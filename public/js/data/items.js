@@ -667,25 +667,6 @@ export const DistanceShredder = {
 	},
 	attachment: { x: 63, y: 35 }
 }
-export const CockpitPiercer = {
-	id: '36',
-	name: 'Cockpit Piercer',
-	svg: true,
-	type: 4,
-	element: 1,
-	tiers: [3, 5],
-	stats: {
-		weight: 27,
-		phyDmg: [540, 866],
-		phyResDmg: 10,
-		range: [7],
-		push: 1,
-		uses: 1,
-		eneCost: 22,
-		heaCost: 22
-	},
-	attachment: { x: 48, y: 56 }
-}
 export const Void = {
 	id: '37',
 	name: 'Void',
@@ -736,6 +717,7 @@ export const DustMaker = {
 	id: '40',
 	name: 'DustMaker',
 	svg: true,
+	type: 5,
 	element: 1,
 	tiers: [3, 5],
 	stats: {
@@ -2261,14 +2243,14 @@ export const RustyEnergyArmor = {
 		heaCol: 64
 	},
 	attachment: {
-		leg1: { x: 63, y: 189 },
-		leg2: { x: 125, y: 189 },
-		side1: { x: 60, y: 148 },
-		side2: { x: 140, y: 148 },
-		side3: { x: 54, y: 80 },
-		side4: { x: 142, y: 80 },
-		top1: { x: 53, y: 24 },
-		top2: { x: 107, y: 24 }
+		leg1:  { x: 64,  y: 177 },
+		leg2:  { x: 128, y: 177 },
+		side1: { x: 54,  y: 87 },
+		side2: { x: 147, y: 87 },
+		side3: { x: 54,  y: 137 },
+		side4: { x: 147, y: 137 },
+		top1:  { x: 68,  y: 11 },
+		top2:  { x: 122, y: 11 }
 	}
 }
 export const BlizzardDissolver = {
@@ -2870,3 +2852,397 @@ export const EnergyProtector = {
 		eleRes: 24
 	}
 }
+export const HardenedPlatinumVest = {
+	id: '161',
+	name: 'Hardened Platinum Vest',
+	type: 1,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 346,
+		health: 908,
+		eneCap: 193,
+		eneReg: 64,
+		heaCap: 289,
+		heaCol: 96,
+		phyRes: 16,
+		expRes: 22,
+		eleRes: 44
+	},
+	attachment: {
+		leg1: { x: 63, y: 189 },
+		leg2: { x: 125, y: 189 },
+		side1: { x: 60, y: 148 },
+		side2: { x: 140, y: 148 },
+		side3: { x: 54, y: 80 },
+		side4: { x: 142, y: 80 },
+		top1: { x: 53, y: 24 },
+		top2: { x: 107, y: 24 }
+	}
+}
+export const UnreliableGuardian = {
+	id: '162',
+	name: 'Unreliable Guardian',
+	type: 5,
+	element: 3,
+	tiers: [3, 5],
+	stats: {
+		weight: 48,
+		eleDmg: [139, 252],
+		eneDmg: 91,
+		eleResDmg: 5,
+		backfire: 98,
+		eneCost: 50
+	}
+}
+export const BackstabbinGuardian = {
+	id: '163',
+	name: 'Backstabbin Guardian',
+	type: 5,
+	element: 2,
+	tiers: [3, 5],
+	stats: {
+		weight: 48,
+		expDmg: [134, 244],
+		heaDmg: 58,
+		expResDmg: 6,
+		backfire: 101,
+		heaCost: 62
+	}
+}
+export const SelfishGuardian = {
+	id: '164',
+	name: 'Selfish Guardian',
+	type: 5,
+	element: 3,
+	tiers: [3, 5],
+	stats: {
+		weight: 48,
+		phyDmg: [215, 379],
+		phyResDmg: 5,
+		backfire: 130,
+		eneCost: 16,
+		heaCost: 16
+	}
+}
+export const SelfishProtector = {
+	id: '165',
+	name: 'Selfish Protector',
+	type: 5,
+	element: 1,
+	tiers: [2, 5],
+	stats: {
+		weight: 42,
+		phyDmg: [201, 359],
+		phyResDmg: 5,
+		backfire: 108,
+		eneCost: 16,
+		heaCost: 16
+	}
+}
+export const BackstabbingProtector = {
+	id: '166',
+	name: 'Backstabbing Protector',
+	type: 5,
+	element: 2,
+	tiers: [2, 5],
+	stats: {
+		weight: 43,
+		expDmg: [126, 226],
+		heaDmg: 50,
+		expResDmg: 5,
+		backfire: 87,
+		heaCost: 50
+	}
+}
+export const UnreliableProtector = {
+	id: '167',
+	name: 'Unreliable Protector',
+	type: 5,
+	element: 3,
+	tiers: [2, 5],
+	stats: {
+		weight: 42,
+		eleDmg: [134, 237],
+		eneDmg: 76,
+		eleResDmg: 5,
+		backfire: 87,
+		eneCost: 50
+	}
+}
+export const LazyFalcon = {
+	id: '168',
+	name: 'Lazy Falcon',
+	type: 4,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 30,
+		phyDmg: [611, 980],
+		phyResDmg: 10,
+		range: [8, 0],
+		backfire: 490
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const HalfBurntScope = {
+	id: '169',
+	name: 'Half Burnt Scope',
+	type: 4,
+	element: 2,
+	tiers: [3, 5],
+	stats: {
+		weight: 30,
+		expDmg: [503, 807],
+		heaDmg: 212,
+		expResDmg: 15,
+		range: [8, 0],
+		backfire: 468,
+		heaCost: 100
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const RustyHeatBlaster = {
+	id: '170',
+	name: 'Rusty Heat Blaster',
+	type: 3,
+	element: 2,
+	tiers: [3, 5],
+	stats: {
+		weight: 43,
+		expDmg: [209, 336],
+		heaDmg: 106,
+		expResDmg: 7,
+		range: [3, 6],
+		uses: 3,
+		backfire: 173,
+		heaCost: 143
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const MalfunctioningBlaster = {
+	id: '171',
+	name: 'Malfunctioning Blaster',
+	type: 3,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 28,
+		phyDmg: [244, 391],
+		phyResDmg: 13,
+		range: [3, 6],
+		backfire: 159,
+		heaCost: 162
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const LastResortVulcan = {
+	id: '172',
+	name: 'Last Resort Vulcan',
+	type: 3,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 52,
+		phyDmg: [216, 478],
+		phyResDmg: 20,
+		range: [4, 8],
+		uses: 2,
+		backfire: 180,
+		heaCost: 31
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const Disintegration = {
+	id: '173',
+	name: 'Disintegration',
+	type: 3,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 47,
+		phyDmg: [202, 362],
+		phyResDmg: 115,
+		range: [1, 2],
+		uses: 3,
+		backfire: 100
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const DistanceController = {
+	id: '174',
+	name: 'Distance Controller',
+	type: 3,
+	element: 2,
+	tiers: [3, 5],
+	stats: {
+		weight: 34,
+		expDmg: [135, 241],
+		heaDmg: 44,
+		expResDmg: 5,
+		range: [1, 2],
+		advance: 6,
+		uses: 2,
+		heaCost: 38
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const DistanceGenerator = {
+	id: '175',
+	name: 'Distance Generator',
+	type: 3,
+	element: 3,
+	tiers: [3, 5],
+	stats: {
+		weight: 35,
+		eleDmg: [135, 241],
+		eneDmg: 63,
+		eleResDmg: 5,
+		range: [1, 2],
+		advance: 6,
+		uses: 2,
+		heaCost: 38
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const CockpitPiercer = {
+	id: '36',
+	name: 'Cockpit Piercer',
+	svg: true,
+	type: 4,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 27,
+		phyDmg: [540, 866],
+		phyResDmg: 10,
+		range: [7],
+		push: 1,
+		uses: 1,
+		eneCost: 22,
+		heaCost: 22
+	},
+	attachment: { x: 48, y: 56 }
+}
+export const CockpitBurner = {
+	id: '176',
+	name: 'Cockpit Burner',
+	type: 4,
+	element: 2,
+	tiers: [3, 5],
+	stats: {
+		weight: 27,
+		expDmg: [394, 654],
+		heaDmg: 177,
+		expResDmg: 12,
+		range: [7, 0],
+		push: 7,
+		uses: 1,
+		eneCost: 31,
+		heaCost: 155
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const CockpitElectrocuter = {
+	id: '177',
+	name: 'Cockpit Electrocuter',
+	type: 4,
+	element: 3,
+	tiers: [3, 5],
+	stats: {
+		weight: 27,
+		eleDmg: [414, 666],
+		eneDmg: 218,
+		eleResDmg: 10,
+		range: [7, 0],
+		push: 1,
+		uses: 1,
+		eneCost: 124,
+		heaCost: 31
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const CrappedEnergyBlaster = {
+	id: '178',
+	name: 'Crapped Energy Blaster',
+	type: 3,
+	element: 3,
+	tiers: [3, 5],
+	stats: {
+		weight: 42,
+		eleDmg: [209, 336],
+		eneDmg: 142,
+		eleResDmg: 7,
+		range: [3, 6],
+		uses: 3,
+		backfire: 173,
+		eneCost: 143
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const ElectrocutedScope = {
+	id: '179',
+	name: 'Electrocuted Scope',
+	type: 3,
+	element: 3,
+	tiers: [3, 5],
+	stats: {
+		weight: 30,
+		eleDmg: [503, 807],
+		eneDmg: 283,
+		eleResDmg: 15,
+		range: [8, 0],
+		backfire: 389,
+		eneCost: 62
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const UnrepairedLaserCannon = {
+	id: '180',
+	name: 'Unrepaired Laser Cannon',
+	type: 3,
+	element: 1,
+	tiers: [2, 5],
+	stats: {
+		weight: 27,
+		phyDmg: [216, 347],
+		range: [2, 4],
+		retreat: 1,
+		backfire: 72,
+		eneCost: 31,
+		heaCost: 31
+	},
+	attachment: { x: 40, y: 50 }
+}
+export const EnergyBatteryArmor = {
+	id: '181',
+	name: 'Energy Battery Armor',
+	width: 222,
+	height: 226,
+	type: 1,
+	element: 3,
+	tiers: [2, 5],
+	stats: {
+		weight: 346,
+		health: 1136,
+		eneCap: 433,
+		eneReg: 24,
+		heaCap: 290,
+		heaCol: 24,
+		phyRes: 14,
+		expRes: 14,
+		eleRes: 14
+	},
+	attachment: {
+		leg1: { x: 66, y: 190 },
+		leg2: { x: 136, y: 190 },
+		side1: { x: 66, y: 149 },
+		side2: { x: 142, y: 149 },
+		side3: { x: 60, y: 97 },
+		side4: { x: 142, y: 97 },
+		top1: { x: 60, y: 51 },
+		top2: { x: 131, y: 51 }
+	}
+}
+
+// last id: 181

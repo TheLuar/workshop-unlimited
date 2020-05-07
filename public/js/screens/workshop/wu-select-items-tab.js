@@ -60,11 +60,13 @@ export const WUSelectItemsTab = class extends WUElementBase
     {
         while (this.itemBlocksContainer.lastChild) this.itemBlocksContainer.lastChild.remove()
 
-        let i = 0
+        const items = Object.keys(this.items)
+            .map(id => this.items[id])
+            .sort((a, b) => a.element - b.element)
 
-        for (const id in this.items)
+        for (let i = 0; i < items.length; i++)
         {
-            const item = this.items[id]
+            const item = items[i]
             const gfx = div('gfx')
             const clickArea = div(clickAreaClassName, null, null, { zIndex:1 })
             const block = div('item-block', { item }, [gfx, clickArea], { visibility:'hidden' })
@@ -78,8 +80,6 @@ export const WUSelectItemsTab = class extends WUElementBase
             }, i * 25)
 
             this.itemBlocksContainer.appendChild(block)
-
-            i++
         }
     }
 
