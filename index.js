@@ -24,15 +24,15 @@ const run = () =>
 
 
 
-io.on('connection', socket =>
-{
-	sockets[socket.id] = socket
+// io.on('connection', socket =>
+// {
+// 	sockets[socket.id] = socket
 
-	socket.on('disconnect', () =>
-	{
-		delete sockets[socket.id]
-	})
-})
+// 	socket.on('disconnect', () =>
+// 	{
+// 		delete sockets[socket.id]
+// 	})
+// })
 
 
 
