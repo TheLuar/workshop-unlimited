@@ -164,14 +164,14 @@ export const BatteryArmor = {
 		eleRes: 14
 	},
 	attachment: {
-		leg1: { x: 66, y: 190 },
-		leg2: { x: 136, y: 190 },
-		side1: { x: 66, y: 149 },
-		side2: { x: 142, y: 149 },
-		side3: { x: 60, y: 97 },
-		side4: { x: 142, y: 97 },
-		top1: { x: 60, y: 51 },
-		top2: { x: 131, y: 51 }
+		leg1:  { x: 71,  y: 187 },
+		leg2:  { x: 125, y: 187 },
+		side1: { x: 57,  y: 83 },
+		side2: { x: 145, y: 83 },
+		side3: { x: 66,  y: 146 },
+		side4: { x: 132, y: 146 },
+		top1:  { x: 50,  y: 16 },
+		top2:  { x: 97,  y: 16 }
 	}
 }
 export const IronBoots = {
@@ -1089,14 +1089,14 @@ export const FlamingBatteryArmor = {
 		eleRes: 14
 	},
 	attachment: {
-		leg1: { x: 66, y: 200 },
-		leg2: { x: 136, y: 200 },
-		side1: { x: 66, y: 149 },
-		side2: { x: 142, y: 149 },
-		side3: { x: 60, y: 97 },
-		side4: { x: 142, y: 97 },
-		top1: { x: 60, y: 51 },
-		top2: { x: 131, y: 51 }
+		leg1:  { x: 71,  y: 187 },
+		leg2:  { x: 125, y: 187 },
+		side1: { x: 57,  y: 83 },
+		side2: { x: 145, y: 83 },
+		side3: { x: 66,  y: 146 },
+		side4: { x: 132, y: 146 },
+		top1:  { x: 50,  y: 16 },
+		top2:  { x: 97,  y: 16 }
 	}
 }
 export const ScorchingFeet = {
@@ -3234,14 +3234,14 @@ export const EnergyBatteryArmor = {
 		eleRes: 14
 	},
 	attachment: {
-		leg1: { x: 66, y: 190 },
-		leg2: { x: 136, y: 190 },
-		side1: { x: 66, y: 149 },
-		side2: { x: 142, y: 149 },
-		side3: { x: 60, y: 97 },
-		side4: { x: 142, y: 97 },
-		top1: { x: 60, y: 51 },
-		top2: { x: 131, y: 51 }
+		leg1:  { x: 71,  y: 187 },
+		leg2:  { x: 125, y: 187 },
+		side1: { x: 57,  y: 83 },
+		side2: { x: 145, y: 83 },
+		side3: { x: 66,  y: 146 },
+		side4: { x: 132, y: 146 },
+		top1:  { x: 50,  y: 16 },
+		top2:  { x: 97,  y: 16 }
 	}
 }
 
