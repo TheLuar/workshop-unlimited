@@ -1,6 +1,6 @@
 {
-    "short_name": "Workshop Unlimited",
-    "name": "Workshop Unlimited Multi",
-    "start_url": "/wudev/index.html",
+    "short_name": "WU",
+    "name": "Workshop Unlimited",
+    "start_url": "index.html",
     "display": "fullscreen"
 }
