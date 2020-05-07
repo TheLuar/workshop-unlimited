@@ -3183,7 +3183,7 @@ export const CrappedEnergyBlaster = {
 export const ElectrocutedScope = {
 	id: '179',
 	name: 'Electrocuted Scope',
-	type: 3,
+	type: 4,
 	element: 3,
 	tiers: [3, 5],
 	stats: {
