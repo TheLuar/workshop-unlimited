@@ -1,0 +1,607 @@
+#app {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.outline {
+	-webkit-filter:
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000);
+	filter:
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000)
+		drop-shadow(0 0 0.5px #000000);
+}
+
+.click-area {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2
+}
+
+.horizontal-separator {
+	position: relative;
+	display: block;
+	width: calc(100% - 6px);
+	height: 1px;
+	background-color: #FFFFFF88;
+	margin: 3px
+}
+
+.wu-stage {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 500px;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	--general-radius: 5px;
+	--color-a: #DDDDDD;
+	--color-b: #051020DD;
+	--color-c: #000000EE;
+	--color-d: #102040EE;
+	--color-e: #888888;
+	--color-f: #FFBB44;
+}
+
+
+/* wu-loading-screen */
+
+.wu-loading-screen {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.wu-loading-screen > .text-container {
+	animation-name: text-glow;
+	animation-duration: 250ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.wu-loading-screen > .wu-procent-bar {
+	width: 40%;
+	height: 5%;
+	margin: 1%;
+	border-radius: 3px;
+}
+.wu-loading-screen > .wu-procent-bar > .text {
+	mix-blend-mode: difference;
+}
+
+
+/* wu-workshop-screen */
+
+.wu-workshop-screen {
+	position: relative;
+	display: grid;
+	grid-template-rows: 20% 20% 20% 20% 20%;
+	grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+	grid-template-areas: 
+		'g i h u u u v w' 
+		'c a d u u u x x' 
+		'e b f u u u x x' 
+		'j k l u u u x x' 
+		'm n o p q r s t';
+	margin: 2.5%;
+	width: 95%;
+	height: 95%;
+	overflow: hidden;
+	--grid-box-margin: 8px;
+	--grid-box-sizing: 100%;
+	--grid-box-sizing: -webkit-calc(100% - var(--grid-box-margin) * 2);
+	--grid-box-sizing: calc(100% - var(--grid-box-margin) * 2);
+}
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(1) { grid-area: a; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(2) { grid-area: b; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(3) { grid-area: e; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(4) { grid-area: f; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(5) { grid-area: c; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(6) { grid-area: d; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(7) { grid-area: g; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(8) { grid-area: h; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(9) { grid-area: i; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(10) { grid-area: j; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(11) { grid-area: k; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(12) { grid-area: l; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(13) { grid-area: m; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(14) { grid-area: n; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(15) { grid-area: o; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(16) { grid-area: p; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(17) { grid-area: q; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(18) { grid-area: r; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(19) { grid-area: s; }
+.wu-workshop-screen > .wu-equipment-slot:nth-of-type(20) { grid-area: t; }
+.wu-workshop-screen > .wu-equipment-slot,
+.wu-workshop-screen > .wu-mech-summary { z-index: 100; }
+
+.wu-workshop-screen > .wu-select-items-tab {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-template-areas: 'a b';
+	width: 100%;
+	height: 100%;
+	border-radius: var(--general-radius);
+	background-color: var(--color-c);
+	z-index: 200;
+}
+.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-content: baseline;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-c);
+	overflow: hidden auto;
+	will-change: scroll-position;
+	z-index: 10;
+	grid-area: b;
+}
+.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block {
+	--size: 15.5%;
+	position: relative;
+	display: block;
+	width: var(--size);
+	height: 0;
+	padding-top: var(--size);
+	margin: 1% 0 0 1%;
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	cursor: pointer;
+}
+.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block.active,
+.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block:hover {
+	box-shadow: 0 0 0 2px var(--color-e) inset;
+}
+.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block > .gfx {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.wu-workshop-screen > .wu-select-items-tab > .item-block.active,
+.wu-workshop-screen > .wu-select-items-tab > .item-block:hover {
+	background-color: var(--color-d);
+}
+.wu-workshop-screen > .wu-mech-summary { grid-area: x }
+
+.wu-workshop-screen > .wu-mech-display { grid-area: u }
+
+.wu-workshop-screen > .battle-btn {
+	position: relative;
+	display: block;
+	width: var(--grid-box-sizing);
+	height: var(--grid-box-sizing);
+	margin: var(--grid-box-margin);
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	cursor: pointer;
+	grid-area: v
+}
+.wu-workshop-screen > .battle-btn:hover {
+	background-color: var(--color-d);
+}
+.wu-workshop-screen > .battle-btn > .icon {
+	position: relative;
+	display: block;
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+/* wu-equipment-slot */
+
+.wu-equipment-slot {
+	position: relative;
+	display: block;
+	width: var(--grid-box-sizing);
+	height: var(--grid-box-sizing);
+	margin: var(--grid-box-margin);
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	cursor: pointer;
+}
+.wu-equipment-slot > .item-gfx,
+.wu-equipment-slot > .icon-gfx {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+/* wu-mech-summary */
+
+.wu-mech-summary {
+	position: relative;
+	display: block;
+	width: var(--grid-box-sizing);
+	height: var(--grid-box-sizing);
+	border-radius: var(--general-radius);
+	margin: var(--grid-box-margin);
+	background-color: var(--color-c);
+}
+.wu-mech-summary > .wu-stat-block {
+	width: 100%;
+	height: calc(100% / 9);
+}
+
+
+
+/* wu-stat-block */
+
+.wu-stat-block {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	width: 120px;
+	height: 30px;
+}
+.wu-stat-block > .icon {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 80%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.wu-stat-block > .output {
+	position: relative;
+	display: block;
+	width: calc(100% - 30px);
+	height: 0;
+	line-height: 0;
+}
+
+
+/* wu-mech-display */
+
+.wu-mech-display {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.wu-mech-display > .parts-container {
+	position: absolute;
+	display: block;
+	left: 50%;
+	bottom: 0;
+	width: 0;
+	height: 0;
+}
+.wu-mech-display > .parts-container > .wu-mech-display-part {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+}
+.wu-mech-display > .parts-container > .wu-mech-display-part.smooth-moving {
+	transition: left 500ms ease-out, top 500ms ease-out;
+}
+.wu-mech-display > .parts-container > .wu-mech-display-part:hover {
+	-webkit-filter: contrast(0.9) brightness(1.2) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000);
+	filter: contrast(0.9) brightness(1.2) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000);
+}
+
+
+/* wu-tool-tip */
+
+.wu-tool-tip {
+	position: absolute;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 230px;
+	padding: 6px;
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	z-index: 1000;
+}
+.wu-tool-tip > .item-name,
+.wu-tool-tip > .item-kind,
+.wu-tool-tip > .is-premium {
+	width: 100%;
+	text-align: center;
+}
+.wu-tool-tip > .item-kind {
+	font-size: 0.85em;
+	color: var(--color-e);
+}
+.wu-tool-tip > .is-premium {
+	font-size: 0.85em;
+	color: var(--color-f);
+}
+.wu-tool-tip > .wu-stat-block {
+	width: 50%;
+}
+
+
+/* wu-popup */
+
+.wu-popup {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-c);
+	z-index: 300;
+}
+.wu-popup > * {
+	width: 30%;
+	text-align: center;
+	margin: 10px
+}
+.wu-popup > .title {
+	font-size: 1.1em;
+}
+.wu-popup > .actions {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+}
+.wu-popup > .actions > .basic-button {
+	width: 40%;
+	padding: 10px;
+	border-radius: var(--general-radius);
+	background-color: var(--color-b);
+	cursor: pointer
+}
+.wu-popup > .actions > .basic-button:hover {
+	background-color: var(--color-d);
+}
+
+
+/* wu-battle-screen */
+
+.wu-battle-screen {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.wu-battle-screen > .wu-player-info-panel:nth-of-type(1) {
+	left: 0;
+	top: 0;
+}
+.wu-battle-screen > .wu-player-info-panel:nth-of-type(2) {
+	right: 0;
+	top: 0;
+	transform: scaleX(-1);
+}
+.wu-battle-screen > .wu-player-info-panel:nth-of-type(2) .text {
+	transform: scaleX(-1);
+}
+.wu-battle-screen > .gfx-container {
+	position: absolute;
+	display: block;
+	left: 5%;
+	top: 0;
+	width: 90%;
+	height: 80%;
+}
+.wu-battle-screen > .gfx-container > .wu-mech-display {
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	height: 0;
+}
+.wu-battle-screen > .move-buttons {
+	position: absolute;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background-color: var(--color-b);
+    transition: top 100ms ease-out;
+    grid-area: c;
+}
+
+
+/*  wu-player-info-panel */
+
+.wu-player-info-panel {
+	position: absolute;
+	display: grid;
+	grid-template-rows: 4% 16% 4% 28% 4% 20% 4% 20%;
+	grid-template-columns: 2.5% 23% 2% 27% 0.5% 6% 2% 27.5% 0.5% 6% 3%;
+	grid-template-areas:
+		'. . . . . . . . . . .'
+		'. a a a a a a a a a .'
+		'. . . . . . . . . . .'
+		'. b . c c c c c c c .'
+		'. b . . . . . . . . .'
+		'. b . e . f . g . h .'
+		'. . . . . . . . . . .'
+		'. . . i i i i i . . .';
+	width: 45%;
+	height: 26%;
+}
+.wu-player-info-panel > .panel-layout {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-image: url(../img/battleScreen/playerInfoPanel.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: 2;
+}
+.wu-player-info-panel .text {
+	z-index: 3;
+}
+.wu-player-info-panel > .text {
+	grid-area: a;
+}
+.wu-player-info-panel > .wu-procent-bar {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.wu-player-info-panel > .wu-procent-bar.health {
+	grid-area: c;
+}
+.wu-player-info-panel > .wu-procent-bar.energy {
+	grid-area: e;
+}
+.wu-player-info-panel > .wu-procent-bar.heat {
+	grid-area: g;
+}
+.wu-player-info-panel > .wu-resistance-display {
+	position: absolute;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 82;
+	width: 40px;
+	height: 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.wu-player-info-panel > .wu-resistance-display:nth-child(5) { left: 26% }
+.wu-player-info-panel > .wu-resistance-display:nth-child(6) { left: 38% }
+.wu-player-info-panel > .wu-resistance-display:nth-child(7) { left: 50% }
+
+
+/* WU-PROCENT-BAR */
+
+.wu-procent-bar {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 30px;
+	background-color: #000000;
+	border-radius: 1px;
+	overflow: hidden;
+}
+.wu-procent-bar > .bar {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	min-width: 0;
+	background-color: #FF00FF;
+	background-image: url(/img/general/bar-frame.svg);
+	background-size: auto 100%;
+	z-index: 1;
+	transition: width 250ms ease;
+}
+.wu-procent-bar > .text {
+	position: relative;
+	display: block;
+	z-index: 2;
+}
+
+
+/* wu-battle-item-button */
+
+.wu-battle-item-button {
+	position: relative;
+	display: block;
+	width: 8%;
+	height: 0;
+	padding: 8% 0 0 0;
+	margin: 0.2%;
+	background-color: var(--color-c);
+	border: 2px solid var(--color-e);
+	border-radius: 10px 0;
+	cursor: pointer;
+}
+.wu-battle-item-button:hover {
+	border-color: var(--color-a);
+}
+.wu-battle-item-button.disabled {
+	opacity: 0.5;
+}
+.wu-battle-item-button.disabled:hover {
+	border-color: unset;
+}
+.wu-battle-item-button > .item-gfx {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+
+/* animations */
+
+@keyframes text-glow {
+	0% {
+		text-shadow: 0 0 3px var(--color-a);
+	}
+	100% {
+		text-shadow: 0 0 10px var(--color-a);
+	}
+}

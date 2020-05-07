@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100px" height="100px">
+  <path transform="translate(50, 50)" style="fill:#DDD" d="M-1.8 -43.8L-43.75 -1.8L-43.75 1.65L-1.8 43.8L1.65 43.8L43.75 1.65L43.75 -1.8L1.65 -43.8L-1.8 -43.8M4.9 -50L50 -4.9L50 4.9L4.9 50L-4.9 50L-50 4.9L-50 -4.9L-4.9 -50L4.9 -50M-0.1 39.2L-39.2 0L-0.1 -39.2L39.2 0L-0.1 39.2" />
+</svg>

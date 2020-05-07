@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10">
+  <path opacity="0.1" d="M0 10L5 0H10L5 10Z"/>
+  <path opacity="0.3" d="M0 0H10V1H0Z"/>
+  <path opacity="0.3" fill="#FFF" d="M0 1H10V2H0Z"/>
+  <path opacity="0.3" d="M0 9H10V10H0Z"/>
+</svg>

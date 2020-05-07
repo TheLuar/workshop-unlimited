@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160px" height="160px">
+  <path fill="#F64" d="M50.25 14.5L145.45 14.5L145.5 109.75L115.75 80L50.25 145.5L14.5 109.75L80 44.25L50.25 14.5" />
+  <path opacity="0" d="M80 44.25L14.5 109.75L50.25 145.5L115.75 80L145.5 109.75L145.45 14.5L50.25 14.5L80 44.25M0 160L0 0L160 0L160 160L0 160" />
+</svg>
