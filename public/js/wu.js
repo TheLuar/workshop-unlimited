@@ -78,6 +78,8 @@ const init = () =>
 
 	scrWorkshop.events.searchBattle = () =>
 	{
+		return
+		
 		// if (!setup[0])
 		// {
 		//     fakeClick(scrWorkshop.slots[0].element)
