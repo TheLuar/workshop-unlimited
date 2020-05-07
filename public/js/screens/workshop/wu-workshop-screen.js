@@ -81,7 +81,7 @@ export const WUWorkshopScreen = class extends WUElementBase
         this.selectItemsTab.hide()
 
         this.addChildren([...this.slots, this.selectItemsTab, this.mechSummary, this.mechDisplay])
-        this.element.appendChild(this.btnBattle)
+        // this.element.appendChild(this.btnBattle)
     }
 
     updateMechSummary ()
