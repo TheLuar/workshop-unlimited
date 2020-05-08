@@ -31,7 +31,6 @@ export const WUStatBlock = class extends WUElementBase
     setStat (key)
     {
         this.stat = statsM.getByKey(key);
-        console.log(this.stat.url)
         this.statIcon.style.backgroundImage = `url(${ this.stat.url })`;
         return this;
     }

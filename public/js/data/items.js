@@ -166,10 +166,10 @@ export const BatteryArmor = {
 	attachment: {
 		leg1:  { x: 71,  y: 187 },
 		leg2:  { x: 125, y: 187 },
-		side1: { x: 57,  y: 83 },
-		side2: { x: 145, y: 83 },
-		side3: { x: 66,  y: 146 },
-		side4: { x: 132, y: 146 },
+		side1: { x: 57,  y: 146 },
+		side2: { x: 145, y: 146 },
+		side3: { x: 66,  y: 83 },
+		side4: { x: 132, y: 83 },
 		top1:  { x: 50,  y: 16 },
 		top2:  { x: 97,  y: 16 }
 	}
@@ -493,7 +493,7 @@ export const SacrificeCannon = {
 		eneCost: 31,
 		heaCost: 31
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 47, y: 47 }
 }
 export const PerimeterProtector = {
 	id: '26',
@@ -1091,10 +1091,10 @@ export const FlamingBatteryArmor = {
 	attachment: {
 		leg1:  { x: 71,  y: 187 },
 		leg2:  { x: 125, y: 187 },
-		side1: { x: 57,  y: 83 },
-		side2: { x: 145, y: 83 },
-		side3: { x: 66,  y: 146 },
-		side4: { x: 132, y: 146 },
+		side1: { x: 57,  y: 146 },
+		side2: { x: 145, y: 146 },
+		side3: { x: 66,  y: 83 },
+		side4: { x: 132, y: 83 },
 		top1:  { x: 50,  y: 16 },
 		top2:  { x: 97,  y: 16 }
 	}
@@ -1495,7 +1495,7 @@ export const BrokenDevourer = {
 		eneCost: 13,
 		heaCost: 81
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 47, y: 47 }
 }
 export const OvercookingOven = {
 	id: '82',
@@ -1515,7 +1515,7 @@ export const OvercookingOven = {
 		eneCost: 31,
 		heaCost: 19
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 74, y: 47 }
 }
 export const SupremeCannon = {
 	id: '83',
@@ -2486,7 +2486,7 @@ export const UnstablePowerCell = {
 		eneCost: 19,
 		heaCost: 31
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 74, y: 47 }
 }
 export const GrimCobra = {
 	id: '137',
@@ -3236,13 +3236,37 @@ export const EnergyBatteryArmor = {
 	attachment: {
 		leg1:  { x: 71,  y: 187 },
 		leg2:  { x: 125, y: 187 },
-		side1: { x: 57,  y: 83 },
-		side2: { x: 145, y: 83 },
-		side3: { x: 66,  y: 146 },
-		side4: { x: 132, y: 146 },
+		side1: { x: 57,  y: 146 },
+		side2: { x: 145, y: 146 },
+		side3: { x: 66,  y: 83 },
+		side4: { x: 132, y: 83 },
 		top1:  { x: 50,  y: 16 },
 		top2:  { x: 97,  y: 16 }
 	}
 }
+export const DrunkLightning = {
+	id: '182',
+	name: 'Drunk Lightning',
+	type: 3,
+	element: 3,
+	tiers: [2, 5],
+	stats: {
+		weight: 27,
+		eleDmg: [155, 390],
+		eneDmg: 123,
+		eleResDmg: 12,
+		range: [2, 4],
+		push: 1,
+		uses: 1,
+		backfire: 123,
+		eneCost: 81,
+		heaCost: 62
+	},
+	divine: {
+		eleDmg: [159, 400],
+		eneDmg: 127
+	},
+	attachment: { x: 47, y: 47 }
+}
 
-// last id: 181
+// last id: 182
