@@ -464,7 +464,7 @@ export const EjectionBlast = {
 	tiers: [3, 5],
 	stats: {
 		weight: 34,
-		phyDmg: [254, 434],
+		phyDmg: [228, 408],
 		phyResDmg: 5,
 		push: 1,
 		retreat: 2,
@@ -472,7 +472,7 @@ export const EjectionBlast = {
 		uses: 2,
 		eneCost: 31,
 		heaCost: 31
-	},
+	},				
 	attachment: { x: 41, y: 39 }
 }
 export const SacrificeCannon = {
@@ -1214,17 +1214,17 @@ export const ChaosBringer = {
 	name: 'Chaos Bringer',
 	type: 3,
 	element: 2,
-	attachment: { x: 43, y: 39 },
 	tiers: [3, 5],
 	stats: {
 		weight: 49,
-		expDmg: [224, 228],
+		expDmg: [224, 2866],
 		heaDmg: 114,
 		range: [1, 2],
 		uses: 3,
 		eneCost: 16,
 		heaCost: 31
-	}
+	},
+	attachment: { x: 43, y: 39 }
 }
 export const CrimsonRapture = {
 	id: '67',
@@ -1709,14 +1709,14 @@ export const SpaceInvader = {
 	tiers: [3, 5],
 	stats: {
 		weight: 41,
-		expDmg: [162, 289],
+		expDmg: [203, 337],
 		heaDmg: 36,
 		expResDmg: 5,
 		range: [4, 8],
 		push: 1,
 		advance: 3,
 		uses: 2,
-		heaCost: 63
+		heaCost: 100
 	},
 	attachment: { x: 54, y: 38 }
 }
@@ -3162,9 +3162,9 @@ export const CockpitElectrocuter = {
 	},
 	attachment: { x: 71, y: 41 }
 }
-export const CrappedEnergyBlaster = {
+export const ScrappedEnergyBlaster = {
 	id: '178',
-	name: 'Crapped Energy Blaster',
+	name: 'Scrapped Energy Blaster',
 	type: 3,
 	element: 3,
 	tiers: [3, 5],
