@@ -1217,7 +1217,7 @@ export const ChaosBringer = {
 	tiers: [3, 5],
 	stats: {
 		weight: 49,
-		expDmg: [224, 2866],
+		expDmg: [224, 286],
 		heaDmg: 114,
 		range: [1, 2],
 		uses: 3,

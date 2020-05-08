@@ -34,15 +34,15 @@ export const WUSelectItemsTab = class extends WUElementBase
             }
         }
         
-        this.itemBlocksContainer = div('item-blocks-container')
-        this.element = div('wu-select-items-tab', { onclick }, [this.itemBlocksContainer])
+        this.itemBlocksCtn = div('item-blocks-container')
+        this.element = div('wu-select-items-tab', { onclick }, [this.itemBlocksCtn])
         this.items = {}
         this.currentSlot = null
     }
 
     onshow (slot)
     {
-        this.itemBlocksContainer.scroll(0, 0)
+        this.itemBlocksCtn.scroll(0, 0)
         if (!slot)
         {
             console.error(`invalid 'slot' argument:`, slot)
@@ -58,7 +58,7 @@ export const WUSelectItemsTab = class extends WUElementBase
 
     updateList ()
     {
-        while (this.itemBlocksContainer.lastChild) this.itemBlocksContainer.lastChild.remove()
+        while (this.itemBlocksCtn.lastChild) this.itemBlocksCtn.lastChild.remove()
 
         const items = Object.keys(this.items)
             .map(id => this.items[id])
@@ -76,10 +76,25 @@ export const WUSelectItemsTab = class extends WUElementBase
             setTimeout(() =>
             {
                 block.style.visibility = ''
-                block.onclick = () => this.select(item)
+                
+                block.onclick = () =>
+                {
+                    if (window.isTouchDevice)
+                    {
+                        if (block.classList.contains('active'))
+                        {
+                            this.select(item)
+                            return
+                        }
+                        Array.from(this.itemBlocksCtn.children).forEach(b => b.classList.remove('active'))
+                        block.classList.add('active')
+                        return
+                    }
+                    this.select(item)
+                }
             }, i * 25)
 
-            this.itemBlocksContainer.appendChild(block)
+            this.itemBlocksCtn.appendChild(block)
         }
     }
 
