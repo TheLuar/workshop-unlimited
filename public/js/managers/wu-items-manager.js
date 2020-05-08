@@ -55,8 +55,9 @@ export const WUItemsManager = class
 		const items = Object.keys(itemsDB).map(a => itemsDB[a]);
 
 		let itemsLoading = 0
+		let i = 0
 
-		const roll = i =>
+		const roll = () =>
 		{
 			const item = items[i]
 			itemsLoading++
@@ -72,7 +73,7 @@ export const WUItemsManager = class
 				})
 		}
 
-		roll(0)
+		roll()
 	}
 
 	getByID (id)
