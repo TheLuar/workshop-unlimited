@@ -1405,7 +1405,7 @@ export const HybridHeatCannon = {
 	name: 'Hybrid Heat Cannon',
 	type: 3,
 	element: 2,
-	tiers: [2, 5],
+	tiers: [3, 5],
 	stats: {
 		weight: 47,
 		expDmg: [159, 269],
