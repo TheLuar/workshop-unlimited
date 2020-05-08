@@ -453,7 +453,7 @@ export const RockRecoiler = {
 		eneCost: 25,
 		heaCost: 38
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 60, y: 35 }
 }
 export const EjectionBlast = {
 	id: '24',
@@ -473,7 +473,7 @@ export const EjectionBlast = {
 		eneCost: 31,
 		heaCost: 31
 	},
-	attachment: { x: 46, y: 38 }
+	attachment: { x: 41, y: 39 }
 }
 export const SacrificeCannon = {
 	id: '25',
@@ -511,7 +511,7 @@ export const PerimeterProtector = {
 		uses: 2,
 		heaCost: 38
 	},
-	attachment: { x: 40, y: 40 }
+	attachment: { x: 53, y: 26 }
 }
 export const DarkEagle = {
 	id: '27',
@@ -638,7 +638,6 @@ export const FranticBrute = {
 	svg: true,
 	type: 4,
 	element: 1,
-	attachment: { x: 40, y: 50 },
 	tiers: [3, 5],
 	stats: {
 		weight: 50,
@@ -647,7 +646,8 @@ export const FranticBrute = {
 		uses: 2,
 		eneCost: 10,
 		heaCost: 50
-	}
+	},
+	attachment: { x: 44, y: 27 }
 }
 export const DistanceShredder = {
 	id: '35',
@@ -1433,7 +1433,7 @@ export const ExplosiveRetreat = {
 		eneCost: 19,
 		heaCost: 44
 	},
-	attachment: { x: 50, y: 35 }
+	attachment: { x: 51, y: 40 }
 }
 export const MagmaRecoiler = {
 	id: '79',
@@ -1453,7 +1453,7 @@ export const MagmaRecoiler = {
 		eneCost: 25,
 		heaCost: 56
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 60, y: 35 }
 }
 export const ShadowWolf = {
 	id: '80',
@@ -1667,7 +1667,6 @@ export const RedRain = {
 	name: 'Red Rain',
 	type: 4,
 	element: 2,
-	attachment: { x: 36, y: 79 },
 	tiers: [3, 5],
 	stats: {
 		weight: 65,
@@ -1679,7 +1678,8 @@ export const RedRain = {
 		uses: 2,
 		eneCost: 30,
 		heaCost: 81
-	}
+	},
+	attachment: { x: 36, y: 79 }
 }
 export const FranticFlame = {
 	id: '92',
@@ -1698,7 +1698,7 @@ export const FranticFlame = {
 		eneCost: 10,
 		heaCost: 81
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 44, y: 27 }
 }
 export const SpaceInvader = {
 	id: '93',
@@ -2424,7 +2424,7 @@ export const EvacSpark = {
 		eneCost: 44,
 		heaCost: 19
 	},
-	attachment: { x: 50, y: 35 }
+	attachment: { x: 51, y: 40 }
 }
 export const LightningRecoiler = {
 	id: '134',
@@ -2445,7 +2445,7 @@ export const LightningRecoiler = {
 		eneCost: 56,
 		heaCost: 25
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 60, y: 35 }
 }
 export const PiercingFox = {
 	id: '135',
@@ -2613,7 +2613,7 @@ export const FranticLightning = {
 		eneCost: 81,
 		heaCost: 13
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 44, y: 27 }
 }
 export const PartyCrasher = {
 	id: '144',
@@ -3018,7 +3018,7 @@ export const RustyHeatBlaster = {
 		backfire: 173,
 		heaCost: 143
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 58, y: 33 }
 }
 export const MalfunctioningBlaster = {
 	id: '171',
@@ -3034,7 +3034,7 @@ export const MalfunctioningBlaster = {
 		backfire: 159,
 		heaCost: 162
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 58, y: 33 }
 }
 export const LastResortVulcan = {
 	id: '172',
@@ -3051,7 +3051,7 @@ export const LastResortVulcan = {
 		backfire: 180,
 		heaCost: 31
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 59, y: 35 }
 }
 export const Disintegration = {
 	id: '173',
@@ -3067,7 +3067,7 @@ export const Disintegration = {
 		uses: 3,
 		backfire: 100
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 57, y: 51 }
 }
 export const DistanceController = {
 	id: '174',
@@ -3085,7 +3085,7 @@ export const DistanceController = {
 		uses: 2,
 		heaCost: 38
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 53, y: 26 }
 }
 export const DistanceGenerator = {
 	id: '175',
@@ -3103,7 +3103,7 @@ export const DistanceGenerator = {
 		uses: 2,
 		heaCost: 38
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 53, y: 26 }
 }
 export const CockpitPiercer = {
 	id: '36',
@@ -3122,7 +3122,7 @@ export const CockpitPiercer = {
 		eneCost: 22,
 		heaCost: 22
 	},
-	attachment: { x: 48, y: 56 }
+	attachment: { x: 71, y: 41 }
 }
 export const CockpitBurner = {
 	id: '176',
@@ -3141,7 +3141,7 @@ export const CockpitBurner = {
 		eneCost: 31,
 		heaCost: 155
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 71, y: 41 }
 }
 export const CockpitElectrocuter = {
 	id: '177',
@@ -3160,7 +3160,7 @@ export const CockpitElectrocuter = {
 		eneCost: 124,
 		heaCost: 31
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 71, y: 41 }
 }
 export const CrappedEnergyBlaster = {
 	id: '178',
@@ -3178,7 +3178,7 @@ export const CrappedEnergyBlaster = {
 		backfire: 173,
 		eneCost: 143
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 58, y: 33 }
 }
 export const ElectrocutedScope = {
 	id: '179',
@@ -3212,7 +3212,7 @@ export const UnrepairedLaserCannon = {
 		eneCost: 31,
 		heaCost: 31
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 47, y: 30 }
 }
 export const EnergyBatteryArmor = {
 	id: '181',

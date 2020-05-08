@@ -54,17 +54,21 @@ export const WUItemsManager = class
 	{
 		const items = Object.keys(itemsDB).map(a => itemsDB[a]);
 
+		let itemsLoading = 0
+
 		const roll = i =>
 		{
 			const item = items[i]
+			itemsLoading++
 
 			getImgBlob('../../../img/items/' + item.fileName, 'image/' + item.fileType)
 				.then(blob => item.url = blob)
 				.catch(() => item.url = missingTextureEncoded)
 				.then(() =>
 				{
+					itemsLoading--
 					this.itemsLoaded++
-					if (items[++i]) roll(i)
+					while (itemsLoading < 5 && items[++i]) roll(i)
 				})
 		}
 
