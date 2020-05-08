@@ -1618,8 +1618,8 @@ export const Savagery = {
 	stats: {
 		weight: 51,
 		expDmg: [154, 232],
-		heaDmg: 93,
-		heaCapDmg: 24,
+		heaDmg: 106,
+		heaCapDmg: 30,
 		range: [4, 8],
 		eneCost: 16,
 		heaCost: 47
@@ -2400,7 +2400,7 @@ export const HybridEnergyCannon = {
 		weight: 66,
 		eleDmg: [159, 269],
 		eneDmg: 139,
-		eneCapDmg: 28,
+		eneCapDmg: 39,
 		range: [3, 6],
 		heaCost: 104
 	},
