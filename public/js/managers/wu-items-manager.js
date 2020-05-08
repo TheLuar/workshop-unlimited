@@ -4,7 +4,6 @@
 // Dependences
 
 import * as itemsDB from '../data/items.js';
-
 import { getImgBlob } from '../utils/get-img-blob.js';
 
 

@@ -118,7 +118,7 @@ export const HollowSpectralArmor = {
 export const EnergyFreeArmor = {
 	id: '5',
 	name: 'Energy Free Armor',
-	svg: true,
+	svg: false,
 	type: 1,
 	element: 1,
 	tiers: [3, 5],

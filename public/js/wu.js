@@ -4,11 +4,9 @@
 // Dependences
 
 import { WUPopup } from './mobiles/wu-popup.js'
-
 import { WUScreenManager } from './screens/wu-screen-manager.js'
-
 import { WUItemsManager } from './managers/wu-items-manager.js'
-
+import { WUStatsManager } from './managers/wu-stats-manager.js'
 import { WUBattleManager } from './managers/wu-battle-manager.js'
 
 
@@ -66,6 +64,7 @@ const getRandomText = type => randomTexts[type][Math.floor(Math.random() * rando
 const init = () =>
 {
 	const screenM = WUScreenManager.getInstance(app)
+	const statsM = WUStatsManager.getInstance()
 	const itemsM = WUItemsManager.getInstance()
 	const battleM = WUBattleManager.getInstance()
 
@@ -158,21 +157,24 @@ const init = () =>
 	screenM.goToScreen('loading')
 	
 	itemsM.load()
+	statsM.load()
 
 	const updateLoad = setInterval(() =>
 	{
-		if (itemsM.ready)
+		if (itemsM.ready && statsM.ready)
 		{
 			clearInterval(updateLoad)
 
 			scrLoading.setProgress(100)
 			scrLoading.setText('Welcome to Workshop Unlimited')
+			scrWorkshop.init()
 
 			setTimeout(() => screenM.goToScreen('workshop'), 2000)
 		}
 		else
 		{
-			scrLoading.setProgress((itemsM.getLoadingProgress() * 100).toFixed(1))
+			const progress = itemsM.getLoadingProgress() + statsM.getLoadingProgress()
+			scrLoading.setProgress((progress * 50).toFixed(1))
 		}
 	}, 100)
 

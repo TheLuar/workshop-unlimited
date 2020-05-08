@@ -84,6 +84,11 @@ export const WUWorkshopScreen = class extends WUElementBase
         // this.element.appendChild(this.btnBattle)
     }
 
+    init ()
+    {
+        this.mechSummary.init()
+    }
+
     updateMechSummary ()
     {
         const sum = statsResolver.getMechStatsFromSetup(this.getSetup());

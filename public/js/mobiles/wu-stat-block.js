@@ -4,9 +4,7 @@
 // Dependences
 
 import { WUStatsManager } from '../managers/wu-stats-manager.js';
-
 import { div } from '../utils/general-utils.js';
-
 import { WUElementBase } from './wu-element-base.js';
 
 
@@ -33,7 +31,8 @@ export const WUStatBlock = class extends WUElementBase
     setStat (key)
     {
         this.stat = statsM.getByKey(key);
-        this.statIcon.style.backgroundImage = `url(../../img/icons/stats/${ key }.svg)`;
+        console.log(this.stat.url)
+        this.statIcon.style.backgroundImage = `url(${ this.stat.url })`;
         return this;
     }
 

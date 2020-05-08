@@ -4,11 +4,8 @@
 // Dependences
 
 import { div } from '../../utils/general-utils.js';
-
 import { WUStatsManager } from '../../managers/wu-stats-manager.js';
-
 import { WUStatBlock } from '../../mobiles/wu-stat-block.js';
-
 import { WUElementBase } from '../../mobiles/wu-element-base.js';
 
 
@@ -27,7 +24,10 @@ export const WUMechSummary = class extends WUElementBase
         
         this.statBlocks = []
         this.element = div('wu-mech-summary')
+    }
 
+    init ()
+    {
         for (const key of statsM.mechSumStatKeys)
         {
             const statBlock = new WUStatBlock(key, 0)

@@ -4,9 +4,7 @@
 // Dependences
 
 import { div } from '../utils/general-utils.js'
-
 import { WUElementBase } from './wu-element-base.js'
-
 import { WUItemsManager } from '../managers/wu-items-manager.js'
 import { WUStatBlock } from './wu-stat-block.js'
 
