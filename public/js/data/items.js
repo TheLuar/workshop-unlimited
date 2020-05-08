@@ -3062,7 +3062,7 @@ export const Disintegration = {
 	stats: {
 		weight: 47,
 		phyDmg: [202, 362],
-		phyResDmg: 115,
+		phyResDmg: 15,
 		range: [1, 2],
 		uses: 3,
 		backfire: 100
