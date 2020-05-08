@@ -2914,7 +2914,7 @@ export const SelfishGuardian = {
 	id: '164',
 	name: 'Selfish Guardian',
 	type: 5,
-	element: 2,
+	element: 1,
 	tiers: [3, 5],
 	stats: {
 		weight: 48,
