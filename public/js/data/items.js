@@ -531,7 +531,7 @@ export const DarkEagle = {
 		eneCost: 25,
 		heaCost: 38
 	},
-	attachment: { x: 40, y: 40 }
+	attachment: { x: 64, y: 32 }
 }
 export const NightEagle = {
 	id: '28',
@@ -665,7 +665,7 @@ export const DistanceShredder = {
 		uses: 2,
 		heaCost: 100
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 54, y: 38 }
 }
 export const Void = {
 	id: '37',
@@ -1474,7 +1474,7 @@ export const ShadowWolf = {
 		eneCost: 25,
 		heaCost: 56
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 64, y: 32 }
 }
 export const BrokenDevourer = {
 	id: '81',
@@ -1613,7 +1613,6 @@ export const Savagery = {
 	name: 'Savagery',
 	type: 4,
 	element: 2,
-	attachment: { x: 48, y: 56 },
 	tiers: [2, 5],
 	stats: {
 		weight: 51,
@@ -1623,7 +1622,8 @@ export const Savagery = {
 		range: [4, 8],
 		eneCost: 16,
 		heaCost: 47
-	}
+	},
+	attachment: { x: 48, y: 55 }
 }
 export const FlamingScope = {
 	id: '89',
@@ -1718,7 +1718,7 @@ export const SpaceInvader = {
 		uses: 2,
 		heaCost: 63
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 54, y: 38 }
 }
 export const Clash = {
 	id: '94',
@@ -2466,7 +2466,7 @@ export const PiercingFox = {
 		eneCost: 56,
 		heaCost: 25
 	},
-	attachment: { x: 40, y: 50 }
+	attachment: { x: 64, y: 32 }
 }
 export const UnstablePowerCell = {
 	id: '136',
@@ -2633,7 +2633,7 @@ export const PartyCrasher = {
 		uses: 2,
 		heaCost: 100
 	},
-	attachment: { x: 63, y: 35 }
+	attachment: { x: 54, y: 38 }
 }
 export const Snack = {
 	id: '145',
@@ -2914,7 +2914,7 @@ export const SelfishGuardian = {
 	id: '164',
 	name: 'Selfish Guardian',
 	type: 5,
-	element: 3,
+	element: 2,
 	tiers: [3, 5],
 	stats: {
 		weight: 48,
