@@ -2245,10 +2245,10 @@ export const RustyEnergyArmor = {
 	attachment: {
 		leg1:  { x: 64,  y: 177 },
 		leg2:  { x: 128, y: 177 },
-		side1: { x: 54,  y: 87 },
-		side2: { x: 147, y: 87 },
-		side3: { x: 54,  y: 137 },
-		side4: { x: 147, y: 137 },
+		side1: { x: 54,  y: 137 },
+		side2: { x: 147, y: 137 },
+		side3: { x: 54,  y: 87 },
+		side4: { x: 147, y: 87 },
 		top1:  { x: 68,  y: 11 },
 		top2:  { x: 122, y: 11 }
 	}

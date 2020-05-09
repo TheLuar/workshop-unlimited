@@ -42,7 +42,7 @@
 	margin: 3px
 }
 
-.wu-stage {
+wu-workshop-unlimited {
 	position: relative;
 	display: block;
 	width: 800px;
@@ -62,7 +62,7 @@
 
 /* wu-loading-screen */
 
-.wu-loading-screen {
+wu-loading-screen {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
@@ -72,26 +72,26 @@
 	width: 100%;
 	height: 100%;
 }
-.wu-loading-screen > .text-container {
+wu-loading-screen > .text-container {
 	animation-name: text-glow;
 	animation-duration: 250ms;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
-.wu-loading-screen > .wu-procent-bar {
+wu-loading-screen > wu-progress-bar {
 	width: 40%;
 	height: 5%;
 	margin: 1%;
 	border-radius: 3px;
 }
-.wu-loading-screen > .wu-procent-bar > .text {
+wu-loading-screen > wu-progress-bar > .text {
 	mix-blend-mode: difference;
 }
 
 
 /* wu-workshop-screen */
 
-.wu-workshop-screen {
+wu-workshop-screen {
 	position: relative;
 	display: grid;
 	grid-template-rows: 20% 20% 20% 20% 20%;
@@ -102,7 +102,8 @@
 		'e b f u u u x x' 
 		'j k l u u u x x' 
 		'm n o p q r s t';
-	margin: 2.5%;
+	left: 2.5%;
+	top: 2.5%;
 	width: 95%;
 	height: 95%;
 	overflow: hidden;
@@ -111,30 +112,30 @@
 	--grid-box-sizing: -webkit-calc(100% - var(--grid-box-margin) * 2);
 	--grid-box-sizing: calc(100% - var(--grid-box-margin) * 2);
 }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(1) { grid-area: a; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(2) { grid-area: b; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(3) { grid-area: e; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(4) { grid-area: f; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(5) { grid-area: c; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(6) { grid-area: d; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(7) { grid-area: g; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(8) { grid-area: h; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(9) { grid-area: i; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(10) { grid-area: j; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(11) { grid-area: k; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(12) { grid-area: l; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(13) { grid-area: m; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(14) { grid-area: n; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(15) { grid-area: o; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(16) { grid-area: p; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(17) { grid-area: q; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(18) { grid-area: r; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(19) { grid-area: s; }
-.wu-workshop-screen > .wu-equipment-slot:nth-of-type(20) { grid-area: t; }
-.wu-workshop-screen > .wu-equipment-slot,
-.wu-workshop-screen > .wu-mech-summary { z-index: 100; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(1) { grid-area: a; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(2) { grid-area: b; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(3) { grid-area: e; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(4) { grid-area: f; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(5) { grid-area: c; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(6) { grid-area: d; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(7) { grid-area: g; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(8) { grid-area: h; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(9) { grid-area: i; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(10) { grid-area: j; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(11) { grid-area: k; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(12) { grid-area: l; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(13) { grid-area: m; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(14) { grid-area: n; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(15) { grid-area: o; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(16) { grid-area: p; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(17) { grid-area: q; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(18) { grid-area: r; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(19) { grid-area: s; }
+wu-workshop-screen > wu-equipment-slot:nth-of-type(20) { grid-area: t; }
+wu-workshop-screen > wu-equipment-slot,
+wu-workshop-screen > wu-mech-summary { z-index: 100; }
 
-.wu-workshop-screen > .wu-select-items-tab {
+wu-workshop-screen > wu-select-items-tab {
 	position: absolute;
 	display: grid;
 	grid-template-columns: 40% 60%;
@@ -145,7 +146,7 @@
 	background-color: var(--color-c);
 	z-index: 200;
 }
-.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container {
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
@@ -159,7 +160,7 @@
 	z-index: 10;
 	grid-area: b;
 }
-.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block {
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block {
 	--size: 15.5%;
 	position: relative;
 	display: block;
@@ -171,11 +172,11 @@
 	border-radius: var(--general-radius);
 	cursor: pointer;
 }
-.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block.active,
-.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block:hover {
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block.active,
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block:hover {
 	box-shadow: 0 0 0 2px var(--color-e) inset;
 }
-.wu-workshop-screen > .wu-select-items-tab > .item-blocks-container > .item-block > .gfx {
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block > .gfx {
 	position: absolute;
 	display: block;
 	left: 0;
@@ -187,15 +188,15 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 }
-.wu-workshop-screen > .wu-select-items-tab > .item-block.active,
-.wu-workshop-screen > .wu-select-items-tab > .item-block:hover {
+wu-workshop-screen > wu-select-items-tab > .item-block.active,
+wu-workshop-screen > wu-select-items-tab > .item-block:hover {
 	background-color: var(--color-d);
 }
-.wu-workshop-screen > .wu-mech-summary { grid-area: x }
+wu-workshop-screen > wu-mech-summary { grid-area: x }
 
-.wu-workshop-screen > .wu-mech-display { grid-area: u }
+wu-workshop-screen > wu-mech-display { grid-area: u }
 
-.wu-workshop-screen > .battle-btn {
+wu-workshop-screen > .battle-btn {
 	position: relative;
 	display: block;
 	width: var(--grid-box-sizing);
@@ -206,10 +207,10 @@
 	cursor: pointer;
 	grid-area: v
 }
-.wu-workshop-screen > .battle-btn:hover {
+wu-workshop-screen > .battle-btn:hover {
 	background-color: var(--color-d);
 }
-.wu-workshop-screen > .battle-btn > .icon {
+wu-workshop-screen > .battle-btn > .icon {
 	position: relative;
 	display: block;
 	width: 80%;
@@ -223,7 +224,7 @@
 
 /* wu-equipment-slot */
 
-.wu-equipment-slot {
+wu-equipment-slot {
 	position: relative;
 	display: block;
 	width: var(--grid-box-sizing);
@@ -233,8 +234,8 @@
 	border-radius: var(--general-radius);
 	cursor: pointer;
 }
-.wu-equipment-slot > .item-gfx,
-.wu-equipment-slot > .icon-gfx {
+wu-equipment-slot > .item-gfx,
+wu-equipment-slot > .icon-gfx {
 	position: absolute;
 	display: block;
 	left: 0;
@@ -250,7 +251,7 @@
 
 /* wu-mech-summary */
 
-.wu-mech-summary {
+wu-mech-summary {
 	position: relative;
 	display: block;
 	width: var(--grid-box-sizing);
@@ -259,7 +260,7 @@
 	margin: var(--grid-box-margin);
 	background-color: var(--color-c);
 }
-.wu-mech-summary > .wu-stat-block {
+wu-mech-summary > wu-stat-block {
 	width: 100%;
 	height: calc(100% / 9);
 }
@@ -268,7 +269,7 @@
 
 /* wu-stat-block */
 
-.wu-stat-block {
+wu-stat-block {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
@@ -276,7 +277,7 @@
 	width: 120px;
 	height: 30px;
 }
-.wu-stat-block > .icon {
+wu-stat-block > .icon {
 	position: relative;
 	display: block;
 	width: 30px;
@@ -285,7 +286,7 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 }
-.wu-stat-block > .output {
+wu-stat-block > .output {
 	position: relative;
 	display: block;
 	width: calc(100% - 30px);
@@ -296,13 +297,13 @@
 
 /* wu-mech-display */
 
-.wu-mech-display {
+wu-mech-display {
 	position: relative;
 	display: block;
 	width: 100%;
 	height: 100%;
 }
-.wu-mech-display > .parts-container {
+wu-mech-display > .parts-container {
 	position: absolute;
 	display: block;
 	left: 50%;
@@ -310,16 +311,16 @@
 	width: 0;
 	height: 0;
 }
-.wu-mech-display > .parts-container > .wu-mech-display-part {
+wu-mech-display > .parts-container > wu-mech-display-part {
 	position: absolute;
 	display: block;
 	left: 0;
 	top: 0;
 }
-.wu-mech-display > .parts-container > .wu-mech-display-part.smooth-moving {
+wu-mech-display > .parts-container > wu-mech-display-part.smooth-moving {
 	transition: left 500ms ease-out, top 500ms ease-out;
 }
-.wu-mech-display > .parts-container > .wu-mech-display-part:hover {
+wu-mech-display > .parts-container > wu-mech-display-part:hover {
 	-webkit-filter: contrast(0.9) brightness(1.2) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000);
 	filter: contrast(0.9) brightness(1.2) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000);
 }
@@ -327,7 +328,7 @@
 
 /* wu-tool-tip */
 
-.wu-tool-tip {
+wu-tool-tip {
 	position: absolute;
 	display: -webkit-flex;
 	display: flex;
@@ -338,21 +339,21 @@
 	border-radius: var(--general-radius);
 	z-index: 1000;
 }
-.wu-tool-tip > .item-name,
-.wu-tool-tip > .item-kind,
-.wu-tool-tip > .is-premium {
+wu-tool-tip > .item-name,
+wu-tool-tip > .item-kind,
+wu-tool-tip > .is-premium {
 	width: 100%;
 	text-align: center;
 }
-.wu-tool-tip > .item-kind {
+wu-tool-tip > .item-kind {
 	font-size: 0.85em;
 	color: var(--color-e);
 }
-.wu-tool-tip > .is-premium {
+wu-tool-tip > .is-premium {
 	font-size: 0.85em;
 	color: var(--color-f);
 }
-.wu-tool-tip > .wu-stat-block {
+wu-tool-tip > wu-stat-block {
 	width: 50%;
 }
 
@@ -430,7 +431,7 @@
 	width: 90%;
 	height: 80%;
 }
-.wu-battle-screen > .gfx-container > .wu-mech-display {
+.wu-battle-screen > .gfx-container > wu-mech-display {
 	position: absolute;
 	bottom: 0;
 	width: 0;
@@ -438,16 +439,16 @@
 }
 .wu-battle-screen > .move-buttons {
 	position: absolute;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20%;
-    background-color: var(--color-b);
-    transition: top 100ms ease-out;
-    grid-area: c;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 20%;
+	background-color: var(--color-b);
+	transition: top 100ms ease-out;
+	grid-area: c;
 }
 
 
@@ -489,18 +490,18 @@
 .wu-player-info-panel > .text {
 	grid-area: a;
 }
-.wu-player-info-panel > .wu-procent-bar {
+.wu-player-info-panel > wu-progress-bar {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 }
-.wu-player-info-panel > .wu-procent-bar.health {
+.wu-player-info-panel > wu-progress-bar.health {
 	grid-area: c;
 }
-.wu-player-info-panel > .wu-procent-bar.energy {
+.wu-player-info-panel > wu-progress-bar.energy {
 	grid-area: e;
 }
-.wu-player-info-panel > .wu-procent-bar.heat {
+.wu-player-info-panel > wu-progress-bar.heat {
 	grid-area: g;
 }
 .wu-player-info-panel > .wu-resistance-display {
@@ -523,7 +524,7 @@
 
 /* WU-PROCENT-BAR */
 
-.wu-procent-bar {
+wu-progress-bar {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
@@ -535,7 +536,7 @@
 	border-radius: 1px;
 	overflow: hidden;
 }
-.wu-procent-bar > .bar {
+wu-progress-bar > .bar {
 	position: absolute;
 	display: block;
 	left: 0;
@@ -550,7 +551,7 @@
 	z-index: 1;
 	transition: width 250ms ease;
 }
-.wu-procent-bar > .text {
+wu-progress-bar > .text {
 	position: relative;
 	display: block;
 	z-index: 2;
