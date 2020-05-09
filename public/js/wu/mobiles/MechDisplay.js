@@ -5,7 +5,7 @@
 
 import { div, defineCustomElement } from '../utils/GeneralUtils.js'
 import { BaseElement } from '../bases/BaseElement.js'
-import { MechDisplayPart } from './MechDisplayPArt.js'
+import { MechDisplayPart } from './MechDisplayPart.js'
 
 
 // Class
