@@ -5,7 +5,6 @@
 
 import { Singleton } from '../bases/Singleton.js'
 import { imagesLoader } from '../helpers/imagesLoader.js'
-import { MISSING_TEXTURE } from '../consts.js'
 
 
 // Export
@@ -76,72 +75,3 @@ export const StatsManager = class extends Singleton
 		return this.total > 0 ? this.loaded / this.total : 0
 	}
 }
-
-
-// 'use strict';
-
-
-// // Dependences
-
-// import * as statsDB from '../data/stats.js';
-// import { getImgBlob } from '../utils/get-img-blob.js';
-
-
-// // General
-
-// const missingTextureEncoded = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48cGF0aCBkPSJNMCAwSDUwVjEwMEgxMDBWNTBIMFYwWiIgZmlsbD0iIzAwMDAwMCIvPjxwYXRoIGQ9Ik01MCAwSDEwMFY1MEgwVjEwMEg1MCBWMFoiIGZpbGw9IiNGRjAwRkYiLz48L3N2Zz4='
-
-
-// // Export
-
-// export const WUStatsManager = class
-// {
-//     constructor ()
-//     {
-//         this.list = Object.keys(statsDB).map(k => statsDB[k])
-//         this.loaded = 0
-//         this.totalStats = this.list.length
-//     }
-
-//     load ()
-//     {
-// 		const roll = i =>
-// 		{
-// 			const stat = this.list[i]
-
-// 			getImgBlob('../../../img/icons/stats/' + stat.key + '.svg', 'image/svg')
-// 				.then(blob => stat.url = blob)
-// 				.catch(() => stat.url = missingTextureEncoded)
-// 				.then(() =>
-// 				{
-// 					this.loaded++
-// 					if (this.list[++i]) roll(i)
-// 				})
-// 		}
-
-// 		roll(0)
-//     }
-
-//     getByKey (key)
-//     {
-//         const stat = statsDB[key];
-//         if (!stat) throw new Error('No such stat with key', key);
-//         return stat;
-//     }
-
-// 	getLoadingProgress ()
-// 	{
-// 		return this.loaded / this.totalStats
-// 	}
-
-// 	get ready ()
-// 	{
-// 		return this.loaded >= this.totalStats
-// 	}
-
-//     static getInstance ()
-//     {
-//         if (!this.instance) this.instance = new this()
-//         return this.instance;
-//     }
-// }
