@@ -21,25 +21,24 @@ export const imagesLoader = (images, step, oneach) => new Promise(resolve =>
 		loading++
 
 		const j = i
-
 		const [src, mime] = images[j]
 
 		getImgBlob(src, mime)
-		.then(blob => result[j] = blob)
-		.catch(() => result[j] = MISSING_TEXTURE)
-		.then(() =>
-		{
-			loading--
-			oneach(result[j], j)
-			if (images[i + 1])
+			.then(blob => result[j] = blob)
+			.catch(() => result[j] = MISSING_TEXTURE)
+			.then(() =>
 			{
-				while (loading < step && images[++i]) roll()
-			}
-			else
-			{
-				resolve(result)
-			}
-		})
+				loading--
+				oneach(result[j], j)
+				if (images[i + 1])
+				{
+					while (loading < step && images[++i]) roll()
+				}
+				else
+				{
+					resolve(result)
+				}
+			})
 	}
 
 	roll()
