@@ -638,7 +638,7 @@ export const FranticBrute = {
 	svg: true,
 	type: 4,
 	element: 1,
-	tiers: [3, 5],
+	tiers: [2, 5],
 	stats: {
 		weight: 50,
 		phyDmg: [69, 632],

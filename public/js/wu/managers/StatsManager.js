@@ -4,7 +4,7 @@
 // Dependences
 
 import { Singleton } from '../bases/Singleton.js'
-import { getImgBlob } from '../utils/GeneralUtils.js';
+import { imagesLoader } from '../helpers/imagesLoader.js'
 import { MISSING_TEXTURE } from '../consts.js'
 
 
@@ -50,28 +50,18 @@ export const StatsManager = class extends Singleton
 
 	load (path)
 	{
-        let loading = 0
-        let i = 0
+        const imagesData = []
 
-        const roll = () =>
-        {
-            const stat = this.list[i]
+		for (const { fileName } of this.list)
+		{
+			imagesData.push([path + fileName, 'image/svg'])
+		}
 
-            loading++
-
-            getImgBlob(path + stat.fileName, 'image/svg')
-                .then(blob => stat.url = blob)
-                .catch(() => stat.url = MISSING_TEXTURE)
-                .then(() =>
-                {
-                    loading--
-                    i++
-                    this.loaded++
-                    if (loading < 20 && this.list[i]) roll(i)
-                })
-        }
-
-        roll()
+		imagesLoader(imagesData, 1, (url, i) =>
+		{
+			this.loaded++
+			this.list[i].url = url
+		})
 	}
 
 	byKey (key)

@@ -15,6 +15,11 @@ export const BaseElement = class extends HTMLElement
 		for (const elm of arguments) this.appendChild(elm)
 	}
 
+	clear ()
+	{
+		while (this.lastChild) this.lastChild.remove()
+	}
+
 	hide () { this.style.display = 'none' }
 	show () { this.style.display = '' }
 

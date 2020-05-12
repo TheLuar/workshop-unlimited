@@ -4,8 +4,7 @@
 // Dependences
 
 import { Singleton } from '../bases/Singleton.js'
-import { getImgBlob } from '../utils/GeneralUtils.js';
-import { MISSING_TEXTURE } from '../consts.js'
+import { imagesLoader } from '../helpers/imagesLoader.js'
 
 
 // Export
@@ -32,10 +31,10 @@ export const ItemsManager = class extends Singleton
 		this.TIER_MYTHICAL = 4
 		this.TIER_DIVINE = 5
 		
-		this.totalItems = 0
-		this.itemsLoaded = 0
+		this.total = 0
+		this.loaded = 0
 
-		this.itemsList = []
+		this.list = []
 		this.mapByID = {}
 		this.mapByName = {}
 		this.mapsByType = {}
@@ -43,8 +42,8 @@ export const ItemsManager = class extends Singleton
 
 	init (items)
 	{
-		this.itemsList = Object.keys(items).map(a => items[a])
-		this.totalItems = this.itemsList.length
+		this.list = Object.keys(items).map(a => items[a])
+		this.total = this.list.length
 
 		for (const name in items)
 		{
@@ -68,37 +67,19 @@ export const ItemsManager = class extends Singleton
 		this._init()
 	}
 
-	async load (path)
+	load (path)
 	{
-		return new Promise(resolve =>
+		const imagesData = []
+
+		for (const { fileName, fileType } of this.list)
 		{
-			let itemsLoading = 0
-			let i = 0
+			imagesData.push([path + fileName, 'image/' + fileType])
+		}
 
-			const roll = () =>
-			{
-				const item = this.itemsList[i]
-
-				itemsLoading++
-
-				getImgBlob(path + item.fileName, 'image/' + item.fileType)
-					.then(blob => item.url = blob)
-					.catch(() => item.url = MISSING_TEXTURE)
-					.then(() =>
-					{
-						itemsLoading--
-						i++
-						this.itemsLoaded++
-						
-						if (this.itemsList[i])
-						{
-							if (itemsLoading < 20) roll(i)
-						}
-						else resolve()
-					})
-			}
-
-			roll()
+		imagesLoader(imagesData, 10, (url, i) =>
+		{
+			this.loaded++
+			this.list[i].url = url
 		})
 	}
 
@@ -133,7 +114,7 @@ export const ItemsManager = class extends Singleton
 
 	getLoadingProgress ()
 	{
-		return this.totalItems > 0 ? this.itemsLoaded / this.totalItems : 0
+		return this.total > 0 ? this.loaded / this.total : 0
 	}
 
 	isPremium (item)

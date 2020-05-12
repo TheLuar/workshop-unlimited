@@ -67,7 +67,7 @@ export const getImgBlob = (src, mimeType) =>
             cnv.toBlob(blob => resolve(URL.createObjectURL(blob)), mimeType)
         }
 
-        img.onerror = e => reject(e)
+        img.onerror = () => reject(null)
 
         img.src = src
     })

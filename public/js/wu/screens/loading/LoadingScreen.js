@@ -23,7 +23,7 @@ export const LoadingScreen = class extends SingletonElement
     init (txt = '')
     {
         this.elmText = div('elm-text', { innerText: txt })
-        this.progressBar = new ProgressBar('#DDDDDD', 100, 0, 'slash')
+        this.progressBar = new ProgressBar('#DDDDDD', 100, 0, 'procent')
 
         this.appendChildren(this.elmText, this.progressBar)
 
