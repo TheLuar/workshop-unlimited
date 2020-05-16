@@ -46,6 +46,7 @@ export const WorkshopManager = class extends Singleton
 			this.screen.updateSummary(sum)
 			this.screen.updateMech(this.setup)
 		})
+		this.screen.manager = this
 
 		this.setup = new Array(slotConfs.length).fill(null)
 

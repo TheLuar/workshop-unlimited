@@ -69,14 +69,9 @@ export const ItemsManager = class extends Singleton
 
 	load (path)
 	{
-		const imagesData = []
+		const imagesData = this.list.map(({ fileName, fileType }) => [path + fileName, 'image/' + fileType])
 
-		for (const { fileName, fileType } of this.list)
-		{
-			imagesData.push([path + fileName, 'image/' + fileType])
-		}
-
-		imagesLoader(imagesData, 10, (url, i) =>
+		imagesLoader(imagesData, 5, (url, i) =>
 		{
 			this.loaded++
 			this.list[i].url = url

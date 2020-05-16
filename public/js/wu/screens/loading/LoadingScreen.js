@@ -18,12 +18,17 @@ export const LoadingScreen = class extends SingletonElement
 
         this.textElm = null
         this.progressBar = null
+
+        this.classList.add('screen')
     }
 
     init (txt = '')
     {
         this.elmText = div('elm-text', { innerText: txt })
         this.progressBar = new ProgressBar('#DDDDDD', 100, 0, 'procent')
+        
+		// this.addEventListener('mouseenter', () => toolTip.displayItem(...))
+		// this.addEventListener('mouseleave', () => toolTip.hide())
 
         this.appendChildren(this.elmText, this.progressBar)
 

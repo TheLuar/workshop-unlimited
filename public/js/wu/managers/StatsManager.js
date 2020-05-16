@@ -49,12 +49,7 @@ export const StatsManager = class extends Singleton
 
 	load (path)
 	{
-        const imagesData = []
-
-		for (const { fileName } of this.list)
-		{
-			imagesData.push([path + fileName, 'image/svg'])
-		}
+        const imagesData = this.list.map(({ fileName }) => [path + fileName, 'image/svg'])
 
 		imagesLoader(imagesData, 1, (url, i) =>
 		{

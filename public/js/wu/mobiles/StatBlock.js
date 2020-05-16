@@ -20,7 +20,9 @@ export const StatBlock = class extends BaseElement
     constructor (key = 'weight', val = 0)
     {
         super()
+
         this._value = 0
+        this.stat = null
         this.statIcon = div('icon');
         this.output = div('output');
         this.appendChildren(this.statIcon, this.output);
@@ -37,7 +39,9 @@ export const StatBlock = class extends BaseElement
 
     val (x = this._value)
     {
-        this.output.innerText = String(this._value = x).replace(',', '-');
+        this._value = x
+        const txt = Array.isArray(x) ? x.filter(x => x) : x
+        this.output.innerText = String(txt).replace(',', '-');
         return x;
     }
 }

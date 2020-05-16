@@ -3268,5 +3268,17 @@ export const DrunkLightning = {
 	},
 	attachment: { x: 47, y: 47 }
 }
+export const SuperbChargeEngine = {
+	id: '183',
+	name: 'Superb Charge Engine',
+	type: 6,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 23,
+		phyDmg: [264, 345],
+		uses: 1
+	}
+}
 
-// last id: 182
+// last id: 183

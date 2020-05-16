@@ -23,6 +23,7 @@ export const LoadingManager = class extends Singleton
 	{
 		this.screen = LoadingScreen.gi()
 		this.screen.init('Loading...')
+		this.screen.manager = this
 
 		this._init()
 	}
