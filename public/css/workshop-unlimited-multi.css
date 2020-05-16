@@ -10,17 +10,17 @@
 
 .outline {
 	-webkit-filter:
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000);
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000);
 	filter:
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000)
-		drop-shadow(0 0 0.5px #000000);
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000);
 }
 
 .click-area {
