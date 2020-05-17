@@ -24,6 +24,8 @@ export const SelectItemsTab = class extends SingletonElement
         this.itemBlocksCtn = null
         this.items = null
         this.currentSlot = null
+
+        this.classList.add('tab')
     }
 
     init ()

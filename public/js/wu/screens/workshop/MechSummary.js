@@ -24,6 +24,8 @@ export const MechSummary = class extends SingletonElement
         
         this.blocks = []
         this.element = div('wu-mech-summary')
+
+        this.classList.add('ui')
     }
 
     init ()

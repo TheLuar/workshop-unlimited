@@ -23,16 +23,6 @@
 		drop-shadow(0 0 0.8px #000000);
 }
 
-.click-area {
-	position: absolute;
-	display: block;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 2
-}
-
 .horizontal-separator {
 	position: relative;
 	display: block;
@@ -51,6 +41,25 @@
 	overflow: hidden;
 }
 
+.ui {
+	z-index: 100;
+}
+
+.tab {
+	z-index: 200;
+}
+
+.click-area {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* wu-workshop-unlimited */
 
 wu-workshop-unlimited {
 	position: relative;
@@ -219,17 +228,9 @@ wu-workshop-screen > .ctn-modules {
 	height: 100%;
 	grid-area: g;
 }
-wu-workshop-screen > wu-mech-summary {
-	z-index: 100;
-	grid-area: f
-}
-wu-workshop-screen > wu-mech-display {
-	z-index: 100;
-	grid-area: b
-}
-wu-workshop-screen > wu-basic-button.settings {
-	grid-area: e
-}
+wu-workshop-screen > wu-mech-summary { grid-area: f }
+wu-workshop-screen > wu-mech-display { grid-area: b }
+wu-workshop-screen > wu-basic-button.settings { grid-area: e }
 
 wu-workshop-screen > wu-select-items-tab {
 	position: absolute;
@@ -240,7 +241,6 @@ wu-workshop-screen > wu-select-items-tab {
 	height: 100%;
 	border-radius: var(--general-radius);
 	background-color: var(--color-c);
-	z-index: 200;
 }
 wu-workshop-screen > wu-select-items-tab > .item-blocks-container {
 	position: relative;
@@ -321,7 +321,8 @@ wu-equipment-slot > .icon-gfx {
 
 wu-mech-summary {
 	position: relative;
-	display: block;
+	display: grid;
+	grid-template-areas: 'a' 'b' 'c' 'd' 'e' 'f' 'g' 'h';
 	width: var(--grid-box-sizing);
 	height: var(--grid-box-sizing);
 	border-radius: var(--general-radius);
@@ -330,7 +331,7 @@ wu-mech-summary {
 }
 wu-mech-summary > wu-stat-block {
 	width: 100%;
-	height: calc(100% / 9);
+	height: 100%;
 }
 
 
@@ -344,12 +345,14 @@ wu-stat-block {
 	align-items: center;
 	width: 120px;
 	height: 30px;
+	white-space: nowrap;
 }
 wu-stat-block > .icon {
 	position: relative;
 	display: block;
-	width: 20%;
-	height: 80%;
+	width: 25%;
+	height: 100%;
+	transform: scale(0.85);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -629,5 +632,48 @@ wu-progress-bar > .text {
 	}
 	100% {
 		text-shadow: 0 0 10px var(--color-a);
+	}
+}
+
+
+
+@media (orientation: portrait) {
+	wu-workshop-unlimited {
+		width: 100%;
+		height: 100%;
+		max-width: unset;
+		max-height: unset;
+	}
+
+	wu-workshop-screen {
+		grid-template-rows: 18% 55% 18% 9%;
+		grid-template-columns: 80% 20%;
+		grid-template-areas:
+			'f e'
+			'b b'
+			'a a'
+			'g g';
+		--grid-box-margin: 5px;
+	}
+
+	wu-workshop-screen > .ctn-parts-and-specs {
+		grid-template-areas:
+			'e a f g i h'
+			'c b d j k l';
+	}
+
+	wu-mech-summary {
+		grid-template-areas:
+			'a d g'
+			'b e h'
+			'c f i';
+	}
+
+	wu-workshop-screen > wu-select-items-tab {
+		grid-template-rows: 40% 60%;
+		grid-template-columns: unset;
+		grid-template-areas:
+			'a'
+			'b';
 	}
 }

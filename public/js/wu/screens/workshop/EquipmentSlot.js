@@ -29,6 +29,7 @@ export const EquipmentSlot = class extends BaseElement
 		this.type = type
 		this.item = null
 
+		this.classList.add('ui')
 		this.appendChildren(this.iconGfx, this.itemGfx)
 		this.init(SelectItemsTab)
 	}
