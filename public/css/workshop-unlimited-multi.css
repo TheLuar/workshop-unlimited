@@ -198,10 +198,10 @@ wu-settings-screen > .sections-wrapper > .section {
 wu-switch-button {
 	position: relative;
 	display: block;
-	width: 4em;
-	height: 1.5em;
-	margin: 0.5em;
-	border-radius: 0.2em;
+	width: 3rem;
+	height: 1.5rem;
+	margin: 0.5rem;
+	border-radius: 0.2rem;
 	background-color: var(--color-c);
 	overflow: hidden;
 	cursor: pointer;
