@@ -31,12 +31,32 @@ export const StatsResolver = class
             sum[key] = 0
             for (const item of items)
             {
-                if (!item) continue
-                sum[key] += item.stats[key] || 0
+                if (!item || !item.stats[key]) continue
+                sum[key] += item.stats[key]
+            }
+        }
+        
+        if (window.arenaBuffs)
+        {
+            for (const key of statsM.mechSumStatKeys)
+            {
+                sum[key] += Math.round(this.getArenaBuff(key, sum[key]))
             }
         }
 
         return sum
+    }
+
+    getArenaBuff (key, value)
+    {
+        const { buff } = statsM.byKey(key)
+
+        if (!buff) return 0
+
+        if (buff.mode === '*') return value * buff.amount - value; else
+        if (buff.mode === '+') return value + buff.amount - value;
+        
+        return 0
     }
 
     getBattleStats (items)

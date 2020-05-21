@@ -61,8 +61,18 @@ export const WorkshopUnlimited = class extends SingletonElement
 			settings: this.settingsM,
 		}
 
+
+		// Listeners
+
+		this.settingsM.on('toggle-arena-buffs', state =>
+		{
+			window.arenaBuffs = state
+			this.workshopM.updateSummary()
+		})
 		this.settingsM.on('goto', key => this.goToScreen(key))
+
 		this.workshopM.on('goto', key => this.goToScreen(key))
+
 
 		this.goToScreen('loading')
 		this.appendChildren(this.loadingM.screen, this.settingsM.screen, this.toolTip)

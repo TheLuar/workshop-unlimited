@@ -72,3 +72,8 @@ export const getImgBlob = (src, mimeType) =>
         img.src = src
     })
 }
+
+export const neq = (first, args) =>
+{
+    return args.every(arg => arg !== first)
+}

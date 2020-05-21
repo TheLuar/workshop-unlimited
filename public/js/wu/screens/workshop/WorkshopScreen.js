@@ -82,7 +82,7 @@ export const WorkshopScreen = class extends SingletonElement
 		}
 	}
 
-	updateMech (setup)
+	updateMechDisplay (setup)
 	{
 		this.mech.assemble(setup)
 	}

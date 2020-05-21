@@ -15,7 +15,7 @@ export const health = {
 	color: '#DDDDDD',
 	buff: {
 		mode: '+',
-		amount: 300
+		amount: 350
 	},
 	name: 'Health Points'
 }

@@ -77,6 +77,8 @@ wu-workshop-unlimited {
 	--color-e: #888888;
 	--color-premium: #FFBB44;
 	--color-g: #101010EE;
+	--color-on: #44FF66;
+	--color-off: #FF4466;
 }
 
 
@@ -97,9 +99,7 @@ wu-loading-screen > .text-container {
 }
 wu-loading-screen > wu-progress-bar {
 	width: 40%;
-	height: 5%;
-	margin: 1%;
-	border-radius: 3px;
+	margin: 0.5em;
 }
 wu-loading-screen > wu-progress-bar > .text {
 	mix-blend-mode: difference;
@@ -130,30 +130,27 @@ wu-basic-button:hover {
 
 /* wu-loading-screen */
 
-wu-settings-screen,
 wu-settings-screen * {
 	background-color: #FFFFFF20;
 }
 
 wu-settings-screen {
-	display: grid;
-	grid-template-rows: 12% 88%;
-	grid-template-areas: 'a' 'b'
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
 }
 wu-settings-screen > .header {
 	display: -webkit-flex;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 100%;
-	grid-area: a;
-	font-size: 150%;
+	height: 2.5em;
+	font-size: 1.5em;
 }
 wu-settings-screen > .header > wu-basic-button {
-	width: 4%;
-	height: 0;
-	padding-top: 4%;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0 0.5rem;
 }
 wu-settings-screen > .sections-wrapper {
 	display: -webkit-flex;
@@ -164,32 +161,63 @@ wu-settings-screen > .sections-wrapper {
 	overflow-x: scroll;
 }
 wu-settings-screen > .sections-wrapper > .section {
-	display: grid;
-	grid-template-columns: 10% 90%;
-	grid-template-areas: 'a b';
 	width: 40%;
 	height: 100%;
 }
-wu-settings-screen > .sections-wrapper > .section > .title {
+.sections-wrapper > .section > .title {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: 100%;
-	transform: rotateZ(-90deg);
+	height: 2em;
+	/* transform: rotateZ(-90deg); */
     white-space: nowrap;
-	font-size: 125%;
-	grid-area: a;
+	font-size: 1.5em;
 }
-wu-settings-screen > .sections-wrapper > .section > .rows-holder {
+.sections-wrapper > .section > .rows-holder {
 	position: relative;
 	display: block;
 	width: 100%;
 	height: 100%;
 	overflow: hidden scroll;
-	grid-area: b;
+}
+.section > .rows-holder > .switch-container {
+	position: relative;
+    display: -webkit-flex;
+    display: flex;
+	width: 100%;
+	height: 2em;
+	align-items: center;
+}
+
+
+/* #wu-switch-button */
+
+wu-switch-button {
+	position: relative;
+	display: block;
+	width: 4em;
+	height: 1.5em;
+	margin: 0.5em;
+	border-radius: 0.2em;
+	background-color: var(--color-c);
+	overflow: hidden;
+	cursor: pointer;
+}
+wu-switch-button > .thumb {
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 100%;
+	left: 0;
+	background-color: var(--color-off);
+	transition: left 250ms, background-color 250ms;
+}
+wu-switch-button.active > .thumb {
+	background-color: var(--color-on);
+	left: 50%;
 }
 
 
@@ -336,23 +364,23 @@ wu-mech-summary > wu-stat-block {
 
 
 
-/* wu-stat-block */
+/* #wu-stat-block */
 
 wu-stat-block {
 	position: relative;
 	display: -webkit-flex;
 	display: flex;
 	align-items: center;
-	width: 120px;
-	height: 30px;
+	width: 24em;
+	height: 1.5em;
 	white-space: nowrap;
 }
 wu-stat-block > .icon {
 	position: relative;
 	display: block;
-	width: 25%;
-	height: 100%;
-	transform: scale(0.85);
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 0.5em;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -360,7 +388,6 @@ wu-stat-block > .icon {
 wu-stat-block > .output {
 	position: relative;
 	display: block;
-	width: 80%;
 	height: 0;
 	line-height: 0;
 }
@@ -426,131 +453,11 @@ wu-tool-tip > .is-premium {
 }
 wu-tool-tip > wu-stat-block {
 	width: 50%;
+	margin-bottom: 0.25em;
 }
 
 
-/* wu-battle-screen */
-/* 
-.wu-battle-screen {
-	position: absolute;
-	display: block;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-}
-.wu-battle-screen > .wu-player-info-panel:nth-of-type(1) {
-	left: 0;
-	top: 0;
-}
-.wu-battle-screen > .wu-player-info-panel:nth-of-type(2) {
-	right: 0;
-	top: 0;
-	transform: scaleX(-1);
-}
-.wu-battle-screen > .wu-player-info-panel:nth-of-type(2) .text {
-	transform: scaleX(-1);
-}
-.wu-battle-screen > .gfx-container {
-	position: absolute;
-	display: block;
-	left: 5%;
-	top: 0;
-	width: 90%;
-	height: 80%;
-}
-.wu-battle-screen > .gfx-container > wu-mech-display {
-	position: absolute;
-	bottom: 0;
-	width: 0;
-	height: 0;
-}
-.wu-battle-screen > .move-buttons {
-	position: absolute;
-	display: -webkit-flex;
-	display: flex;
-	align-items: center;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 20%;
-	background-color: var(--color-b);
-	transition: top 100ms ease-out;
-	grid-area: c;
-} */
-
-
-/*  wu-player-info-panel */
-
-/* .wu-player-info-panel {
-	position: absolute;
-	display: grid;
-	grid-template-rows: 4% 16% 4% 28% 4% 20% 4% 20%;
-	grid-template-columns: 2.5% 23% 2% 27% 0.5% 6% 2% 27.5% 0.5% 6% 3%;
-	grid-template-areas:
-		'. . . . . . . . . . .'
-		'. a a a a a a a a a .'
-		'. . . . . . . . . . .'
-		'. b . c c c c c c c .'
-		'. b . . . . . . . . .'
-		'. b . e . f . g . h .'
-		'. . . . . . . . . . .'
-		'. . . i i i i i . . .';
-	width: 45%;
-	height: 26%;
-}
-.wu-player-info-panel > .panel-layout {
-	position: absolute;
-	display: block;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-	background-image: url(../img/battleScreen/playerInfoPanel.png);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	z-index: 2;
-}
-.wu-player-info-panel .text {
-	z-index: 3;
-}
-.wu-player-info-panel > .text {
-	grid-area: a;
-}
-.wu-player-info-panel > wu-progress-bar {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-}
-.wu-player-info-panel > wu-progress-bar.health {
-	grid-area: c;
-}
-.wu-player-info-panel > wu-progress-bar.energy {
-	grid-area: e;
-}
-.wu-player-info-panel > wu-progress-bar.heat {
-	grid-area: g;
-}
-.wu-player-info-panel > .wu-resistance-display {
-	position: absolute;
-	display: -webkit-flex;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	top: 82;
-	width: 40px;
-	height: 40px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-}
-.wu-player-info-panel > .wu-resistance-display:nth-child(5) { left: 26% }
-.wu-player-info-panel > .wu-resistance-display:nth-child(6) { left: 38% }
-.wu-player-info-panel > .wu-resistance-display:nth-child(7) { left: 50% } */
-
-
-/* WU-PROCENT-BAR */
+/* #wu-progress-bar */
 
 wu-progress-bar {
 	position: relative;
@@ -558,10 +465,11 @@ wu-progress-bar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 300px;
-	height: 30px;
+	width: 24em;
+	height: 1.5em;
+	margin: 0.5em;
+	border-radius: 0.2em;
 	background-color: #000000;
-	border-radius: 1px;
 	overflow: hidden;
 }
 wu-progress-bar > .bar {
@@ -585,46 +493,6 @@ wu-progress-bar > .text {
 	z-index: 2;
 }
 
-
-/* wu-battle-item-button */
-
-/* .wu-battle-item-button {
-	position: relative;
-	display: block;
-	width: 8%;
-	height: 0;
-	padding: 8% 0 0 0;
-	margin: 0.2%;
-	background-color: var(--color-c);
-	border: 2px solid var(--color-e);
-	border-radius: 10px 0;
-	cursor: pointer;
-}
-.wu-battle-item-button:hover {
-	border-color: var(--color-a);
-}
-.wu-battle-item-button.disabled {
-	opacity: 0.5;
-}
-.wu-battle-item-button.disabled:hover {
-	border-color: unset;
-}
-.wu-battle-item-button > .item-gfx {
-	position: absolute;
-	display: block;
-	left: 0;
-	top: 0;
-	width: 80%;
-	height: 80%;
-	margin: 10%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain;
-} */
-
-
-
-/* animations */
 
 @keyframes text-glow {
 	0% {
