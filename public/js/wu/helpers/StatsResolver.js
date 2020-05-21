@@ -19,7 +19,7 @@ export const StatsResolver = class
 {
     constructor ()
     {
-        
+        this.maxWeight = 1000
     }
 
     getMechStatsFromSetup (items)
@@ -35,6 +35,8 @@ export const StatsResolver = class
                 sum[key] += item.stats[key]
             }
         }
+
+        if (sum.weight > this.maxWeight) sum.health -= (sum.weight - this.maxWeight) * 15
         
         if (window.arenaBuffs)
         {

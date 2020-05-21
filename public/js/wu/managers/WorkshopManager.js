@@ -49,8 +49,10 @@ export const WorkshopManager = class extends Singleton
 			slot.setItem(item)
 			this.setup[slot.index] = item
 			this.updateSummary()
+
+			console.log(displayUpdaterTypes, slot.type)
 			
-			if (slot.type in displayUpdaterTypes) this.updateMechDisplay()
+			if (displayUpdaterTypes.includes(slot.type)) this.updateMechDisplay()
 		})
 		this.screen.manager = this
 
