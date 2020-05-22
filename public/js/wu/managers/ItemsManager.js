@@ -16,7 +16,7 @@ export const ItemsManager = class extends Singleton
 		super()
 
 		this.TYPE_TORSO = 1
-		this.TYPE_LEG = 2
+		this.TYPE_LEGS = 2
 		this.TYPE_SIDE = 3
 		this.TYPE_TOP = 4
 		this.TYPE_DRONE = 5
