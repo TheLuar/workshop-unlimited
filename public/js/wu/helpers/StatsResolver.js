@@ -60,7 +60,7 @@ export const StatsResolver = class extends Singleton
 		{
 			for (const key of statsM.mechSumStatKeys)
 			{
-				sum[key] += Math.round(this.getArenaBuff(key, sum[key]))
+				sum[key] = Math.round(this.getArenaBuff(key, sum[key]))
 			}
 		}
 
@@ -106,11 +106,11 @@ export const StatsResolver = class extends Singleton
 		return stats
 	}
 
-	get (item, key)
+	get (item, key, buffs = true)
 	{
 		let value = item.stats[key]
 
-		if (GeneralSettings.get('buffs_on_tooltip'))
+		if (buffs && GeneralSettings.get('buffs_on_tooltip'))
 		{
 			if (GeneralSettings.get('divine_tier') && item.divine && item.divine[key]) value = item.divine[key]
 			if (GeneralSettings.get('arena_buffs')) value = Array.isArray(value) ? value.map(x => this.getArenaBuff(key, x)) : this.getArenaBuff(key, value)	

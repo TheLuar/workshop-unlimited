@@ -74,7 +74,7 @@ export const ToolTip = class extends SingletonElement
 
 		for (const key in item.stats)
 		{
-			const block = new StatBlock(key, statsResolver.get(item, key))
+			const block = new StatBlock(key, statsResolver.get(item, key, key !== 'health'))
 			content.push(block)
 		}
 
