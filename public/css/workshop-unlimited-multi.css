@@ -1,13 +1,3 @@
-#app {
-	position: relative;
-	display: -webkit-flex;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-}
-
 .outline {
 	-webkit-filter:
 		drop-shadow(0 0 0.8px #000000)
@@ -130,10 +120,6 @@ wu-basic-button:hover {
 
 /* wu-loading-screen */
 
-wu-settings-screen * {
-	background-color: #FFFFFF20;
-}
-
 wu-settings-screen {
 	display: -webkit-flex;
 	display: flex;
@@ -151,6 +137,8 @@ wu-settings-screen > .header > wu-basic-button {
     width: 2.25rem;
     height: 2.25rem;
     margin: 0 0.5rem;
+	border-radius: var(--general-radius);
+	background-color: #00000080;
 }
 wu-settings-screen > .sections-wrapper {
 	display: -webkit-flex;
@@ -180,16 +168,18 @@ wu-settings-screen > .sections-wrapper > .section {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 100%;
 	overflow: hidden scroll;
 }
 .section > .rows-holder > .switch-container {
 	position: relative;
     display: -webkit-flex;
     display: flex;
-	width: 100%;
-	height: 2em;
 	align-items: center;
+	width: 100%;
+	height: 2.5rem;
+	margin: 0.25rem 0;
+	border-radius: var(--general-radius);
+	background-color: #00000080;
 }
 
 
@@ -439,18 +429,19 @@ wu-tool-tip {
 }
 wu-tool-tip > .item-name,
 wu-tool-tip > .item-kind,
-wu-tool-tip > .is-premium {
+wu-tool-tip > .is-premium,
+wu-tool-tip > .divine-missing {
 	width: 100%;
 	text-align: center;
 }
-wu-tool-tip > .item-kind {
+wu-tool-tip > .item-kind,
+wu-tool-tip > .is-premium,
+wu-tool-tip > .divine-missing {
 	font-size: 0.85em;
-	color: var(--color-e);
 }
-wu-tool-tip > .is-premium {
-	font-size: 0.85em;
-	color: var(--color-premium);
-}
+wu-tool-tip > .item-kind { color: var(--color-e) }
+wu-tool-tip > .is-premium { color: var(--color-premium) }
+wu-tool-tip > .divine-missing { color: var(--color-off) }
 wu-tool-tip > wu-stat-block {
 	width: 50%;
 	margin-bottom: 0.25em;
@@ -543,5 +534,14 @@ wu-progress-bar > .text {
 		grid-template-areas:
 			'a'
 			'b';
+	}
+
+	wu-settings-screen > .sections-wrapper {
+		flex-direction: column;
+	}
+
+	wu-settings-screen > .sections-wrapper > .section {
+		width: 100%;
+		height: unset;
 	}
 }

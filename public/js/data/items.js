@@ -1,8 +1,5 @@
 'use strict';
 
-/* This is supposed to be a JSON file, however, as awesome as
- * it is, ESModules doesn't allow to import JSON directly.
- */
 
 export const Interceptor = {
 	id: '1',
@@ -21,15 +18,20 @@ export const Interceptor = {
 		expRes: 22,
 		eleRes: 22
 	},
+	divine: {
+		health: 884,
+		eneCap: 200,
+		heaCap: 275
+	},
 	attachment: {
-		leg1: { x: 58, y: 189 },
-		leg2: { x: 134, y: 189 },
-		side1: { x: 64, y: 141 },
+		leg1:  { x: 58,  y: 189 },
+		leg2:  { x: 134, y: 189 },
+		side1: { x: 64,  y: 141 },
 		side2: { x: 133, y: 141 },
-		side3: { x: 60, y: 89 },
+		side3: { x: 60,  y: 89 },
 		side4: { x: 137, y: 89 },
-		top1: { x: 59, y: 44 },
-		top2: { x: 122, y: 44 }
+		top1:  { x: 59,  y: 44 },
+		top2:  { x: 122, y: 44 }
 	}
 }
 export const Archimonde = {
@@ -50,15 +52,20 @@ export const Archimonde = {
 		expRes: 22,
 		eleRes: 22
 	},
+	divine: {
+		health: 1152,
+		eneCap: 284,
+		heaCap: 284
+	},
 	attachment: {
-		leg1: { x: 53, y: 214 },
-		leg2: { x: 116, y: 214 },
-		side1: { x: 49, y: 176 },
+		leg1:  { x: 53,  y: 214 },
+		leg2:  { x: 116, y: 214 },
+		side1: { x: 49,  y: 176 },
 		side2: { x: 116, y: 176 },
-		side3: { x: 45, y: 128 },
+		side3: { x: 45,  y: 128 },
 		side4: { x: 120, y: 128 },
-		top1: { x: 41, y: 83 },
-		top2: { x: 101, y: 83 }
+		top1:  { x: 41,  y: 83 },
+		top2:  { x: 101, y: 83 }
 	}
 }
 export const Avenger = {
@@ -79,15 +86,20 @@ export const Avenger = {
 		expRes: 22,
 		eleRes: 22
 	},
+	divine: {
+		health: 1306,
+		eneCap: 200,
+		heaCap: 150
+	},
 	attachment: {
-		leg1: { x: 60, y: 168 },
-		leg2: { x: 123, y: 168 },
-		side1: { x: 65, y: 128 },
+		leg1:  { x: 60,  y: 168 },
+		leg2:  { x: 123, y: 168 },
+		side1: { x: 65,  y: 128 },
 		side2: { x: 145, y: 128 },
-		side3: { x: 58, y: 92 },
+		side3: { x: 58,  y: 92 },
 		side4: { x: 146, y: 92 },
-		top1: { x: 57, y: 28 },
-		top2: { x: 120, y: 28 }
+		top1:  { x: 57,  y: 28 },
+		top2:  { x: 120, y: 28 }
 	}
 }
 export const HollowSpectralArmor = {
@@ -104,15 +116,20 @@ export const HollowSpectralArmor = {
 		heaCap: 241,
 		heaCol: 80
 	},
+	divine: {
+		health: 1678,
+		eneCap: 259,
+		heaCap: 259
+	},
 	attachment: {
-		leg1: { x: 63, y: 189 },
-		leg2: { x: 125, y: 189 },
-		side1: { x: 60, y: 148 },
+		leg1:  { x: 63,  y: 189 },
+		leg2:  { x: 125, y: 189 },
+		side1: { x: 60,  y: 148 },
 		side2: { x: 140, y: 148 },
-		side3: { x: 54, y: 80 },
+		side3: { x: 54,  y: 80 },
 		side4: { x: 142, y: 80 },
-		top1: { x: 53, y: 24 },
-		top2: { x: 107, y: 24 }
+		top1:  { x: 53,  y: 24 },
+		top2:  { x: 107, y: 24 }
 	}
 }
 export const EnergyFreeArmor = {
@@ -133,15 +150,20 @@ export const EnergyFreeArmor = {
 		expRes: 24,
 		eleRes: 24
 	},
+	divine: {
+		health: 1441,
+		eneCap: 26,
+		heaCap: 235
+	},
 	attachment: {
-		leg1: { x: 83, y: 175 },
-		leg2: { x: 145, y: 175 },
-		side1: { x: 70, y: 155 },
+		leg1:  { x: 83,  y: 175 },
+		leg2:  { x: 145, y: 175 },
+		side1: { x: 70,  y: 155 },
 		side2: { x: 150, y: 155 },
-		side3: { x: 70, y: 105 },
+		side3: { x: 70,  y: 105 },
 		side4: { x: 150, y: 105 },
-		top1: { x: 63, y: 24 },
-		top2: { x: 147, y: 24 }
+		top1:  { x: 63,  y: 24 },
+		top2:  { x: 147, y: 24 }
 	}
 }
 export const BatteryArmor = {
@@ -162,6 +184,11 @@ export const BatteryArmor = {
 		phyRes: 14,
 		expRes: 14,
 		eleRes: 14
+	},
+	divine: {
+		health: 1284,
+		eneCap: 374,
+		heaCap: 343
 	},
 	attachment: {
 		leg1:  { x: 71,  y: 187 },
@@ -885,15 +912,20 @@ export const Nightmare = {
 		expRes: 16,
 		eleRes: 22
 	},
+	divine: {
+		health: 910,
+		eneCap: 200,
+		heaCap: 298
+	},
 	attachment: {
-		leg1: { x: 58, y: 189 },
-		leg2: { x: 133, y: 189 },
-		side1: { x: 64, y: 141 },
+		leg1:  { x: 58,  y: 189 },
+		leg2:  { x: 133, y: 189 },
+		side1: { x: 64,  y: 141 },
 		side2: { x: 133, y: 141 },
-		side3: { x: 60, y: 89 },
+		side3: { x: 60,  y: 89 },
 		side4: { x: 137, y: 89 },
-		top1: { x: 59, y: 44 },
-		top2: { x: 122, y: 44 }
+		top1:  { x: 59,  y: 44 },
+		top2:  { x: 122, y: 44 }
 	}
 }
 export const Brutality = {
@@ -914,15 +946,20 @@ export const Brutality = {
 		expRes: 16,
 		eleRes: 22
 	},
+	divine: {
+		health: 1070,
+		eneCap: 225,
+		heaCap: 298
+	},
 	attachment: {
-		leg1: { x: 108, y: 216 },
-		leg2: { x: 182, y: 216 },
+		leg1:  { x: 108, y: 216 },
+		leg2:  { x: 182, y: 216 },
 		side1: { x: 106, y: 176 },
 		side2: { x: 203, y: 176 },
 		side3: { x: 101, y: 128 },
 		side4: { x: 210, y: 128 },
-		top1: { x: 110, y: 48 },
-		top2: { x: 184, y: 48 }
+		top1:  { x: 110, y: 48 },
+		top2:  { x: 184, y: 48 }
 	}
 }
 export const Windigo = {
@@ -943,15 +980,20 @@ export const Windigo = {
 		expRes: 16,
 		eleRes: 22
 	},
+	divine: {
+		health: 1017,
+		eneCap: 225,
+		heaCap: 310
+	},
 	attachment: {
-		leg1: { x: 76, y: 199 },
-		leg2: { x: 167, y: 199 },
-		side1: { x: 91, y: 156 },
+		leg1:  { x: 76,  y: 199 },
+		leg2:  { x: 167, y: 199 },
+		side1: { x: 91,  y: 156 },
 		side2: { x: 219, y: 156 },
-		side3: { x: 84, y: 112 },
+		side3: { x: 84,  y: 112 },
 		side4: { x: 221, y: 112 },
-		top1: { x: 77, y: 64 },
-		top2: { x: 189, y: 64 }
+		top1:  { x: 77,  y: 64 },
+		top2:  { x: 189, y: 64 }
 	}
 }
 export const Zarkares = {
@@ -972,15 +1014,20 @@ export const Zarkares = {
 		expRes: 24,
 		eleRes: 16
 	},
+	divine: {
+		health: 1177,
+		eneCap: 200,
+		heaCap: 321
+	},
 	attachment: {
-		leg1: { x: 65, y: 182 },
-		leg2: { x: 129, y: 182 },
-		side1: { x: 75, y: 143 },
+		leg1:  { x: 65,  y: 182 },
+		leg2:  { x: 129, y: 182 },
+		side1: { x: 75,  y: 143 },
 		side2: { x: 145, y: 143 },
-		side3: { x: 71, y: 98 },
+		side3: { x: 71,  y: 98 },
 		side4: { x: 151, y: 98 },
-		top1: { x: 66, y: 44 },
-		top2: { x: 128, y: 44 }
+		top1:  { x: 66,  y: 44 },
+		top2:  { x: 128, y: 44 }
 	}
 }
 export const MoltenPlatinumVest = {
@@ -1001,15 +1048,20 @@ export const MoltenPlatinumVest = {
 		expRes: 16,
 		eleRes: 22
 	},
+	divine: {
+		health: 1054,
+		eneCap: 207,
+		heaCap: 282
+	},
 	attachment: {
-		leg1: { x: 63, y: 189 },
-		leg2: { x: 125, y: 189 },
-		side1: { x: 60, y: 148 },
+		leg1:  { x: 63,  y: 189 },
+		leg2:  { x: 125, y: 189 },
+		side1: { x: 60,  y: 148 },
 		side2: { x: 140, y: 148 },
-		side3: { x: 54, y: 80 },
+		side3: { x: 54,  y: 80 },
 		side4: { x: 142, y: 80 },
-		top1: { x: 53, y: 24 },
-		top2: { x: 107, y: 24 }
+		top1:  { x: 53,  y: 24 },
+		top2:  { x: 107, y: 24 }
 	}
 }
 export const Sabretooth = {
@@ -1030,15 +1082,20 @@ export const Sabretooth = {
 		expRes: 24,
 		eleRes: 16
 	},
+	divine: {
+		health: 1219,
+		eneCap: 207,
+		heaCap: 329
+	},
 	attachment: {
-		leg1: { x: 102, y: 218 },
-		leg2: { x: 164, y: 218 },
+		leg1:  { x: 102, y: 218 },
+		leg2:  { x: 164, y: 218 },
 		side1: { x: 101, y: 164 },
 		side2: { x: 176, y: 164 },
-		side3: { x: 94, y: 117 },
+		side3: { x: 94,  y: 117 },
 		side4: { x: 182, y: 117 },
-		top1: { x: 103, y: 42 },
-		top2: { x: 178, y: 42 }
+		top1:  { x: 103, y: 42 },
+		top2:  { x: 178, y: 42 }
 	}
 }
 export const FracturedHeatArmor = {
@@ -1058,15 +1115,20 @@ export const FracturedHeatArmor = {
 		heaCap: 267,
 		heaCol: 96
 	},
+	divine: {
+		health: 1786,
+		eneCap: 207,
+		heaCap: 282
+	},
 	attachment: {
-		leg1: { x: 63, y: 189 },
-		leg2: { x: 125, y: 189 },
-		side1: { x: 60, y: 148 },
+		leg1:  { x: 63,  y: 189 },
+		leg2:  { x: 125, y: 189 },
+		side1: { x: 60,  y: 148 },
 		side2: { x: 140, y: 148 },
-		side3: { x: 54, y: 80 },
+		side3: { x: 54,  y: 80 },
 		side4: { x: 142, y: 80 },
-		top1: { x: 53, y: 24 },
-		top2: { x: 107, y: 24 }
+		top1:  { x: 53,  y: 24 },
+		top2:  { x: 107, y: 24 }
 	}
 }
 export const FlamingBatteryArmor = {
@@ -1087,6 +1149,11 @@ export const FlamingBatteryArmor = {
 		phyRes: 14,
 		expRes: 14,
 		eleRes: 14
+	},
+	divine: {
+		health: 1177,
+		eneCap: 324,
+		heaCap: 412
 	},
 	attachment: {
 		leg1:  { x: 71,  y: 187 },
@@ -1931,15 +1998,20 @@ export const Sith = {
 		expRes: 22,
 		eleRes: 16
 	},
+	divine: {
+		health: 910,
+		eneCap: 298,
+		heaCap: 200
+	},
 	attachment: {
-		leg1: { x: 56, y: 189 },
-		leg2: { x: 132, y: 189 },
-		side1: { x: 62, y: 141 },
+		leg1:  { x: 56,  y: 189 },
+		leg2:  { x: 132, y: 189 },
+		side1: { x: 62,  y: 141 },
 		side2: { x: 131, y: 141 },
-		side3: { x: 58, y: 89 },
+		side3: { x: 58,  y: 89 },
 		side4: { x: 135, y: 89 },
-		top1: { x: 57, y: 43 },
-		top2: { x: 121, y: 43 }
+		top1:  { x: 57,  y: 43 },
+		top2:  { x: 121, y: 43 }
 	}
 }
 export const Naga = {
@@ -1960,15 +2032,20 @@ export const Naga = {
 		expRes: 22,
 		eleRes: 16
 	},
+	divine: {
+		health: 1017,
+		eneCap: 287,
+		heaCap: 200
+	},
 	attachment: {
-		leg1: { x: 37, y: 172 },
-		leg2: { x: 101, y: 172 },
-		side1: { x: 61, y: 117 },
+		leg1:  { x: 37,  y: 172 },
+		leg2:  { x: 101, y: 172 },
+		side1: { x: 61,  y: 117 },
 		side2: { x: 123, y: 117 },
-		side3: { x: 62, y: 63 },
+		side3: { x: 62,  y: 63 },
 		side4: { x: 135, y: 63 },
-		top1: { x: 59, y: 27 },
-		top2: { x: 128, y: 27 }
+		top1:  { x: 59,  y: 27 },
+		top2:  { x: 128, y: 27 }
 	}
 }
 export const GrimReaper = {
@@ -1989,15 +2066,20 @@ export const GrimReaper = {
 		expRes: 22,
 		eleRes: 16
 	},
+	divine: {
+		health: 910,
+		eneCap: 356,
+		heaCap: 200
+	},
 	attachment: {
-		leg1: { x: 47, y: 188 },
-		leg2: { x: 111, y: 188 },
-		side1: { x: 64, y: 146 },
+		leg1:  { x: 47,  y: 188 },
+		leg2:  { x: 111, y: 188 },
+		side1: { x: 64,  y: 146 },
 		side2: { x: 142, y: 146 },
-		side3: { x: 61, y: 95 },
+		side3: { x: 61,  y: 95 },
 		side4: { x: 149, y: 95 },
-		top1: { x: 58, y: 67 },
-		top2: { x: 124, y: 67 }
+		top1:  { x: 58,  y: 67 },
+		top2:  { x: 124, y: 67 }
 	}
 }
 export const LightningPlatinumVest = {
@@ -2018,15 +2100,20 @@ export const LightningPlatinumVest = {
 		expRes: 22,
 		eleRes: 16
 	},
+	divine: {
+		health: 1054,
+		eneCap: 282,
+		heaCap: 207
+	},
 	attachment: {
-		leg1: { x: 63, y: 189 },
-		leg2: { x: 125, y: 189 },
-		side1: { x: 60, y: 148 },
+		leg1:  { x: 63,  y: 189 },
+		leg2:  { x: 125, y: 189 },
+		side1: { x: 60,  y: 148 },
 		side2: { x: 140, y: 148 },
-		side3: { x: 54, y: 80 },
+		side3: { x: 54,  y: 80 },
 		side4: { x: 142, y: 80 },
-		top1: { x: 53, y: 24 },
-		top2: { x: 107, y: 24 }
+		top1:  { x: 53,  y: 24 },
+		top2:  { x: 107, y: 24 }
 	}
 }
 export const ChargedWalkers = {
@@ -2241,6 +2328,11 @@ export const RustyEnergyArmor = {
 		eneReg: 96,
 		heaCap: 193,
 		heaCol: 64
+	},
+	divine: {
+		health: 1786,
+		eneCap: 282,
+		heaCap: 207
 	},
 	attachment: {
 		leg1:  { x: 64,  y: 177 },
@@ -2869,15 +2961,20 @@ export const HardenedPlatinumVest = {
 		expRes: 22,
 		eleRes: 44
 	},
+	divine: {
+		health: 960,
+		eneCap: 207,
+		heaCap: 310
+	},
 	attachment: {
-		leg1: { x: 63, y: 189 },
-		leg2: { x: 125, y: 189 },
-		side1: { x: 60, y: 148 },
+		leg1:  { x: 63,  y: 189 },
+		leg2:  { x: 125, y: 189 },
+		side1: { x: 60,  y: 148 },
 		side2: { x: 140, y: 148 },
-		side3: { x: 54, y: 80 },
+		side3: { x: 54,  y: 80 },
 		side4: { x: 142, y: 80 },
-		top1: { x: 53, y: 24 },
-		top2: { x: 107, y: 24 }
+		top1:  { x: 53,  y: 24 },
+		top2:  { x: 107, y: 24 }
 	}
 }
 export const UnreliableGuardian = {
@@ -3232,6 +3329,11 @@ export const EnergyBatteryArmor = {
 		phyRes: 14,
 		expRes: 14,
 		eleRes: 14
+	},
+	divine: {
+		health: 1177,
+		eneCap: 449,
+		heaCap: 298
 	},
 	attachment: {
 		leg1:  { x: 71,  y: 187 },

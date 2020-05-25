@@ -18,6 +18,8 @@ export const SettingsScreen = class extends SingletonElement
 		super()
 
 		this.classList.add('screen')
+
+		this.sectionsWrapper = null
 	}
 
 	init ()
@@ -29,31 +31,35 @@ export const SettingsScreen = class extends SingletonElement
 		})
 
 		const txtSettings = div('text', { innerText: 'Settings' })
-
 		const header = div('header', null, [btnGoBack, txtSettings])
 
-		const rowArenaBuffs = this.createSwitch('Arena Buffs', false, state => this.manager.dispatch('toggle-arena-buffs', state))
-		const secWorkshop = this.createSection('Workshop', [rowArenaBuffs])
-
-		const sectionsWrapper = div('sections-wrapper', null, [secWorkshop])
+		this.sectionsWrapper = div('sections-wrapper')
 		
-		this.appendChildren(header, sectionsWrapper)
+		this.appendChildren(header, this.sectionsWrapper)
 
 		this._init()
 	}
 
-	createSection (name, rowElements = [])
+	addSection (name, rows = [])
+	{
+		const toggles = rows.map(data => this.createSwitch(...data))
+		const section = this.createSection(name, toggles)
+
+		this.sectionsWrapper.appendChild(section)
+	}
+
+	createSection (name, children = [])
 	{
 		const title = div('title', { innerText: name })
-		const rows = div('rows-holder', null, rowElements)
+		const rows = div('rows-holder', null, children)
 		const section = div('section', null, [title, rows])
 		return section
 	}
 
-	createSwitch (title, state = false, callback)
+	createSwitch (label, state, callback)
 	{
-		const btn = new SwitchButton({ title: 'Toggle ' + title, state, callback })
-		const txt = div('label', { innerText: title })
+		const btn = new SwitchButton({ tip: 'Toggle ' + label, state, callback })
+		const txt = div('label', { innerText: label })
 		const ctn = div('switch-container', null, [btn, txt])
 		return ctn
 	}

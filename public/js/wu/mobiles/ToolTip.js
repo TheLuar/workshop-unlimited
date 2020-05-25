@@ -7,11 +7,14 @@ import { div } from '../utils/GeneralUtils.js'
 import { SingletonElement } from '../bases/SingletonElement.js'
 import { ItemsManager } from '../managers/ItemsManager.js'
 import { StatBlock } from './StatBlock.js'
+import { StatsResolver } from '../helpers/StatsResolver.js'
+import { GeneralSettings } from '../helpers/GeneralSettings.js'
 
 
 // General
 
-const itemsM = ItemsManager.gi()
+let itemsM = null
+let statsResolver = null
 
 
 // Class
@@ -25,6 +28,9 @@ export const ToolTip = class extends SingletonElement
 
 	init (container = document.body)
 	{
+		itemsM = ItemsManager.gi()
+		statsResolver = StatsResolver.gi()
+
 		container.appendChild(this)
 		container.addEventListener('mousemove', e =>
 		{
@@ -68,11 +74,20 @@ export const ToolTip = class extends SingletonElement
 
 		for (const key in item.stats)
 		{
-			const block = new StatBlock(key, item.stats[key])
+			const block = new StatBlock(key, statsResolver.get(item, key))
 			content.push(block)
 		}
 
+		if (GeneralSettings.get('divine_tier')
+		 && GeneralSettings.get('buffs_on_tooltip')
+		 && !item.divine)
+		{
+			content.push(div('horizontal-separator'))
+			content.push(div('divine-missing', { innerText: '(Divine Stats Missing)' }))
+		}
+
 		this.appendChildren(...content)
+
 		this.show()
 	}
  

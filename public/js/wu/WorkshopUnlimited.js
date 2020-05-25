@@ -10,6 +10,7 @@ import { LoadingManager } from './managers/LoadingManager.js'
 import { SettingsManager } from './managers/SettingsManager.js'
 import { WorkshopManager } from './managers/WorkshopManager.js'
 import { ToolTip } from './mobiles/ToolTip.js'
+import { GeneralSettings } from './helpers/GeneralSettings.js'
 
 
 // Class
@@ -39,7 +40,9 @@ export const WorkshopUnlimited = class extends SingletonElement
 			stats = {},
 		} = conf
 		
+
 		container.appendChild(this)
+
 
 		this.itemsM = ItemsManager.gi()
 		this.statsM = StatsManager.gi()
@@ -55,6 +58,7 @@ export const WorkshopUnlimited = class extends SingletonElement
 		// this.workshopM.init() workshop is initialized after images are loaded
 		this.toolTip.init(this)
 
+
 		this.screenManagers = {
 			loading: this.loadingM,
 			workshop: this.workshopM,
@@ -64,13 +68,7 @@ export const WorkshopUnlimited = class extends SingletonElement
 
 		// Listeners
 
-		this.settingsM.on('toggle-arena-buffs', state =>
-		{
-			window.arenaBuffs = state
-			this.workshopM.updateSummary()
-		})
 		this.settingsM.on('goto', key => this.goToScreen(key))
-
 		this.workshopM.on('goto', key => this.goToScreen(key))
 
 

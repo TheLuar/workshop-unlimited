@@ -4,92 +4,124 @@
 // Dependences
 
 import { StatsManager } from '../managers/StatsManager.js'
-import { ItemsManager } from '../managers/ItemsManager.js'
+import { GeneralSettings } from '../helpers/GeneralSettings.js'
+import { Singleton } from '../bases/Singleton.js'
 
 
 // General
 
-const statsM = StatsManager.gi()
-const itemsM = ItemsManager.gi()
+let statsM = null
 
 
 // Export
 
-export const StatsResolver = class
+export const StatsResolver = class extends Singleton
 {
-    constructor ()
-    {
-        this.maxWeight = 1000
-    }
+	constructor ()
+	{
+		super()
+		this.maxWeight = 1000
 
-    getMechStatsFromSetup (items)
-    {
-        const sum = {}
+		this.init()
+	}
 
-        for (const key of statsM.mechSumStatKeys)
-        {
-            sum[key] = 0
-            for (const item of items)
-            {
-                if (!item || !item.stats[key]) continue
-                sum[key] += item.stats[key]
-            }
-        }
+	init ()
+	{
+		statsM = StatsManager.gi()
 
-        if (sum.weight > this.maxWeight) sum.health -= (sum.weight - this.maxWeight) * 15
-        
-        if (window.arenaBuffs)
-        {
-            for (const key of statsM.mechSumStatKeys)
-            {
-                sum[key] += Math.round(this.getArenaBuff(key, sum[key]))
-            }
-        }
+		this._init()
+	}
 
-        return sum
-    }
+	getMechStatsFromSetup (items)
+	{
+		const sum = {}
 
-    getArenaBuff (key, value)
-    {
-        const { buff } = statsM.byKey(key)
+		for (const key of statsM.mechSumStatKeys)
+		{
+			sum[key] = 0
+			for (const item of items)
+			{
+				if (!item || !item.stats[key]) continue
 
-        if (!buff) return 0
+				if (GeneralSettings.get('divine_tier') && item.divine && item.divine[key])
+				{
+					sum[key] += item.divine[key]
+				}
+				else
+				{
+					sum[key] += item.stats[key]
+				}
+			}
+		}
 
-        if (buff.mode === '*') return value * buff.amount - value; else
-        if (buff.mode === '+') return value + buff.amount - value;
-        
-        return 0
-    }
+		if (sum.weight > this.maxWeight) sum.health -= (sum.weight - this.maxWeight) * 15
+		
+		if (GeneralSettings.get('arena_buffs'))
+		{
+			for (const key of statsM.mechSumStatKeys)
+			{
+				sum[key] += Math.round(this.getArenaBuff(key, sum[key]))
+			}
+		}
 
-    getBattleStats (items)
-    {
-        const stats = {
-            health: 0, eneCap: 0, eneReg: 0, heaCap: 0,
-            heaCol: 0, phyRes: 0, expRes: 0, eleRes: 0, 
-        };
+		return sum
+	}
 
-        const statNames = Object.keys(stats);
+	getArenaBuff (key, value)
+	{
+		const { buff } = statsM.byKey(key)
 
-        for (const item of items)
-        {
-            if (!item) continue;
+		if (buff)
+		{
+			if (buff.mode === '*') value *= buff.amount; else
+			if (buff.mode === '+') value += buff.amount;
+		}
 
-            for (const name of statNames)
-            {
-                if (item.stats[name]) stats[name] += item.stats[name];
-            }
-        }
+		return value
+	}
 
-        stats.healthCap = stats.health;
-        stats.energy = stats.eneCap;
-        stats.heat = 0;
+	getBattleStats (items)
+	{
+		const stats = {
+			health: 0, eneCap: 0, eneReg: 0, heaCap: 0,
+			heaCol: 0, phyRes: 0, expRes: 0, eleRes: 0, 
+		};
 
-        return stats
-    }
+		const statNames = Object.keys(stats);
 
-    static gi ()
-    {
-        if (!this.instance) this.instance = new this()
-        return this.instance
-    }
+		for (const item of items)
+		{
+			if (!item) continue;
+
+			for (const name of statNames)
+			{
+				if (item.stats[name]) stats[name] += item.stats[name];
+			}
+		}
+
+		stats.healthCap = stats.health;
+		stats.energy = stats.eneCap;
+		stats.heat = 0;
+
+		return stats
+	}
+
+	get (item, key)
+	{
+		let value = item.stats[key]
+
+		if (GeneralSettings.get('buffs_on_tooltip'))
+		{
+			if (GeneralSettings.get('divine_tier') && item.divine && item.divine[key]) value = item.divine[key]
+			if (GeneralSettings.get('arena_buffs')) value = Array.isArray(value) ? value.map(x => this.getArenaBuff(key, x)) : this.getArenaBuff(key, value)	
+		}
+		
+		return Array.isArray(value) ? value.map(Math.round) : Math.round(value)
+	}
+
+	static gi ()
+	{
+		if (!this.instance) this.instance = new this()
+		return this.instance
+	}
 }
