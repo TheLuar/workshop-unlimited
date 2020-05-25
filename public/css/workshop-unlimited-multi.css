@@ -68,7 +68,9 @@ wu-workshop-unlimited {
 	--color-premium: #FFBB44;
 	--color-g: #101010EE;
 	--color-on: #44FF66;
+	--color-on2: #228033;
 	--color-off: #FF4466;
+	--color-off2: #802233;
 }
 
 
@@ -192,7 +194,7 @@ wu-switch-button {
 	height: 1.5rem;
 	margin: 0.5rem;
 	border-radius: 0.2rem;
-	background-color: var(--color-c);
+	background-color: var(--color-off2);
 	overflow: hidden;
 	cursor: pointer;
 }
@@ -204,6 +206,9 @@ wu-switch-button > .thumb {
 	left: 0;
 	background-color: var(--color-off);
 	transition: left 250ms, background-color 250ms;
+}
+wu-switch-button.active {
+	background-color: var(--color-on2);
 }
 wu-switch-button.active > .thumb {
 	background-color: var(--color-on);
