@@ -66,6 +66,7 @@ wu-workshop-unlimited {
 	--color-d: #102040EE;
 	--color-e: #888888;
 	--color-premium: #FFBB44;
+	--color-require: #FF4400;
 	--color-g: #101010EE;
 	--color-on: #44FF66;
 	--color-on2: #228033;
@@ -197,6 +198,7 @@ wu-switch-button {
 	background-color: var(--color-off2);
 	overflow: hidden;
 	cursor: pointer;
+	transition: background-color 250ms;
 }
 wu-switch-button > .thumb {
 	position: absolute;
@@ -433,20 +435,18 @@ wu-tool-tip {
 	z-index: 1000;
 }
 wu-tool-tip > .item-name,
-wu-tool-tip > .item-kind,
-wu-tool-tip > .is-premium,
-wu-tool-tip > .divine-missing {
+wu-tool-tip > .sub {
 	width: 100%;
 	text-align: center;
 }
-wu-tool-tip > .item-kind,
-wu-tool-tip > .is-premium,
-wu-tool-tip > .divine-missing {
+wu-tool-tip > .sub > * {
+	width: 100%;
 	font-size: 0.85em;
 }
-wu-tool-tip > .item-kind { color: var(--color-e) }
-wu-tool-tip > .is-premium { color: var(--color-premium) }
-wu-tool-tip > .divine-missing { color: var(--color-off) }
+wu-tool-tip > .sub > .item-kind { color: var(--color-e) }
+wu-tool-tip > .sub > .is-premium { color: var(--color-premium) }
+wu-tool-tip > .sub > .require-jump { color: var(--color-require) }
+wu-tool-tip > .sub > .divine-missing { color: var(--color-off) }
 wu-tool-tip > wu-stat-block {
 	width: 50%;
 	margin-bottom: 0.25em;

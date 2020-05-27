@@ -28,7 +28,7 @@ export const SwitchButton = class extends BaseElement
 			state = false
 		} = options
 
-		this.tip = tip
+		this.tip = { text: tip }
 		this.callback = callback
 		this.state = !!state
 		this.thumb = null
@@ -52,8 +52,6 @@ export const SwitchButton = class extends BaseElement
 	_setListeners ()
 	{
 		this.addEventListener('click', () => this.toggle())
-		this.addEventListener('mouseenter', () => toolTip.displayHTML(this.tip))
-		this.addEventListener('mouseleave', () => toolTip.hide())
 	}
 
 	toggle (trigger = true, state = !this.state)

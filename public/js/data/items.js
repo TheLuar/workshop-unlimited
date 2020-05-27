@@ -216,6 +216,10 @@ export const IronBoots = {
 		walk: 1,
 		jump: 2
 	},
+	divine: {
+		health: 491,
+		phyDmg: [167, 219]
+	},
 	attachment: { x: 60, y: 13 }
 }
 export const RollingBeasts = {
@@ -224,7 +228,6 @@ export const RollingBeasts = {
 	svg: true,
 	type: 2,
 	element: 1,
-	attachment: { x: 111, y: 22 },
 	tiers: [3, 5],
 	stats: {
 		weight: 134,
@@ -233,7 +236,12 @@ export const RollingBeasts = {
 		push: 1,
 		range: [1, 0],
 		walk: 3
-	}
+	},
+	divine: {
+		health: 476,
+		phyDmg: [169, 255]
+	},
+	attachment: { x: 111, y: 22 }
 }
 export const GraveDiggers = {
 	id: '9',
@@ -241,7 +249,6 @@ export const GraveDiggers = {
 	svg: true,
 	type: 2,
 	element: 1,
-	attachment: { x: 57, y: 22 },
 	tiers: [1, 5],
 	stats: {
 		weight: 123,
@@ -251,7 +258,12 @@ export const GraveDiggers = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 491,
+		phyDmg: [167, 219]
+	},
+	attachment: { x: 57, y: 22 }
 }
 export const TheClaw = {
 	id: '10',
@@ -259,21 +271,24 @@ export const TheClaw = {
 	svg: true,
 	type: 2,
 	element: 1,
-	attachment: { x: 116, y: 24 },
 	tiers: [3, 5],
 	stats: {
 		weight: 150,
 		health: 860,
 		phyDmg: [79, 111],
 		range: [1, 0]
-	}
+	},
+	divine: {
+		health: 909,
+		phyDmg: [83, 117]
+	},
+	attachment: { x: 116, y: 24 }
 }
 export const BackBreaker = {
 	id: '11',
 	name: 'BackBreaker',
 	type: 3,
 	element: 1,
-	attachment: { x: 34, y: 55 },
 	tiers: [2, 5],
 	stats: {
 		weight: 44,
@@ -284,14 +299,17 @@ export const BackBreaker = {
 		range: [1, 0],
 		eneCost: 31,
 		heaCost: 31
-	}
+	},
+	divine: {
+		phyDmg: [234, 419]
+	},
+	attachment: { x: 34, y: 55 }
 }
 export const WarHammer = {
 	id: '12',
 	name: 'War Hammer',
 	type: 3,
 	element: 1,
-	attachment: { x: 33, y: 63 },
 	tiers: [2, 5],
 	stats: {
 		weight: 58,
@@ -302,14 +320,17 @@ export const WarHammer = {
 		range: [1, 0],
 		eneCost: 31,
 		heaCost: 31
-	}
+	},
+	divine: {
+		phyDmg: [261, 439]
+	},
+	attachment: { x: 33, y: 63 }
 }
 export const SeraphBlade = {
 	id: '13',
 	name: 'SeraphBlade',
 	type: 3,
 	element: 1,
-	attachment: { x: 38, y: 71 },
 	tiers: [3, 5],
 	stats: {
 		weight: 49,
@@ -318,14 +339,17 @@ export const SeraphBlade = {
 		range: [1, 2],
 		eneCost: 13,
 		heaCost: 50
-	}
+	},
+	divine: {
+		phyDmg: [251, 403]
+	},
+	attachment: { x: 38, y: 71 }
 }
 export const Annihilation = {
 	id: '14',
 	name: 'Annihilation',
 	type: 3,
 	element: 1,
-	attachment: { x: 42, y: 45 },
 	tiers: [2, 5],
 	stats: {
 		weight: 65,
@@ -333,14 +357,17 @@ export const Annihilation = {
 		phyResDmg: 15,
 		range: [1, 2],
 		uses: 3
-	}
+	},
+	divine: {
+		phyDmg: [209, 351]
+	},
+	attachment: { x: 42, y: 45 }
 }
 export const Mercy = {
 	id: '15',
 	name: 'Mercy',
 	type: 3,
 	element: 1,
-	attachment: { x: 44, y: 26 },
 	tiers: [3, 5],
 	stats: {
 		weight: 84,
@@ -349,14 +376,17 @@ export const Mercy = {
 		push: 1,
 		range: [1, 2],
 		uses: 3
-	}
+	},
+	divine: {
+		phyDmg: [208, 464]
+	},
+	attachment: { x: 44, y: 26 }
 }
 export const ArmorAnnihilator = {
 	id: '16',
 	name: 'Armor Annihilator',
 	type: 3,
 	element: 1,
-	attachment: { x: 65, y: 42 },
 	tiers: [3, 5],
 	stats: {
 		weight: 20,
@@ -364,7 +394,11 @@ export const ArmorAnnihilator = {
 		phyResDmg: 50,
 		range: [2, 4],
 		uses: 1
-	}
+	},
+	divine: {
+		phyDmg: [43, 57]
+	},
+	attachment: { x: 65, y: 42 }
 }
 export const AdvancedRepulser = {
 	id: '17',
@@ -380,6 +414,9 @@ export const AdvancedRepulser = {
 		range: [2, 4],
 		heaCost: 62,
 		uses: 2
+	},
+	divine: {
+		phyDmg: [77, 101]
 	}
 }
 export const Purifier = {
@@ -387,21 +424,23 @@ export const Purifier = {
 	name: 'Purifier',
 	type: 3,
 	element: 1,
-	attachment: { x: 55, y: 41 },
 	tiers: [3, 5],
 	stats: {
 		weight: 25,
 		phyDmg: [184, 241],
 		range: [2, 4],
 		uses: 2
-	}
+	},
+	divine: {
+		phyDmg: [194, 254]
+	},
+	attachment: { x: 55, y: 41 }
 }
 export const NightFall = {
 	id: '19',
 	name: 'NightFall',
 	type: 3,
 	element: 1,
-	attachment: { x: 52, y: 36 },
 	tiers: [2, 5],
 	stats: {
 		weight: 49,
@@ -411,14 +450,17 @@ export const NightFall = {
 		uses: 3,
 		eneCost: 31,
 		heaCost: 31
-	}
+	},
+	divine: {
+		phyDmg: [244, 366]
+	},
+	attachment: { x: 52, y: 36 }
 }
 export const BloodWeep = {
 	id: '20',
 	name: 'BloodWeep',
 	type: 3,
 	element: 1,
-	attachment: { x: 38, y: 38 },
 	tiers: [3, 5],
 	stats: {
 		weight: 34,
@@ -428,14 +470,17 @@ export const BloodWeep = {
 		uses: 3,
 		eneCost: 31,
 		heaCost: 31
-	}
+	},
+	divine: {
+		phyDmg: [155, 220]
+	},
+	attachment: { x: 38, y: 38 }
 }
 export const TerrorCry = {
 	id: '21',
 	name: 'Terror Cry',
 	type: 3,
 	element: 1,
-	attachment: { x: 36, y: 33 },
 	tiers: [2, 5],
 	stats: {
 		weight: 46,
@@ -445,14 +490,17 @@ export const TerrorCry = {
 		uses: 3,
 		eneCost: 25,
 		heaCost: 25
-	}
+	},
+	divine: {
+		phyDmg: [248, 368]
+	},
+	attachment: { x: 36, y: 33 }
 }
 export const Sweetie = {
 	id: '22',
 	name: 'Sweetie',
 	type: 3,
 	element: 1,
-	attachment: { x: 49, y: 45 },
 	tiers: [3, 5],
 	stats: {
 		weight: 42,
@@ -461,7 +509,11 @@ export const Sweetie = {
 		range: [3, 6],
 		uses: 3,
 		heaCost: 31
-	}
+	},
+	divine: {
+		phyDmg: [179, 271]
+	},
+	attachment: { x: 49, y: 45 }
 }
 export const RockRecoiler = {
 	id: '23',
@@ -479,6 +531,9 @@ export const RockRecoiler = {
 		uses: 3,
 		eneCost: 25,
 		heaCost: 38
+	},
+	divine: {
+		phyDmg: [218, 345]
 	},
 	attachment: { x: 60, y: 35 }
 }
@@ -499,7 +554,10 @@ export const EjectionBlast = {
 		uses: 2,
 		eneCost: 31,
 		heaCost: 31
-	},				
+	},
+	divine: {
+		phyDmg: [241, 431]
+	},
 	attachment: { x: 41, y: 39 }
 }
 export const SacrificeCannon = {
@@ -520,6 +578,9 @@ export const SacrificeCannon = {
 		eneCost: 31,
 		heaCost: 31
 	},
+	divine: {
+		phyDmg: [214, 520]
+	},
 	attachment: { x: 47, y: 47 }
 }
 export const PerimeterProtector = {
@@ -537,6 +598,9 @@ export const PerimeterProtector = {
 		retreat: 6,
 		uses: 2,
 		heaCost: 38
+	},
+	divine: {
+		phyDmg: [161, 289]
 	},
 	attachment: { x: 53, y: 26 }
 }
@@ -558,6 +622,9 @@ export const DarkEagle = {
 		eneCost: 25,
 		heaCost: 38
 	},
+	divine: {
+		phyDmg: [191, 482]
+	},
 	attachment: { x: 64, y: 32 }
 }
 export const NightEagle = {
@@ -575,6 +642,9 @@ export const NightEagle = {
 		eneCost: 25,
 		heaCost: 25
 	},
+	divine: {
+		phyDmg: [214, 345]
+	},
 	attachment: { x: 42, y: 50 }
 }
 export const SpartanCarnage = {
@@ -582,7 +652,6 @@ export const SpartanCarnage = {
 	name: 'Spartan Carnage',
 	type: 4,
 	element: 1,
-	attachment: { x: 50, y: 44 },
 	tiers: [3, 5],
 	stats: {
 		weight: 51,
@@ -592,14 +661,17 @@ export const SpartanCarnage = {
 		uses: 3,
 		eneCost: 31,
 		heaCost: 31
-	}
+	},
+	divine: {
+		phyDmg: [238, 408]
+	},
+	attachment: { x: 50, y: 44 }
 }
 export const RecklessBeam = {
 	id: '30',
 	name: 'Reckless Beam',
 	type: 4,
 	element: 1,
-	attachment: { x: 48, y: 56 },
 	tiers: [2, 5],
 	stats: {
 		weight: 35,
@@ -607,14 +679,17 @@ export const RecklessBeam = {
 		range: [4, 8],
 		eneCost: 25,
 		heaCost: 25
-	}
+	},
+	divine: {
+		phyDmg: [241, 364]
+	},
+	attachment: { x: 48, y: 56 }
 }
 export const DesertFury = {
 	id: '31',
 	name: 'Desert Fury',
 	type: 4,
 	element: 1,
-	attachment: { x: 37, y: 34 },
 	tiers: [3, 5],
 	stats: {
 		weight: 29,
@@ -624,7 +699,11 @@ export const DesertFury = {
 		uses: 2,
 		eneCost: 16,
 		heaCost: 16
-	}
+	},
+	divine: {
+		phyDmg: [162, 236]
+	},
+	attachment: { x: 37, y: 34 }
 }
 export const MightyCannon = {
 	id: '32',
@@ -632,7 +711,6 @@ export const MightyCannon = {
 	svg: true,
 	type: 4,
 	element: 1,
-	attachment: { x: 56, y: 35 },
 	tiers: [3, 5],
 	stats: {
 		weight: 55,
@@ -641,14 +719,17 @@ export const MightyCannon = {
 		range: [4, 8],
 		eneCost: 38,
 		heaCost: 38
-	}
+	},
+	divine: {
+		phyDmg: [252, 431]
+	},
+	attachment: { x: 56, y: 35 }
 }
 export const Falcon = {
 	id: '33',
 	name: 'Falcon',
 	type: 4,
 	element: 1,
-	attachment: { x: 60, y: 52 },
 	tiers: [3, 5],
 	stats: {
 		weight: 19,
@@ -657,7 +738,11 @@ export const Falcon = {
 		uses: 1,
 		eneCost: 22,
 		heaCost: 22
-	}
+	},
+	divine: {
+		phyDmg: [629, 1052]
+	},
+	attachment: { x: 60, y: 52 }
 }
 export const FranticBrute = {
 	id: '34',
@@ -673,6 +758,9 @@ export const FranticBrute = {
 		uses: 2,
 		eneCost: 10,
 		heaCost: 50
+	},
+	divine: {
+		phyDmg: [70, 649]
 	},
 	attachment: { x: 44, y: 27 }
 }
@@ -691,6 +779,9 @@ export const DistanceShredder = {
 		range: [4, 8],
 		uses: 2,
 		heaCost: 100
+	},
+	divine: {
+		phyDmg: [241, 431]
 	},
 	attachment: { x: 54, y: 38 }
 }
@@ -1172,7 +1263,6 @@ export const ScorchingFeet = {
 	svg: true,
 	type: 2,
 	element: 2,
-	attachment: { x: 60, y: 13 },
 	tiers: [0, 5],
 	stats: {
 		weight: 120,
@@ -1183,7 +1273,13 @@ export const ScorchingFeet = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 428,
+		expDmg: [147, 192],
+		heaDmg: 37
+	},
+	attachment: { x: 60, y: 13 }
 }
 export const DevouringPaws = {
 	id: '61',
@@ -1191,7 +1287,6 @@ export const DevouringPaws = {
 	svg: true,
 	type: 2,
 	element: 2,
-	attachment: { x: 62, y: 22 },
 	tiers: [2, 5],
 	stats: {
 		weight: 119,
@@ -1202,7 +1297,13 @@ export const DevouringPaws = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 408,
+		expDmg: [144, 227],
+		heaDmg: 45
+	},
+	attachment: { x: 62, y: 22 }
 }
 export const DynamiteBoots = {
 	id: '62',
@@ -1210,7 +1311,6 @@ export const DynamiteBoots = {
 	svg: true,
 	type: 2,
 	element: 2,
-	attachment: { x: 52, y: 19 },
 	tiers: [2, 5],
 	stats: {
 		weight: 136,
@@ -1221,7 +1321,13 @@ export const DynamiteBoots = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 428,
+		expDmg: [136, 229],
+		heaDmg: 30
+	},
+	attachment: { x: 52, y: 19 }
 }
 export const TerrorBlade = {
 	id: '63',
@@ -2121,7 +2227,6 @@ export const ChargedWalkers = {
 	name: 'Charged Walkers',
 	type: 2,
 	element: 3,
-	attachment: { x: 60, y: 13 },
 	tiers: [0, 5],
 	stats: {
 		weight: 122,
@@ -2132,7 +2237,13 @@ export const ChargedWalkers = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 413,
+		eleDmg: [147, 192],
+		eneDmg: 49
+	},
+	attachment: { x: 60, y: 13 }
 }
 export const DynamicStompers = {
 	id: '113',
@@ -2140,7 +2251,6 @@ export const DynamicStompers = {
 	svg: true,
 	type: 2,
 	element: 3,
-	attachment: { x: 64, y: 27 },
 	tiers: [2, 5],
 	stats: {
 		weight: 118,
@@ -2151,7 +2261,13 @@ export const DynamicStompers = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 386,
+		eleDmg: [158, 223],
+		eneDmg: 60
+	},
+	attachment: { x: 64, y: 27 }
 }
 export const SparkedRunners = {
 	id: '114',
@@ -2159,7 +2275,6 @@ export const SparkedRunners = {
 	svg: true,
 	type: 2,
 	element: 3,
-	attachment: { x: 115, y: 22 },
 	tiers: [3, 5],
 	stats: {
 		weight: 114,
@@ -2169,7 +2284,13 @@ export const SparkedRunners = {
 		push: 1,
 		range: [1, 0],
 		walk: 3
-	}
+	},
+	divine: {
+		health: 389,
+		eleDmg: [143, 264],
+		eneDmg: 41
+	},
+	attachment: { x: 115, y: 22 }
 }
 export const LightningSupporters = {
 	id: '115',
@@ -2177,7 +2298,6 @@ export const LightningSupporters = {
 	svg: true,
 	type: 2,
 	element: 3,
-	attachment: { x: 78, y: 20 },
 	tiers: [2, 5],
 	stats: {
 		weight: 124,
@@ -2188,14 +2308,19 @@ export const LightningSupporters = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 428,
+		eleDmg: [131, 197],
+		eneDmg: 69
+	},
+	attachment: { x: 78, y: 20 }
 }
 export const RecoilStompers = {
 	id: '116',
 	name: 'Recoil Stompers',
 	type: 2,
 	element: 3,
-	attachment: { x: 52, y: 19 },
 	tiers: [2, 5],
 	stats: {
 		weight: 138,
@@ -2206,7 +2331,13 @@ export const RecoilStompers = {
 		range: [1, 0],
 		walk: 1,
 		jump: 2
-	}
+	},
+	divine: {
+		health: 413,
+		eleDmg: [140, 216],
+		eneDmg: 38
+	},
+	attachment: { x: 52, y: 19 }
 }
 export const StormWeaver = {
 	id: '117',
@@ -3080,6 +3211,9 @@ export const LazyFalcon = {
 		range: [8, 0],
 		backfire: 490
 	},
+	divine: {
+		phyDmg: [646, 1036]
+	},
 	attachment: { x: 40, y: 50 }
 }
 export const HalfBurntScope = {
@@ -3131,6 +3265,9 @@ export const MalfunctioningBlaster = {
 		backfire: 159,
 		heaCost: 162
 	},
+	divine: {
+		phyDmg: [258, 413]
+	},
 	attachment: { x: 58, y: 33 }
 }
 export const LastResortVulcan = {
@@ -3147,6 +3284,9 @@ export const LastResortVulcan = {
 		uses: 2,
 		backfire: 180,
 		heaCost: 31
+	},
+	divine: {
+		phyDmg: [229, 506]
 	},
 	attachment: { x: 59, y: 35 }
 }
@@ -3218,6 +3358,9 @@ export const CockpitPiercer = {
 		uses: 1,
 		eneCost: 22,
 		heaCost: 22
+	},
+	divine: {
+		phyDmg: [570, 915]
 	},
 	attachment: { x: 71, y: 41 }
 }
@@ -3308,6 +3451,9 @@ export const UnrepairedLaserCannon = {
 		backfire: 72,
 		eneCost: 31,
 		heaCost: 31
+	},
+	divine: {
+		phyDmg: [222, 357]
 	},
 	attachment: { x: 47, y: 30 }
 }

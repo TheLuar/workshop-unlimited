@@ -116,4 +116,9 @@ export const ItemsManager = class extends Singleton
 	{
 		return item.tiers[0] > this.TIER_EPIC
 	}
+
+	requireJump (item)
+	{
+		return 'advance' in item.stats || 'retreat' in item.stats
+	}
 }

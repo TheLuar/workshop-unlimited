@@ -5,12 +5,6 @@
 
 import { div, css, defineCustomElement } from '../../utils/GeneralUtils.js'
 import { BaseElement } from '../../bases/BaseElement.js'
-import { ToolTip } from '../../mobiles/ToolTip.js'
-
-
-// General
-
-let toolTip = null
 
 
 // Export
@@ -28,6 +22,7 @@ export const EquipmentSlot = class extends BaseElement
 
 		this.type = type
 		this.item = null
+		this.tip = {}
 
 		this.classList.add('ui')
 		this.appendChildren(this.iconGfx, this.itemGfx)
@@ -36,11 +31,6 @@ export const EquipmentSlot = class extends BaseElement
 
 	init (SelectItemsTab)
 	{
-		toolTip = ToolTip.gi()
-		
-		this.addEventListener('mouseenter', () => toolTip.displayItem(this.item))
-		this.addEventListener('mouseleave', () => toolTip.hide())
-		
 		this.addEventListener('click', () =>
 		{
 			SelectItemsTab.setSlot(this)
@@ -56,6 +46,7 @@ export const EquipmentSlot = class extends BaseElement
 			return
 		}
 		this.item = item
+		this.tip = { item }
 		this.itemGfx.style.backgroundImage = `url(${ item.url })`
 		this.itemGfx.style.display = ''
 		this.iconGfx.style.display = 'none'
@@ -64,6 +55,7 @@ export const EquipmentSlot = class extends BaseElement
 	clear ()
 	{
 		this.item = null
+		this.tip = {}
 		this.iconGfx.style.display = ''
 		this.itemGfx.style.display = 'none'
 	}

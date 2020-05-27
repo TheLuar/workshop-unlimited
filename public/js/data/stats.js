@@ -7,6 +7,7 @@ export const weight = {
 	key: 'weight',
 	inputs: 1,
 	color: '#999999',
+	buff: null,
 	name: 'Weight'
 }
 export const health = {
@@ -103,6 +104,7 @@ export const phyResDmg = {
 	key: 'phyResDmg',
 	inputs: 1,
 	color: '#DDAA00',
+	buff: null,
 	name: 'Physical Resistance Damage'
 }
 export const expDmg = {
@@ -129,26 +131,21 @@ export const heaCapDmg = {
 	key: 'heaCapDmg',
 	inputs: 1,
 	color: '#994499',
-	buff: {
-		mode: '*',
-		amount: 1.2
-	},
+	buff: null,
 	name: 'Heat Capacity Damage'
 }
 export const heaColDmg = {
 	key: 'heaColDmg',
 	inputs: 1,
 	color: '#994499',
-	buff: {
-		mode: '*',
-		amount: 1.2
-	},
+	buff: null,
 	name: 'Heat Cooling Damage'
 }
 export const expResDmg = {
 	key: 'expResDmg',
 	inputs: 1,
 	color: '#DD4400',
+	buff: null,
 	name: 'Explosive Resistance Damage'
 }
 export const eleDmg = {
@@ -175,97 +172,107 @@ export const eneCapDmg = {
 	key: 'eneCapDmg',
 	inputs: 1,
 	color: '#994499',
-	buff: {
-		mode: '*',
-		amount: 1.2
-	},
+	buff: null,
 	name: 'Energy Capacity Damage'
 }
 export const eneRegDmg = {
 	key: 'eneRegDmg',
 	inputs: 1,
 	color: '#994499',
-	buff: {
-		mode: '*',
-		amount: 1.2
-	},
+	buff: null,
 	name: 'Energy Regeneration Damage'
 }
 export const eleResDmg = {
 	key: 'eleResDmg',
 	inputs: 1,
 	color: '#00AADD',
+	buff: null,
 	name: 'Electric Resistance Damage'
 }
 export const range = {
 	key: 'range',
 	inputs: 2,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Range'
 }
 export const push = {
 	key: 'push',
 	inputs: 1,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Knockback'
 }
 export const pull = {
 	key: 'pull',
 	inputs: 1,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Pull'
 }
 export const recoil = {
 	key: 'recoil',
 	inputs: 1,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Recoil'
 }
 export const retreat = {
 	key: 'retreat',
 	inputs: 1,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Retreat'
 }
 export const advance = {
 	key: 'advance',
 	inputs: 1,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Advance'
 }
 export const walk = {
 	key: 'walk',
 	inputs: 1,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Walking Distance'
 }
 export const jump = {
 	key: 'jump',
 	inputs: 1,
 	color: '#DDDDDD',
+	buff: null,
 	name: 'Jumping Distance'
 }
 export const uses = {
 	key: 'uses',
 	inputs: 1,
 	color: '#22FF22',
+	buff: null,
 	name: 'Max Uses'
 }
 export const backfire = {
 	key: 'backfire',
 	inputs: 1,
 	color: '#AA0000',
+	buff: {
+		mode: '*',
+		amount: 0.8
+	},
 	name: 'Backfire'
 }
 export const heaCost = {
 	key: 'heaCost',
 	inputs: 1,
 	color: '#882200',
+	buff: null,
 	name: 'Heat Generation'
 }
 export const eneCost = {
 	key: 'eneCost',
 	inputs: 1,
 	color: '#005588',
+	buff: null,
 	name: 'Energy Consumption'
 }

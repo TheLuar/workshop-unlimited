@@ -29,11 +29,10 @@ export const BasicButton = class extends BaseElement
 			callback = null,
 		} = options
 
+		this.tip = { text: title }
 		this.style.backgroundImage = `url(${ icon })`
 
 		this.addEventListener('click', callback)
-		this.addEventListener('mouseenter', () => toolTip.displayHTML(title))
-		this.addEventListener('mouseleave', () => toolTip.hide())
 
 		if (className) this.className = className
 	}

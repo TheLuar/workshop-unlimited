@@ -106,14 +106,14 @@ export const StatsResolver = class extends Singleton
 		return stats
 	}
 
-	get (item, key, buffs = true)
+	get (item, key, arenaBuffs = true)
 	{
 		let value = item.stats[key]
 
-		if (buffs && GeneralSettings.get('buffs_on_tooltip'))
+		if (GeneralSettings.get('buffs_on_tooltip'))
 		{
 			if (GeneralSettings.get('divine_tier') && item.divine && item.divine[key]) value = item.divine[key]
-			if (GeneralSettings.get('arena_buffs')) value = Array.isArray(value) ? value.map(x => this.getArenaBuff(key, x)) : this.getArenaBuff(key, value)	
+			if (GeneralSettings.get('arena_buffs') && arenaBuffs) value = Array.isArray(value) ? value.map(x => this.getArenaBuff(key, x)) : this.getArenaBuff(key, value)	
 		}
 		
 		return Array.isArray(value) ? value.map(Math.round) : Math.round(value)

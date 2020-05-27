@@ -5,12 +5,6 @@
 
 import { defineCustomElement } from '../utils/GeneralUtils.js'
 import { BaseElement } from '../bases/BaseElement.js'
-import { ToolTip } from '../mobiles/ToolTip.js'
-
-
-// General
-
-let toolTip = ToolTip.gi()
 
 
 // Class
@@ -26,6 +20,7 @@ export const MechDisplayPart = class extends BaseElement
 		this.name = name
 		this.lastItem = null
 		this.item = null
+		this.tip = null
 		this._x = 0
 		this._y = 0
 		this._w = 0
@@ -38,14 +33,13 @@ export const MechDisplayPart = class extends BaseElement
 	init ()
 	{
 		this.classList.add('outline')
-		this.addEventListener('mouseenter', () => toolTip.displayItem(this.item))
-		this.addEventListener('mouseleave', () => toolTip.hide())
 	}
 
 	setItem (item = null)
 	{
 		this.lastItem = this.item
 		this.item = item
+		this.tip = item ? { item } : null
 
 		if (this.item === this.lastItem) return
 
@@ -54,7 +48,6 @@ export const MechDisplayPart = class extends BaseElement
 		if (!item) return
 
 		this._ready = false
-
 		this.img.src = this.item.url
 
 		const onReady = setInterval(() =>
