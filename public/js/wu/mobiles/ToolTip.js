@@ -114,7 +114,11 @@ export const ToolTip = class extends SingletonElement
 		if (itemsM.isPremium(item))   sub.push(div('is-premium',   { innerText: 'PREMIUM' }))
 		if (itemsM.requireJump(item)) sub.push(div('require-jump', { innerText: 'Require Jump' }))
 		
-		if (GeneralSettings.get('divine_tier') && GeneralSettings.get('buffs_on_tooltip') && !item.divine) sub.push(div('divine-missing', { innerText: '(Divine Stats Missing)' }))
+		if (GeneralSettings.get('divine_tier')
+		 && GeneralSettings.get('buffs_on_tooltip')
+		 && !item.divine
+		 && item.tiers[1] > 4)
+			sub.push(div('divine-missing', { innerText: '(Divine Stats Missing)' }))
 		
 		content.push(div('sub', null, sub))
 		content.push(div('horizontal-separator'))

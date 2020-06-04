@@ -116,7 +116,7 @@ export const StatsResolver = class extends Singleton
 			if (GeneralSettings.get('arena_buffs') && arenaBuffs) value = Array.isArray(value) ? value.map(x => this.getArenaBuff(key, x)) : this.getArenaBuff(key, value)	
 		}
 		
-		return Array.isArray(value) ? value.map(Math.round) : Math.round(value)
+		return Array.isArray(value) ? value.map(Math.ceil) : Math.ceil(value)
 	}
 
 	static gi ()

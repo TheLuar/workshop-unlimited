@@ -260,7 +260,7 @@ export const GraveDiggers = {
 		jump: 2
 	},
 	divine: {
-		health: 491,
+		health: 295,
 		phyDmg: [167, 219]
 	},
 	attachment: { x: 57, y: 22 }
@@ -533,7 +533,7 @@ export const RockRecoiler = {
 		heaCost: 38
 	},
 	divine: {
-		phyDmg: [218, 345]
+		phyDmg: [218, 435]
 	},
 	attachment: { x: 60, y: 35 }
 }
@@ -925,6 +925,9 @@ export const PlatinumPlating = {
 	stats: {
 		weight: 40,
 		health: 315
+	},
+	divine: {
+		health: 332
 	}
 }
 export const IronPlating = {
@@ -932,7 +935,7 @@ export const IronPlating = {
 	name: 'Iron Plating',
 	type: 9,
 	element: 1,
-	tiers: [0, 1],
+	tiers: [0, 2],
 	stats: {
 		weight: 40,
 		health: 145
@@ -947,6 +950,9 @@ export const MightyProtector = {
 	stats: {
 		weight: 28,
 		phyRes: 59
+	},
+	divine: {
+		phyRes: 63
 	}
 }
 export const PhysicalProtector = {
@@ -954,7 +960,7 @@ export const PhysicalProtector = {
 	name: 'Physical Protector',
 	type: 9,
 	element: 1,
-	tiers: [0, 1],
+	tiers: [0, 2],
 	stats: {
 		weight: 28,
 		phyRes: 24
@@ -971,6 +977,11 @@ export const MaximumProtector = {
 		phyRes: 39,
 		expRes: 39,
 		eleRes: 39
+	},
+	divine: {
+		phyRes: 41,
+		expRes: 41,
+		eleRes: 41,
 	}
 }
 export const SaviorResistance = {
@@ -978,7 +989,7 @@ export const SaviorResistance = {
 	name: 'Savior Resistance',
 	type: 9,
 	element: 1,
-	tiers: [0, 5],
+	tiers: [0, 2],
 	stats: {
 		weight: 51,
 		phyRes: 16,
@@ -2041,6 +2052,10 @@ export const HeatEngine = {
 		weight: 25,
 		heaCap: 89,
 		heaCol: 42
+	},
+	divine: {
+		heaCap: 92,
+		heaCol: 44
 	}
 }
 export const CoolingMassBooster = {
@@ -2052,6 +2067,9 @@ export const CoolingMassBooster = {
 	stats: {
 		weight: 15,
 		heaCol: 63
+	},
+	divine: {
+		heaCol: 65
 	}
 }
 export const HeatStorageUnit = {
@@ -2063,17 +2081,23 @@ export const HeatStorageUnit = {
 	stats: {
 		weight: 22,
 		heaCap: 134
+	},
+	divine: {
+		heaCap: 141
 	}
 }
-export const UltraHotProtector = {
+export const UltrahotProtector = {
 	id: '106',
-	name: 'UltraHot Protector',
+	name: 'Ultrahot Protector',
 	type: 9,
 	element: 2,
 	tiers: [3, 5],
 	stats: {
 		weight: 28,
 		expRes: 59
+	},
+	divine: {
+		expRes: 63
 	}
 }
 export const HeatProtector = {
@@ -2081,7 +2105,7 @@ export const HeatProtector = {
 	name: 'Heat Protector',
 	type: 9,
 	element: 2,
-	tiers: [0, 5],
+	tiers: [0, 2],
 	stats: {
 		weight: 28,
 		expRes: 24
@@ -3029,6 +3053,10 @@ export const EnergyEngine = {
 		weight: 25,
 		eneCap: 89,
 		eneReg: 42
+	},
+	divine: {
+		eneCap: 92,
+		eneReg: 44
 	}
 }
 export const EnergyMassBooster = {
@@ -3040,6 +3068,9 @@ export const EnergyMassBooster = {
 	stats: {
 		weight: 15,
 		eneReg: 63
+	},
+	divine: {
+		eneReg: 65
 	}
 }
 export const EnergyStorageUnit = {
@@ -3051,6 +3082,9 @@ export const EnergyStorageUnit = {
 	stats: {
 		weight: 22,
 		eneCap: 134
+	},
+	divine: {
+		eneCap: 141
 	}
 }
 export const SuperChargeProtector = {
@@ -3062,6 +3096,9 @@ export const SuperChargeProtector = {
 	stats: {
 		weight: 28,
 		eleRes: 59
+	},
+	divine: {
+		eleRes: 63
 	}
 }
 export const EnergyProtector = {
@@ -3069,7 +3106,7 @@ export const EnergyProtector = {
 	name: 'Energy Protector',
 	type: 9,
 	element: 3,
-	tiers: [0, 5],
+	tiers: [0, 2],
 	stats: {
 		weight: 28,
 		eleRes: 24
@@ -3123,9 +3160,9 @@ export const UnreliableGuardian = {
 		eneCost: 50
 	}
 }
-export const BackstabbinGuardian = {
+export const BackstabbingGuardian = {
 	id: '163',
-	name: 'Backstabbin Guardian',
+	name: 'Backstabbing Guardian',
 	type: 5,
 	element: 2,
 	tiers: [3, 5],
@@ -3195,7 +3232,7 @@ export const UnreliableProtector = {
 		eneDmg: 76,
 		eleResDmg: 5,
 		backfire: 87,
-		eneCost: 50
+		eneCost: 69
 	}
 }
 export const LazyFalcon = {
@@ -3303,6 +3340,9 @@ export const Disintegration = {
 		range: [1, 2],
 		uses: 3,
 		backfire: 100
+	},
+	divine: {
+		phyDmg: [213, 382]
 	},
 	attachment: { x: 57, y: 51 }
 }
