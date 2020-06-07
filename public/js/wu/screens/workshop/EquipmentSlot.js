@@ -11,21 +11,26 @@ import { BaseElement } from '../../bases/BaseElement.js'
 
 export const EquipmentSlot = class extends BaseElement
 {
+	type = 0
+	item = null
+	tip = null
+
+	elm_icon = null
+	elm_itemImg = null
+
 	constructor (SelectItemsTab, type, iconName)
 	{
 		super()
 
 		const backgroundImage = `url(../../../img/slots/${ iconName }.svg)`
 
-		this.iconGfx = css(div('icon-gfx'), { backgroundImage })
-		this.itemGfx = div('item-gfx')
+		this.elm_icon = css(div('icon-gfx'), { backgroundImage })
+		this.elm_itemImg = div('item-gfx')
 
 		this.type = type
-		this.item = null
-		this.tip = {}
 
 		this.classList.add('ui')
-		this.appendChildren(this.iconGfx, this.itemGfx)
+		this.appendChildren(this.elm_icon, this.elm_itemImg)
 		this.init(SelectItemsTab)
 	}
 
@@ -40,24 +45,21 @@ export const EquipmentSlot = class extends BaseElement
 	
 	setItem (item)
 	{
-		if (!item)
-		{
-			this.clear()
-			return
-		}
+		if (!item) return this.clear()
+
 		this.item = item
 		this.tip = { item }
-		this.itemGfx.style.backgroundImage = `url(${ item.url })`
-		this.itemGfx.style.display = ''
-		this.iconGfx.style.display = 'none'
+		this.elm_itemImg.style.backgroundImage = `url(${ item.url })`
+		this.elm_itemImg.style.display = ''
+		this.elm_icon.style.display = 'none'
 	}
 
 	clear ()
 	{
 		this.item = null
-		this.tip = {}
-		this.iconGfx.style.display = ''
-		this.itemGfx.style.display = 'none'
+		this.tip = null
+		this.elm_itemImg.style.display = 'none'
+		this.elm_icon.style.display = ''
 	}
 }
 defineCustomElement(EquipmentSlot)

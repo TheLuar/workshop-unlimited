@@ -7,6 +7,7 @@ import { div } from '../../utils/GeneralUtils.js'
 import { SingletonElement } from '../../bases/SingletonElement.js'
 import { EquipmentSlot } from './EquipmentSlot.js'
 import { SelectItemsTab } from './SelectItemsTab.js'
+import { SearchingForBattleTab } from './SearchingForBattleTab.js'
 import { MechSummary } from './MechSummary.js'
 import { MechDisplay } from '../../mobiles/MechDisplay.js'
 import { BasicButton } from '../../mobiles/BasicButton.js'
@@ -16,39 +17,51 @@ import { BasicButton } from '../../mobiles/BasicButton.js'
 
 export const WorkshopScreen = class extends SingletonElement
 {
+	manager = null
+	slots = []
+	ctnPartsAndSpecials = null
+	ctnModules = null
+	btn_settings = null
+	btn_searchBattle = null
+	itemsTab = null
+	summary = null
+	mech = null
+
 	constructor ()
 	{
 		super()
 		
-		this.slots = null
-		this.ctnPartsAndSpecials = null
-		this.ctnModules = null
-		this.btnSettings = null
-		this.itemsTab = null
-		this.summary = null
-		this.mech = null
-		
 		this.classList.add('screen')
 	}
 
-	init (slotConfs)
+	init (manager, slotConfs)
 	{
 		const slotGridAreas = Array.from('abcdefghijklabcdefgh')
 
-		this.slots = []
+		this.manager = manager
 
 		this.ctnPartsAndSpecs = div('ctn-parts-and-specs')
 		this.ctnModules = div('ctn-modules')
 
-		this.btnSettings = new BasicButton({
+		this.btn_settings = new BasicButton({
 			title: 'Settings',
 			icon: '../../../../img/general/cog.png',
 			className: 'settings',
-			callback: () => this.manager.dispatch('goto', 'settings')
+			onclick: () => this.manager.dispatch('goto', 'settings')
 		})
+
+		this.btn_searchBattle = new BasicButton({
+			title: 'Search for Battle',
+			icon: '../../../../img/general/mech.svg',
+			className: 'battle',
+		})
+		this.btn_searchBattle.style.display = 'none'
 
 		this.itemsTab = SelectItemsTab.gi()
 		this.itemsTab.init()
+
+		this.tab_searchingForBattle = SearchingForBattleTab.gi()
+		this.tab_searchingForBattle.init()
 
 		this.summary = MechSummary.gi()
 		this.summary.show()
@@ -70,7 +83,17 @@ export const WorkshopScreen = class extends SingletonElement
 			container.appendChild(slot)
 		}
 
-		this.appendChildren(this.ctnPartsAndSpecs, this.ctnModules, this.btnSettings, this.itemsTab, this.summary, this.mech)
+		this.appendChildren(
+			this.ctnPartsAndSpecs,
+			this.ctnModules,
+			this.btn_settings,
+			this.btn_searchBattle,
+			this.itemsTab,
+			this.tab_searchingForBattle,
+			this.summary,
+			this.mech
+		)
+
 		this._init()
 	}
 

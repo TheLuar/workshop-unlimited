@@ -7,6 +7,7 @@ import { div } from '../utils/GeneralUtils.js'
 import { SingletonElement } from '../bases/SingletonElement.js'
 import { ItemsManager } from '../managers/ItemsManager.js'
 import { StatBlock } from './StatBlock.js'
+import { StatsManager } from '../managers/StatsManager.js'
 import { StatsResolver } from '../helpers/StatsResolver.js'
 import { GeneralSettings } from '../helpers/GeneralSettings.js'
 
@@ -14,6 +15,7 @@ import { GeneralSettings } from '../helpers/GeneralSettings.js'
 // General
 
 let itemsM = null
+let statsM = null
 let statsResolver = null
 
 
@@ -21,44 +23,104 @@ let statsResolver = null
 
 export const ToolTip = class extends SingletonElement
 {
+	_x = 0
+	_y = 0
+
+	offset = 20 // distance from tooltip to pointer (pixels)
+	changed = false
+	currentTip = null
+	lastTarget = null
+
+	statBlocks = []
+	
+
+	elm_title = null
+	
+	elm_itemKind = null
+	elm_itemIsPremium = null
+	elm_itemRequireJump = null
+	elm_itemMissingDivine = null
+
+	ctn_itemDetails = null
+	ctn_statBlocks = null
+	
+	elm_textAndHTML = null
+
+
 	constructor ()
 	{
 		super()
-
-		this._offset = 20 // distance from pointer (pixels)
-		this._tip = null
-		this._lastTarget = null
 	}
 
 	init (container = document.body)
 	{
 		itemsM = ItemsManager.gi()
+		statsM = StatsManager.gi()
 		statsResolver = StatsResolver.gi()
 
+
+		this.statBlocks = statsM.list.map(statConf => new StatBlock(statConf.key))
+
+
+		this.elm_title = div('title')
+
+		this.elm_itemKind = div('item-kind')
+		this.elm_itemIsPremium = div('item-is-premium', { innerText: 'PREMIUM' })
+		this.elm_itemRequireJump = div('item-require-jump', { innerText: 'Require Jump' })
+		this.elm_itemMissingDivine = div('item-missing-divine', { innerText: '(Divine Stats Missing)' })
+
+		this.ctn_itemDetails = div('item-details', null, [
+			div('horizontal-separator'),
+			this.elm_itemKind,
+			this.elm_itemIsPremium,
+			this.elm_itemRequireJump,
+			this.elm_itemMissingDivine
+		])
+
+		this.ctn_statBlocks = div('stat-blocks',  null, [
+			div('horizontal-separator'),
+			...this.statBlocks
+		])
+
+		this.elm_textAndHTML = div('text-and-html')
+
+
+		this.appendChildren(
+			this.elm_title,
+			this.ctn_itemDetails,
+			this.ctn_statBlocks,
+			this.elm_textAndHTML
+		)
+
 		container.appendChild(this)
+
+		this.setContainerListeners(container)
+		this._init()
+	}
+
+	setContainerListeners (container)
+	{
 		container.addEventListener('mousemove', e =>
 		{
-			if (e.target !== this._lastTarget)
+			if (e.target !== this.lastTarget)
 			{
-				this._lastTarget = e.target
+				this.lastTarget = e.target
 				this._findTip(e.target)
 
-				if (this._changed) this._render()
+				if (this.changed) this._render()
 			}
 
-			if (this._tip)
+			if (this.currentTip)
 			{
 				const cx = this.parentNode.offsetWidth  / 2
 				const cy = this.parentNode.offsetHeight / 2
 				const x = e.x - this.parentNode.offsetLeft
 				const y = e.y - this.parentNode.offsetTop
 	
-				this.x = x + (x > cx ? -this.offsetWidth  - this._offset : this._offset)
-				this.y = y + (y > cy ? -this.offsetHeight - this._offset : this._offset)
+				this.x = x + (x > cx ? -this.offsetWidth  - this.offset : this.offset)
+				this.y = y + (y > cy ? -this.offsetHeight - this.offset : this.offset)
 			}
 		})
-
-		this._init()
 	}
 
 	_findTip (HTMLElement)
@@ -66,7 +128,7 @@ export const ToolTip = class extends SingletonElement
 		let target = HTMLElement
 		let newTip = null
 
-		this._changed = false
+		this.changed = false
 
 		while (target !== this.parentNode)
 		{
@@ -80,67 +142,79 @@ export const ToolTip = class extends SingletonElement
 
 		if (newTip !== this.tip)
 		{
-			this._tip = newTip
-			this._changed = true
+			this.currentTip = newTip
+			this.changed = true
 		}
 	}
 
 	_render ()
 	{
-		this._clear()
-
-		if (!this._tip) return this.hide()
+		if (!this.currentTip) return this.hide()
 		
-		const { item, html, text } = this._tip
+		const { item, html, text } = this.currentTip
 		
-		this.show()
+		this.elm_title.style.display = 'none'
+		this.ctn_itemDetails.style.display = 'none'
+		this.ctn_statBlocks.style.display = 'none'
+		this.elm_textAndHTML.style.display = 'none'
 
-		if (item) return this._renderItem(item)
-		if (html) return this._renderHTML(html)
-		if (text) return this._renderText(text)
-
-		this.hide()
+		if (item) this._renderItem(item); else
+		if (html) this._renderHTML(html); else
+		if (text) this._renderText(text); else
+		if (this.visible) this.hide()
 	}
 
 	_renderItem (item)
 	{
-		const content = []
-		const sub = []
+		this.elm_title.innerText = item.name
+		this.elm_itemKind.innerText = itemsM.getItemKind(item)
 
-		content.push(div('item-name', { innerText: item.name }))
-
-		sub.push(div('item-kind', { innerText: itemsM.getItemKind(item) }))
-
-		if (itemsM.isPremium(item))   sub.push(div('is-premium',   { innerText: 'PREMIUM' }))
-		if (itemsM.requireJump(item)) sub.push(div('require-jump', { innerText: 'Require Jump' }))
+		this.elm_itemIsPremium.style.display = itemsM.isPremium(item) ? '' : 'none'
+		this.elm_itemRequireJump.style.display = itemsM.requireJump(item) ? '' : 'none'
+		this.elm_itemMissingDivine.style.display = this.isMissingDivineStats(item) ? '' : 'none'
 		
-		if (GeneralSettings.get('divine_tier')
-		 && GeneralSettings.get('buffs_on_tooltip')
-		 && !item.divine
-		 && item.tiers[1] > 4)
-			sub.push(div('divine-missing', { innerText: '(Divine Stats Missing)' }))
-		
-		content.push(div('sub', null, sub))
-		content.push(div('horizontal-separator'))
-		
-		for (const key in item.stats) content.push(new StatBlock(key, statsResolver.get(item, key, key !== 'health')))
+		for (const block of this.statBlocks)
+		{
+			if (!item.stats.hasOwnProperty(block.stat.key))
+			{
+				block.hide()
+				continue
+			}
 
-		this.appendChildren(...content)
+			const key = block.stat.key
+			const useArenaBuffs = key !== 'health'
+			const value = statsResolver.get(item, key, useArenaBuffs)
+
+			block.val(value)
+			block.show()
+		}
+
+		this.elm_title.style.display = ''
+		this.ctn_itemDetails.style.display = ''
+		this.ctn_statBlocks.style.display = ''
+		this.show()
 	}
 
 	_renderHTML (html)
 	{
-		this.innerHTML = html
+		this.elm_textAndHTML.style.display = ''
+		this.elm_textAndHTML.innerHTML = html
+		this.show()
 	}
 
 	_renderText (text)
 	{
-		this.innerText = text
+		this.elm_textAndHTML.style.display = ''
+		this.elm_textAndHTML.innerText = text
+		this.show()
 	}
- 
-	_clear ()
+
+	isMissingDivineStats (item)
 	{
-		while (this.lastChild) this.lastChild.remove()
+		return GeneralSettings.get('divine_tier')
+		    && GeneralSettings.get('buffs_on_tooltip')
+		    && !item.divine
+		    && item.tiers[1] > 4
 	}
 
 	set x (n) { this.style.left = (this._x = n) + 'px' }

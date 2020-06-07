@@ -16,10 +16,10 @@
 .horizontal-separator {
 	position: relative;
 	display: block;
-	width: calc(100% - 6px);
+	width: 100%;
 	height: 1px;
 	background-color: #FFFFFF88;
-	margin: 3px
+	margin: 0.25rem 0;
 }
 
 .screen {
@@ -36,6 +36,12 @@
 }
 
 .tab {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+	height: 100%;
+	background-color: #000000DD;
 	z-index: 200;
 }
 
@@ -46,6 +52,18 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
+}
+
+.loading-animation {
+	position: relative;
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 1em;
+	background-image: url(../img/general/notexture.svg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 
@@ -103,16 +121,25 @@ wu-loading-screen > wu-progress-bar > .text {
 
 wu-basic-button {
 	position: relative;
-	display: block;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: var(--grid-box-sizing);
 	height: var(--grid-box-sizing);
 	margin: var(--grid-box-margin);
-	background-position: center;
-	background-size: 80%;
 	background-color: var(--color-c);
-	background-repeat: no-repeat;
 	border-radius: var(--general-radius);
 	cursor: pointer;
+}
+wu-basic-button > .icon {
+	position: relative;
+	display: block;
+	width: 80%;
+	height: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 }
 wu-basic-button:hover {
 	/* background-color: var(--color-g); */
@@ -223,11 +250,11 @@ wu-switch-button.active > .thumb {
 wu-workshop-screen {
 	display: grid;
 	grid-template-rows: 13.33333% 66.66666% 20%;
-	grid-template-columns: 37.5% 37.5% 8.33333% 8.33333% 8.33333%;
+	grid-template-columns: 37.5% 37.5% 12.5% 12.5%;
 	grid-template-areas:
-		'a b c d e'
-		'a b f f f'
-		'g g g g g';
+		'a b c d'
+		'a b f f'
+		'g g g g';
 	--grid-box-margin: 8px;
 	--grid-box-sizing: 100%;
 	--grid-box-sizing: -webkit-calc(100% - var(--grid-box-margin) * 2);
@@ -255,7 +282,8 @@ wu-workshop-screen > .ctn-modules {
 }
 wu-workshop-screen > wu-mech-summary { grid-area: f }
 wu-workshop-screen > wu-mech-display { grid-area: b }
-wu-workshop-screen > wu-basic-button.settings { grid-area: e }
+wu-workshop-screen > wu-basic-button.settings { grid-area: c }
+wu-workshop-screen > wu-basic-button.settings { grid-area: d }
 
 wu-workshop-screen > wu-select-items-tab {
 	position: absolute;
@@ -276,7 +304,7 @@ wu-workshop-screen > wu-select-items-tab > .item-blocks-container {
 	width: 100%;
 	height: 100%;
 	background-color: var(--color-c);
-	overflow: hidden auto;
+	overflow: hidden scroll;
 	will-change: scroll-position;
 	z-index: 10;
 	grid-area: b;
@@ -313,6 +341,26 @@ wu-workshop-screen > wu-select-items-tab > .item-block.active,
 wu-workshop-screen > wu-select-items-tab > .item-block:hover {
 	background-color: var(--color-d);
 }
+wu-searching-for-battle-tab {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+wu-searching-for-battle-tab > .ctn-searching {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1em
+}
+wu-searching-for-battle-tab > .btn-cancel {
+	width: 8em;
+	height: 3em;
+}
+
+
 
 
 /* wu-equipment-slot */
@@ -427,27 +475,34 @@ wu-tool-tip {
 	position: absolute;
 	display: -webkit-flex;
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	max-width: 230px;
 	padding: 6px;
 	background-color: var(--color-c);
 	border-radius: var(--general-radius);
 	z-index: 1000;
 }
-wu-tool-tip > .item-name,
-wu-tool-tip > .sub {
+wu-tool-tip > .title,
+wu-tool-tip > .item-details {
 	width: 100%;
 	text-align: center;
 }
-wu-tool-tip > .sub > * {
+wu-tool-tip > .item-details > * {
 	width: 100%;
 	font-size: 0.85em;
 }
-wu-tool-tip > .sub > .item-kind { color: var(--color-e) }
-wu-tool-tip > .sub > .is-premium { color: var(--color-premium) }
-wu-tool-tip > .sub > .require-jump { color: var(--color-require) }
-wu-tool-tip > .sub > .divine-missing { color: var(--color-off) }
-wu-tool-tip > wu-stat-block {
+wu-tool-tip > .item-details > .item-kind { color: var(--color-e) }
+wu-tool-tip > .item-details > .item-is-premium { color: var(--color-premium) }
+wu-tool-tip > .item-details > .item-require-jump { color: var(--color-require) }
+wu-tool-tip > .item-details > .item-missing-divine { color: var(--color-off) }
+wu-tool-tip > .stat-blocks {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+wu-tool-tip > .stat-blocks > wu-stat-block {
 	width: 50%;
 	margin-bottom: 0.25em;
 }
@@ -500,7 +555,6 @@ wu-progress-bar > .text {
 }
 
 
-
 @media (orientation: portrait) {
 	wu-workshop-unlimited {
 		width: 100%;
@@ -510,9 +564,10 @@ wu-progress-bar > .text {
 	}
 
 	wu-workshop-screen {
-		grid-template-rows: 18% 55% 18% 9%;
+		grid-template-rows: 9% 9% 55% 18% 9%;
 		grid-template-columns: 80% 20%;
 		grid-template-areas:
+			'f d'
 			'f e'
 			'b b'
 			'a a'

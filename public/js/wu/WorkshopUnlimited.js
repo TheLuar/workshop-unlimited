@@ -4,32 +4,35 @@
 // Packages
 
 import { SingletonElement } from './bases/SingletonElement.js'
+import { SocketManager } from './managers/SocketManager.js'
 import { ItemsManager } from './managers/ItemsManager.js'
 import { StatsManager } from './managers/StatsManager.js'
 import { LoadingManager } from './managers/LoadingManager.js'
 import { SettingsManager } from './managers/SettingsManager.js'
 import { WorkshopManager } from './managers/WorkshopManager.js'
+import { BattleManager } from './managers/BattleManager.js'
 import { ToolTip } from './mobiles/ToolTip.js'
-import { GeneralSettings } from './helpers/GeneralSettings.js'
 
 
 // Class
 
 export const WorkshopUnlimited = class extends SingletonElement
 {
+	lastScreen = ''
+	currentScreen = ''
+	socketM = null
+	itemsM = null
+	statsM = null
+	workshopM = null
+	loadingM = null
+	settingsM = null
+	battleM = null
+	screens = null
+	toolTip = null
+
 	constructor ()
 	{
 		super()
-
-		this.lastScreen = ''
-		this.currentScreen = ''
-		this.settingsM = null
-		this.itemsM = null
-		this.statsM = null
-		this.workshopM = null
-		this.loadingM = null
-		this.screens = null
-		this.toolTip = null
 	}
 
 	init (conf = {})
@@ -44,25 +47,30 @@ export const WorkshopUnlimited = class extends SingletonElement
 		container.appendChild(this)
 
 
+		this.socketM = SocketManager.gi()
 		this.itemsM = ItemsManager.gi()
 		this.statsM = StatsManager.gi()
 		this.loadingM = LoadingManager.gi()
 		this.workshopM = WorkshopManager.gi()
 		this.settingsM = SettingsManager.gi()
+		this.battleM = BattleManager.gi()
 		this.toolTip = ToolTip.gi()
 
+		this.socketM.init()
 		this.itemsM.init(items)
 		this.statsM.init(stats)
 		this.loadingM.init()
 		this.settingsM.init()
 		// this.workshopM.init() workshop is initialized after images are loaded
-		this.toolTip.init(this)
+		this.battleM.init()
+		// this.toolTip.init(this) init after images loaded
 
 
 		this.screenManagers = {
 			loading: this.loadingM,
 			workshop: this.workshopM,
 			settings: this.settingsM,
+			battle: this.battleM,
 		}
 
 
@@ -73,7 +81,7 @@ export const WorkshopUnlimited = class extends SingletonElement
 
 
 		this.goToScreen('loading')
-		this.appendChildren(this.loadingM.screen, this.settingsM.screen, this.toolTip)
+		this.appendChildren(this.loadingM.screen, this.settingsM.screen, this.battleM.screen, this.toolTip)
 		this.show()
 
 		this._init()
@@ -128,6 +136,7 @@ export const WorkshopUnlimited = class extends SingletonElement
 		this.loadingM.setText('Initializing...')
 
 		this.workshopM.init()
+		this.toolTip.init(this)
 		this.appendChildren(this.workshopM.screen)
 		
 		this.loadingM.setText('Welcome to Workshop Unlimited')

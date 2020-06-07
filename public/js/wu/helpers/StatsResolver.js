@@ -17,10 +17,11 @@ let statsM = null
 
 export const StatsResolver = class extends Singleton
 {
+	maxWeight = 1000
+	
 	constructor ()
 	{
 		super()
-		this.maxWeight = 1000
 
 		this.init()
 	}

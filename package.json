@@ -1,11 +1,11 @@
 {
   "name": "workshop-unlimited",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "What about being able to build your dreams’ mech? Or just any mech that ever came in your mind, for free and without limitations? Well, here you go.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.4"
   }
 }

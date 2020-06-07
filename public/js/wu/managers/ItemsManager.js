@@ -11,25 +11,34 @@ import { imagesLoader } from '../helpers/imagesLoader.js'
 
 export const ItemsManager = class extends Singleton
 {
+	TYPE_TORSO = 1
+	TYPE_LEGS = 2
+	TYPE_SIDE = 3
+	TYPE_TOP = 4
+	TYPE_DRONE = 5
+	TYPE_CHARGE = 6
+	TYPE_TELE = 7
+	TYPE_HOOK = 8
+	TYPE_MODULE = 9
+	
+	DISPLAYABLE_ITEM_TYPES = [
+		this.TYPE_TORSO,
+		this.TYPE_LEGS,
+		this.TYPE_SIDE,
+		this.TYPE_TOP,
+		this.TYPE_DRONE
+	]
+
+	TIER_COMMON = 0
+	TIER_RARE = 1
+	TIER_EPIC = 2
+	TIER_LEGENDARY = 3
+	TIER_MYTHICAL = 4
+	TIER_DIVINE = 5
+	
 	constructor ()
 	{
 		super()
-
-		this.TYPE_TORSO = 1
-		this.TYPE_LEGS = 2
-		this.TYPE_SIDE = 3
-		this.TYPE_TOP = 4
-		this.TYPE_DRONE = 5
-		this.TYPE_CHARGE = 6
-		this.TYPE_TELE = 7
-		this.TYPE_HOOK = 8
-		this.TYPE_MODULE = 9
-		this.TIER_COMMON = 0
-		this.TIER_RARE = 1
-		this.TIER_EPIC = 2
-		this.TIER_LEGENDARY = 3
-		this.TIER_MYTHICAL = 4
-		this.TIER_DIVINE = 5
 		
 		this.total = 0
 		this.loaded = 0

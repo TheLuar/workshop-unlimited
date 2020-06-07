@@ -3,21 +3,17 @@
 
 // Packages
 
-import { dom } from '../utils/GeneralUtils.js'
+import { div } from '../utils/GeneralUtils.js'
 import { BaseElement } from '../bases/BaseElement.js'
 import { defineCustomElement } from '../utils/GeneralUtils.js'
-import { ToolTip } from '../mobiles/ToolTip.js'
-
-
-// General
-
-const toolTip = ToolTip.gi()
 
 
 // Class
 
 export const BasicButton = class extends BaseElement
 {
+	tip = null
+
 	constructor (options = {})
 	{
 		super()
@@ -25,16 +21,27 @@ export const BasicButton = class extends BaseElement
 		const {
 			title = '',
 			icon = '',
+			text = '',
 			className = '',
 			callback = null,
+			onclick = null,
 		} = options
 
 		this.tip = { text: title }
-		this.style.backgroundImage = `url(${ icon })`
 
-		this.addEventListener('click', callback)
+		this.onclick = callback || onclick
 
 		if (className) this.className = className
+
+		if (icon)
+		{
+			const elmIcon = div('icon', null, null, { backgroundImage: `url(${ icon })` })
+			this.appendChild(elmIcon)
+		}
+		else if (text)
+		{
+			this.appendChild(div('text', { innerText: text }))
+		}
 	}
 }
 defineCustomElement(BasicButton)
