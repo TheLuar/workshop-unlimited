@@ -6,7 +6,7 @@ const routes = require('express').Router()
 
 const regExes = {
 	uint: /\d+/,
-	name: /[a-z ]+/
+	name: /[a-z ]+/i
 }
 
 
