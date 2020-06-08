@@ -12,7 +12,7 @@ const regExes = {
 
 routes.get('/api/items', (req, res) =>
 {
-	res.status(200).send(items)
+	res.status(200).json(items)
 })
 
 routes.get('/api/items/:name_or_id', (req, res) =>
@@ -23,7 +23,7 @@ routes.get('/api/items/:name_or_id', (req, res) =>
 						 : regExes.name.test(x) ? 'name'
 						 : ''
 
-	if (!prop) return res.status(400).send({
+	if (!prop) return res.status(400).json({
 		message: 'The parameter must be an numeric ID or name of the item you are looking for'
 	})
 
@@ -33,11 +33,11 @@ routes.get('/api/items/:name_or_id', (req, res) =>
 		    && String(item[prop]).toLowerCase() === x.toLowerCase()
 	})
 
-	if (!item) return res.status(404).send({
+	if (!item) return res.status(404).json({
 		message: `No item with ID or name '${ x }'`
 	})
 
-	return res.send(item)
+	return res.json(item)
 })
 
 
