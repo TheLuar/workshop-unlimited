@@ -4,6 +4,7 @@
 // Export
 
 export const weight = {
+	id: 1,
 	key: 'weight',
 	inputs: 1,
 	color: '#999999',
@@ -11,6 +12,7 @@ export const weight = {
 	name: 'Weight'
 }
 export const health = {
+	id: 2,
 	key: 'health',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -21,6 +23,7 @@ export const health = {
 	name: 'Health Points'
 }
 export const eneCap = {
+	id: 3,
 	key: 'eneCap',
 	inputs: 1,
 	color: '#00AAEE',
@@ -31,6 +34,7 @@ export const eneCap = {
 	name: 'Energy Capacity'
 }
 export const eneReg = {
+	id: 4,
 	key: 'eneReg',
 	inputs: 1,
 	color: '#00BFBF',
@@ -41,6 +45,7 @@ export const eneReg = {
 	name: 'Energy Regeneration'
 }
 export const heaCap = {
+	id: 5,
 	key: 'heaCap',
 	inputs: 1,
 	color: '#FF5500',
@@ -51,6 +56,7 @@ export const heaCap = {
 	name: 'Heat Capacity'
 }
 export const heaCol = {
+	id: 6,
 	key: 'heaCol',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -61,6 +67,7 @@ export const heaCol = {
 	name: 'Heat Cooling'
 }
 export const phyRes = {
+	id: 7,
 	key: 'phyRes',
 	inputs: 1,
 	color: '#FFBB33',
@@ -71,6 +78,7 @@ export const phyRes = {
 	name: 'Physical Resistance'
 }
 export const expRes = {
+	id: 8,
 	key: 'expRes',
 	inputs: 1,
 	color: '#FF6622',
@@ -81,6 +89,7 @@ export const expRes = {
 	name: 'Explosive Resistance'
 }
 export const eleRes = {
+	id: 9,
 	key: 'eleRes',
 	inputs: 1,
 	color: '#33BBFF',
@@ -91,6 +100,7 @@ export const eleRes = {
 	name: 'Electric Resistance'
 }
 export const phyDmg = {
+	id: 10,
 	key: 'phyDmg',
 	inputs: 2,
 	color: '#FFBB00',
@@ -101,6 +111,7 @@ export const phyDmg = {
 	name: 'Physical Damage'
 }
 export const phyResDmg = {
+	id: 11,
 	key: 'phyResDmg',
 	inputs: 1,
 	color: '#DDAA00',
@@ -108,6 +119,7 @@ export const phyResDmg = {
 	name: 'Physical Resistance Damage'
 }
 export const expDmg = {
+	id: 12,
 	key: 'expDmg',
 	inputs: 2,
 	color: '#FF5500',
@@ -118,6 +130,7 @@ export const expDmg = {
 	name: 'Explosive Damage'
 }
 export const heaDmg = {
+	id: 13,
 	key: 'heaDmg',
 	inputs: 1,
 	color: '#FF5500',
@@ -128,6 +141,7 @@ export const heaDmg = {
 	name: 'Heat Damage'
 }
 export const heaCapDmg = {
+	id: 14,
 	key: 'heaCapDmg',
 	inputs: 1,
 	color: '#994499',
@@ -135,6 +149,7 @@ export const heaCapDmg = {
 	name: 'Heat Capacity Damage'
 }
 export const heaColDmg = {
+	id: 15,
 	key: 'heaColDmg',
 	inputs: 1,
 	color: '#994499',
@@ -142,6 +157,7 @@ export const heaColDmg = {
 	name: 'Heat Cooling Damage'
 }
 export const expResDmg = {
+	id: 16,
 	key: 'expResDmg',
 	inputs: 1,
 	color: '#DD4400',
@@ -149,6 +165,7 @@ export const expResDmg = {
 	name: 'Explosive Resistance Damage'
 }
 export const eleDmg = {
+	id: 17,
 	key: 'eleDmg',
 	inputs: 2,
 	color: '#00BBFF',
@@ -159,6 +176,7 @@ export const eleDmg = {
 	name: 'Electric Damage'
 }
 export const eneDmg = {
+	id: 18,
 	key: 'eneDmg',
 	inputs: 1,
 	color: '#00BBFF',
@@ -169,6 +187,7 @@ export const eneDmg = {
 	name: 'Energy Damage'
 }
 export const eneCapDmg = {
+	id: 19,
 	key: 'eneCapDmg',
 	inputs: 1,
 	color: '#994499',
@@ -176,6 +195,7 @@ export const eneCapDmg = {
 	name: 'Energy Capacity Damage'
 }
 export const eneRegDmg = {
+	id: 20,
 	key: 'eneRegDmg',
 	inputs: 1,
 	color: '#994499',
@@ -183,6 +203,7 @@ export const eneRegDmg = {
 	name: 'Energy Regeneration Damage'
 }
 export const eleResDmg = {
+	id: 21,
 	key: 'eleResDmg',
 	inputs: 1,
 	color: '#00AADD',
@@ -190,6 +211,7 @@ export const eleResDmg = {
 	name: 'Electric Resistance Damage'
 }
 export const range = {
+	id: 22,
 	key: 'range',
 	inputs: 2,
 	color: '#DDDDDD',
@@ -197,6 +219,7 @@ export const range = {
 	name: 'Range'
 }
 export const push = {
+	id: 23,
 	key: 'push',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -204,6 +227,7 @@ export const push = {
 	name: 'Knockback'
 }
 export const pull = {
+	id: 24,
 	key: 'pull',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -211,6 +235,7 @@ export const pull = {
 	name: 'Pull'
 }
 export const recoil = {
+	id: 25,
 	key: 'recoil',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -218,6 +243,7 @@ export const recoil = {
 	name: 'Recoil'
 }
 export const retreat = {
+	id: 26,
 	key: 'retreat',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -225,6 +251,7 @@ export const retreat = {
 	name: 'Retreat'
 }
 export const advance = {
+	id: 27,
 	key: 'advance',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -232,6 +259,7 @@ export const advance = {
 	name: 'Advance'
 }
 export const walk = {
+	id: 28,
 	key: 'walk',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -239,6 +267,7 @@ export const walk = {
 	name: 'Walking Distance'
 }
 export const jump = {
+	id: 29,
 	key: 'jump',
 	inputs: 1,
 	color: '#DDDDDD',
@@ -246,6 +275,7 @@ export const jump = {
 	name: 'Jumping Distance'
 }
 export const uses = {
+	id: 30,
 	key: 'uses',
 	inputs: 1,
 	color: '#22FF22',
@@ -253,6 +283,7 @@ export const uses = {
 	name: 'Max Uses'
 }
 export const backfire = {
+	id: 31,
 	key: 'backfire',
 	inputs: 1,
 	color: '#AA0000',
@@ -263,6 +294,7 @@ export const backfire = {
 	name: 'Backfire'
 }
 export const heaCost = {
+	id: 32,
 	key: 'heaCost',
 	inputs: 1,
 	color: '#882200',
@@ -270,6 +302,7 @@ export const heaCost = {
 	name: 'Heat Generation'
 }
 export const eneCost = {
+	id: 33,
 	key: 'eneCost',
 	inputs: 1,
 	color: '#005588',

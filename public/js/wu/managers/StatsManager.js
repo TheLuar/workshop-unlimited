@@ -30,7 +30,7 @@ export const StatsManager = class extends Singleton
 
 	init (stats)
 	{
-		this.list = Object.keys(stats).map(k => stats[k])
+		this.list = Object.keys(stats).map(k => stats[k]).sort((a, b) => a.id - b.id)
 		this.total = this.list.length
 
 		for (const key in stats)
