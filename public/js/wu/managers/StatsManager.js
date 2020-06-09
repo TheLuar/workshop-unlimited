@@ -13,8 +13,8 @@ export const StatsManager = class extends Singleton
 {
 	constructor ()
 	{
-        super()
-        
+		super()
+				
 		this.total = 0
 		this.loaded = 0
 		
@@ -24,7 +24,7 @@ export const StatsManager = class extends Singleton
 			'phyRes', 'expRes', 'eleRes'
 		]
 
-        this.list = []
+		this.list = []
 		this.mapByKey = {}
 	}
 
@@ -49,7 +49,7 @@ export const StatsManager = class extends Singleton
 
 	load (path)
 	{
-        const imagesData = this.list.map(({ fileName }) => [path + fileName, 'image/svg'])
+		const imagesData = this.list.map(({ fileName }) => [path + fileName, 'image/svg'])
 
 		imagesLoader(imagesData, 1, (url, i) =>
 		{

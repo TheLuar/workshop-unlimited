@@ -58,6 +58,8 @@ export const ToolTip = class extends SingletonElement
 		statsM = StatsManager.gi()
 		statsResolver = StatsResolver.gi()
 
+		console.log(statsM)
+
 
 		this.statBlocks = statsM.list.map(statConf => new StatBlock(statConf.key))
 
@@ -81,6 +83,8 @@ export const ToolTip = class extends SingletonElement
 			div('horizontal-separator'),
 			...this.statBlocks
 		])
+
+		// for (const )
 
 		this.elm_textAndHTML = div('text-and-html')
 

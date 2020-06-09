@@ -798,6 +798,9 @@ export const Void = {
 		phyResDmg: 6,
 		eneCost: 16,
 		heaCost: 16
+	},
+	divine: {
+		phyDmg: [147, 192]
 	}
 }
 export const HurlBat = {
@@ -829,6 +832,9 @@ export const Greedy = {
 		phyResDmg: 10,
 		eneCost: 16,
 		heaCost: 16
+	},
+	divine: {
+		phyDmg: [77, 124]
 	}
 }
 export const DustMaker = {
@@ -845,6 +851,9 @@ export const DustMaker = {
 		eneRegDmg: 4,
 		eneCost: 16,
 		heaCost: 16
+	},
+	divine: {
+		phyDmg: [126, 255]
 	}
 }
 export const Backstabber = {
@@ -860,6 +869,9 @@ export const Backstabber = {
 		pull: 1,
 		eneCost: 16,
 		heaCost: 16
+	},
+	divine: {
+		phyDmg: [172, 178]
 	}
 }
 export const Tonto = {
@@ -875,6 +887,9 @@ export const Tonto = {
 		range: [2, 4],
 		eneCost: 25,
 		heaCost: 25
+	},
+	divine: {
+		phyDmg: [189, 345]
 	}
 }
 export const SolarTorch = {
@@ -890,6 +905,9 @@ export const SolarTorch = {
 		range: [3, 6],
 		eneCost: 25,
 		heaCost: 25
+	},
+	divine: {
+		phyDmg: [204, 368]
 	}
 }
 export const ChargeEngine = {
@@ -902,6 +920,9 @@ export const ChargeEngine = {
 		weight: 20,
 		phyDmg: [132, 174],
 		uses: 1
+	},
+	divine: {
+		phyDmg: [137, 180]
 	}
 }
 export const PlatinumGrapplingHook = {
@@ -914,6 +935,9 @@ export const PlatinumGrapplingHook = {
 		weight: 17,
 		phyDmg: [143, 187],
 		uses: 1
+	},
+	divine: {
+		phyDmg: [154, 202]
 	}
 }
 export const PlatinumPlating = {
@@ -1356,6 +1380,10 @@ export const TerrorBlade = {
 		range: [1, 0],
 		eneCost: 13,
 		heaCost: 50
+	},
+	divine: {
+		expDmg: [258, 337],
+		heaDmg: 112
 	}
 }
 export const FlamingHammer = {
@@ -1374,6 +1402,10 @@ export const FlamingHammer = {
 		range: [1, 0],
 		eneCost: 13,
 		heaCost: 50
+	},
+	divine: {
+		expDmg: [236, 395],
+		heaDmg: 88
 	}
 }
 export const HeronMark = {
@@ -1391,6 +1423,10 @@ export const HeronMark = {
 		range: [1, 2],
 		eneCost: 13,
 		heaCost: 50
+	},
+	divine: {
+		expDmg: [204, 329],
+		heaDmg: 82
 	}
 }
 export const ChaosBringer = {
@@ -1407,6 +1443,10 @@ export const ChaosBringer = {
 		uses: 3,
 		eneCost: 16,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [237, 302],
+		heaDmg: 121
 	},
 	attachment: { x: 43, y: 39 }
 }
@@ -1426,6 +1466,10 @@ export const CrimsonRapture = {
 		uses: 3,
 		eneCost: 31,
 		heaCost: 93
+	},
+	divine: {
+		expDmg: [172, 225],
+		heaDmg: 143
 	}
 }
 export const Reckoning = {
@@ -1444,6 +1488,10 @@ export const Reckoning = {
 		range: [1, 2],
 		uses: 3,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [193, 430],
+		heaDmg: 53
 	}
 }
 export const BasaltDissolver = {
@@ -1460,6 +1508,10 @@ export const BasaltDissolver = {
 		expResDmg: 45,
 		range: [2, 4],
 		uses: 1
+	},
+	divine: {
+		expDmg: [33, 67],
+		heaDmg: 45
 	}
 }
 export const MagmaBlast = {
@@ -1481,6 +1533,10 @@ export const MagmaBlast = {
 		range: [2, 4],
 		uses: 1,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [223, 425],
+		heaDmg: 83
 	}
 }
 export const Sorrow = {
@@ -1497,6 +1553,10 @@ export const Sorrow = {
 		heaCapDmg: 12,
 		range: [2, 4],
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [172, 225],
+		heaDmg: 99
 	}
 }
 export const Abomination = {
@@ -1516,6 +1576,10 @@ export const Abomination = {
 		uses: 3,
 		eneCost: 19,
 		heaCost: 44
+	},
+	divine: {
+		expDmg: [224, 327],
+		heaDmg: 75
 	}
 }
 export const HeatBomb = {
@@ -1532,6 +1596,10 @@ export const HeatBomb = {
 		range: [2, 4],
 		uses: 1,
 		heaCost: 393
+	},
+	divine: {
+		expDmg: [41, 60],
+		heaDmg: 404
 	}
 }
 export const CorruptLight = {
@@ -1549,6 +1617,10 @@ export const CorruptLight = {
 		range: [3, 6],
 		eneCost: 16,
 		heaCost: 47
+	},
+	divine: {
+		expDmg: [144, 243],
+		heaDmg: 96
 	}
 }
 export const DawnBlaze = {
@@ -1566,6 +1638,10 @@ export const DawnBlaze = {
 		range: [3, 6],
 		eneCost: 16,
 		heaCost: 47
+	},
+	divine: {
+		expDmg: [216, 280],
+		heaDmg: 73
 	}
 }
 export const Flaminator = {
@@ -1582,6 +1658,10 @@ export const Flaminator = {
 		range: [3, 6],
 		eneCost: 110
 	},
+	divine: {
+		expDmg: [152, 235],
+		heaDmg: 96
+	},
 	attachment: { x: 58, y: 38 }
 }
 export const HybridHeatCannon = {
@@ -1597,6 +1677,10 @@ export const HybridHeatCannon = {
 		heaCapDmg: 33,
 		range: [3, 6],
 		eneCost: 104
+	},
+	divine: {
+		expDmg: [168, 285],
+		heaDmg: 111
 	},
 	attachment: { x: 63, y: 39 }
 }
@@ -1617,6 +1701,10 @@ export const ExplosiveRetreat = {
 		eneCost: 19,
 		heaCost: 44
 	},
+	divine: {
+		expDmg: [173, 356],
+		heaDmg: 61
+	},
 	attachment: { x: 51, y: 40 }
 }
 export const MagmaRecoiler = {
@@ -1636,6 +1724,10 @@ export const MagmaRecoiler = {
 		uses: 3,
 		eneCost: 25,
 		heaCost: 56
+	},
+	divine: {
+		expDmg: [178, 360],
+		heaDmg: 52
 	},
 	attachment: { x: 60, y: 35 }
 }
@@ -1658,6 +1750,10 @@ export const ShadowWolf = {
 		eneCost: 25,
 		heaCost: 56
 	},
+	divine: {
+		expDmg: [155, 297],
+		heaDmg: 53
+	},
 	attachment: { x: 64, y: 32 }
 }
 export const BrokenDevourer = {
@@ -1679,6 +1775,10 @@ export const BrokenDevourer = {
 		eneCost: 13,
 		heaCost: 81
 	},
+	divine: {
+		expDmg: [159, 400],
+		heaDmg: 96
+	},
 	attachment: { x: 47, y: 47 }
 }
 export const OvercookingOven = {
@@ -1699,6 +1799,10 @@ export const OvercookingOven = {
 		eneCost: 31,
 		heaCost: 19
 	},
+	divine: {
+		expDmg: [253, 246],
+		heaDmg: 187
+	},
 	attachment: { x: 74, y: 47 }
 }
 export const SupremeCannon = {
@@ -1718,6 +1822,10 @@ export const SupremeCannon = {
 		uses: 3,
 		eneCost: 19,
 		heaCost: 44
+	},
+	divine: {
+		expDmg: [210, 323],
+		heaDmg: 73
 	}
 }
 export const VandalRage = {
@@ -1737,6 +1845,10 @@ export const VandalRage = {
 		range: [4, 5],
 		uses: 1,
 		heaCost: 25
+	},
+	divine: {
+		expDmg: [147, 192],
+		heaDmg: 45
 	}
 }
 export const Desolation = {
@@ -1754,6 +1866,10 @@ export const Desolation = {
 		range: [4, 8],
 		uses: 3,
 		heaCost: 56
+	},
+	divine: {
+		expDmg: [216, 319],
+		heaDmg: 49
 	}
 }
 export const IronFrenzy = {
@@ -1807,6 +1923,10 @@ export const Savagery = {
 		eneCost: 16,
 		heaCost: 47
 	},
+	divine: {
+		expDmg: [158, 238],
+		heaDmg: 109
+	},
 	attachment: { x: 48, y: 55 }
 }
 export const FlamingScope = {
@@ -1825,6 +1945,10 @@ export const FlamingScope = {
 		uses: 1,
 		eneCost: 31,
 		heaCost: 155
+	},
+	divine: {
+		expDmg: [600, 783],
+		heaDmg: 224
 	}
 }
 export const BurningShower = {
@@ -1844,6 +1968,10 @@ export const BurningShower = {
 		range: [4, 8],
 		uses: 3,
 		heaCost: 81
+	},
+	divine: {
+		expDmg: [183, 365],
+		heaDmg: 90
 	}
 }
 export const RedRain = {
@@ -1862,6 +1990,10 @@ export const RedRain = {
 		uses: 2,
 		eneCost: 30,
 		heaCost: 81
+	},
+	divine: {
+		expDmg: [229, 361],
+		heaDmg: 112
 	},
 	attachment: { x: 36, y: 79 }
 }
@@ -1902,6 +2034,10 @@ export const SpaceInvader = {
 		uses: 2,
 		heaCost: 100
 	},
+	divine: {
+		expDmg: [215, 356],
+		heaDmg: 38
+	},
 	attachment: { x: 54, y: 38 }
 }
 export const Clash = {
@@ -1917,6 +2053,10 @@ export const Clash = {
 		heaDmg: 36,
 		expResDmg: 6,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [105, 138],
+		heaDmg: 37
 	}
 }
 export const Nemo = {
@@ -1932,6 +2072,10 @@ export const Nemo = {
 		heaDmg: 41,
 		heaCapDmg: 20,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [100, 145],
+		heaDmg: 42
 	}
 }
 export const Swoop = {
@@ -1948,6 +2092,10 @@ export const Swoop = {
 		expResDmg: 5,
 		eneCost: 31,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [59, 95],
+		heaDmg: 61
 	}
 }
 export const Murmur = {
@@ -1963,6 +2111,10 @@ export const Murmur = {
 		heaDmg: 36,
 		heaColDmg: 7,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [90, 161],
+		heaDmg: 38
 	}
 }
 export const FlameWave = {
@@ -1978,6 +2130,10 @@ export const FlameWave = {
 		heaDmg: 45,
 		push: 1,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [89,163],
+		heaDmg: 47
 	}
 }
 export const HeatPoint = {
@@ -1994,6 +2150,10 @@ export const HeatPoint = {
 		expResDmg: 6,
 		uses: 3,
 		heaCost: 50
+	},
+	divine: {
+		expDmg: [166, 218],
+		heaDmg: 49
 	}
 }
 export const FireFly = {
@@ -2010,6 +2170,10 @@ export const FireFly = {
 		expResDmg: 5,
 		range: [2, 4],
 		heaCost: 50
+	},
+	divine: {
+		expDmg: [138, 249],
+		heaDmg: 49
 	}
 }
 export const FlameSpear = {
@@ -2026,6 +2190,10 @@ export const FlameSpear = {
 		expResDmg: 7,
 		range: [3, 6],
 		heaCost: 50
+	},
+	divine: {
+		expDmg: [150, 274],
+		heaDmg: 57
 	}
 }
 export const FlamingGrapplingHook = {
@@ -2040,7 +2208,12 @@ export const FlamingGrapplingHook = {
 		heaDmg: 39,
 		uses: 1,
 		heaCost: 31
+	},
+	divine: {
+		expDmg: [119, 156],
+		heaDmg: 41
 	}
+
 }
 export const HeatEngine = {
 	id: '103',
@@ -2379,6 +2552,10 @@ export const StormWeaver = {
 		range: [1, 0],
 		eneCost: 50,
 		heaCost: 13
+	},
+	divine: {
+		eleDmg: [258, 337],
+		eneDmg: 121
 	}
 }
 export const VikingHammer = {
@@ -2397,6 +2574,10 @@ export const VikingHammer = {
 		range: [1, 0],
 		eneCost: 50,
 		heaCost: 13
+	},
+	divine: {
+		eleDmg: [217, 364],
+		eneDmg: 117
 	}
 }
 export const BrightRoar = {
@@ -2414,6 +2595,10 @@ export const BrightRoar = {
 		range: [1, 2],
 		eneCost: 50,
 		heaCost: 13
+	},
+	divine: {
+		eleDmg: [204, 329],
+		eneDmg: 108
 	}
 }
 export const BigDaddy = {
@@ -2431,6 +2616,10 @@ export const BigDaddy = {
 		uses: 3,
 		eneCost: 47,
 		heaCost: 16
+	},
+	divine: {
+		eleDmg: [215, 280],
+		eneDmg: 161
 	}
 }
 export const AshCreator = {
@@ -2449,6 +2638,10 @@ export const AshCreator = {
 		uses: 3,
 		eneCost: 93,
 		heaCost: 31
+	},
+	divine: {
+		eleDmg: [172, 225],
+		eneDmg: 190
 	}
 }
 export const BullDog = {
@@ -2467,6 +2660,10 @@ export const BullDog = {
 		range: [1, 2],
 		uses: 3,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [193, 430],
+		eneDmg: 71
 	}
 }
 export const RustyEnergyArmor = {
@@ -2514,6 +2711,10 @@ export const BlizzardDissolver = {
 		eleResDmg: 50,
 		range: [2, 4],
 		uses: 1
+	},
+	divine: {
+		eleDmg: [36, 73],
+		eneDmg: 65
 	}
 }
 export const EMP = {
@@ -2530,6 +2731,10 @@ export const EMP = {
 		range: [2, 4],
 		uses: 1,
 		eneCost: 393
+	},
+	divine: {
+		eleDmg: [38, 63],
+		eneDmg: 343
 	}
 }
 export const MortalBullet = {
@@ -2546,6 +2751,10 @@ export const MortalBullet = {
 		eneCapDmg: 12,
 		range: [2, 4],
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [177, 230],
+		eneDmg: 140
 	}
 }
 export const LastWords = {
@@ -2565,6 +2774,10 @@ export const LastWords = {
 		uses: 3,
 		eneCost: 47,
 		heaCost: 16
+	},
+	divine: {
+		eleDmg: [190,293],
+		eneDmg: 97
 	}
 }
 export const BunkerShell = {
@@ -2585,6 +2798,10 @@ export const BunkerShell = {
 		range: [2, 4],
 		uses: 1,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [256, 489],
+		eneDmg: 130
 	}
 }
 export const MaliceBeam = {
@@ -2602,6 +2819,10 @@ export const MaliceBeam = {
 		range: [3, 6],
 		eneCost: 47,
 		heaCost: 12
+	},
+	divine: {
+		eleDmg: [144, 243],
+		eneDmg: 127
 	}
 }
 export const UltraBright = {
@@ -2619,6 +2840,10 @@ export const UltraBright = {
 		range: [3, 6],
 		eneCost: 47,
 		heaCost: 16
+	},
+	divine: {
+		eleDmg: [209, 273],
+		eneDmg: 97
 	}
 }
 export const HotFlash = {
@@ -2635,6 +2860,10 @@ export const HotFlash = {
 		range: [3, 6],
 		heaCost: 110
 	},
+	divine: {
+		eleDmg: [152, 235],
+		eneDmg: 146
+	},
 	attachment: { x: 58, y: 38 }
 }
 export const HybridEnergyCannon = {
@@ -2650,6 +2879,10 @@ export const HybridEnergyCannon = {
 		eneCapDmg: 39,
 		range: [3, 6],
 		heaCost: 104
+	},
+	divine: {
+		eleDmg: [168, 285],
+		eneDmg: 147
 	},
 	attachment: { x: 63, y: 39 }
 }
@@ -2692,6 +2925,10 @@ export const LightningRecoiler = {
 		eneCost: 56,
 		heaCost: 25
 	},
+	divine: {
+		eleDmg: [178, 360],
+		eneDmg: 69
+	},
 	attachment: { x: 60, y: 35 }
 }
 export const PiercingFox = {
@@ -2713,6 +2950,10 @@ export const PiercingFox = {
 		eneCost: 56,
 		heaCost: 25
 	},
+	divine: {
+		eleDmg: [155, 397],
+		eneDmg: 67
+	},
 	attachment: { x: 64, y: 32 }
 }
 export const UnstablePowerCell = {
@@ -2733,6 +2974,10 @@ export const UnstablePowerCell = {
 		eneCost: 19,
 		heaCost: 31
 	},
+	divine: {
+		eleDmg: [153, 246],
+		eneDmg: 260
+	},
 	attachment: { x: 74, y: 47 }
 }
 export const GrimCobra = {
@@ -2752,6 +2997,10 @@ export const GrimCobra = {
 		uses: 3,
 		eneCost: 47,
 		heaCost: 16
+	},
+	divine: {
+		eleDmg: [186, 298],
+		eneDmg: 97
 	}
 }
 export const Hysteria = {
@@ -2768,6 +3017,10 @@ export const Hysteria = {
 		range: [4, 8],
 		eneCost: 47,
 		heaCost: 16
+	},
+	divine: {
+		eleDmg: [174, 259],
+		eneDmg: 132
 	},
 	attachment: { x: 48, y: 56 }
 }
@@ -2787,6 +3040,10 @@ export const ValiantSniper = {
 		range: [4, 8],
 		uses: 2,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [133, 193],
+		eneDmg: 200
 	}
 }
 export const SpineFall = {
@@ -2806,6 +3063,10 @@ export const SpineFall = {
 		range: [4, 8],
 		eneCost: 75,
 		heaCost: 25
+	},
+	divine: {
+		eleDmg: [202, 346],
+		eneDmg: 111
 	}
 }
 export const Delerium = {
@@ -2823,6 +3084,10 @@ export const Delerium = {
 		range: [4, 8],
 		eneCost: 47,
 		heaCost: 16
+	},
+	divine: {
+		eleDmg: [226, 305],
+		eneDmg: 100
 	}
 }
 export const LightningScope = {
@@ -2841,6 +3106,10 @@ export const LightningScope = {
 		uses: 1,
 		eneCost: 155,
 		heaCost: 31
+	},
+	divine: {
+		eleDmg: [600, 783],
+		eneDmg: 299
 	}
 }
 export const FranticLightning = {
@@ -2880,6 +3149,10 @@ export const PartyCrasher = {
 		uses: 2,
 		heaCost: 100
 	},
+	divine: {
+		eleDmg: [215, 368],
+		eneDmg: 50
+	},
 	attachment: { x: 54, y: 38 }
 }
 export const Snack = {
@@ -2895,6 +3168,10 @@ export const Snack = {
 		eneDmg: 48,
 		eleResDmg: 6,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [105, 138],
+		eneDmg: 49
 	}
 }
 export const Torment = {
@@ -2910,6 +3187,10 @@ export const Torment = {
 		eneDmg: 48,
 		eneCapDmg: 12,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [100, 145],
+		eneDmg: 49
 	}
 }
 export const WindForge = {
@@ -2925,6 +3206,10 @@ export const WindForge = {
 		eneDmg: 76,
 		eleResDmg: 5,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [59, 95],
+		eneDmg: 81
 	}
 }
 export const Anguish = {
@@ -2940,6 +3225,10 @@ export const Anguish = {
 		eneDmg: 48,
 		eneRegDmg: 7,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [90, 161],
+		eneDmg: 50
 	}
 }
 export const Shockwave = {
@@ -2955,6 +3244,10 @@ export const Shockwave = {
 		eneDmg: 49,
 		push: 1,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [147, 193],
+		eneDmg: 52
 	}
 }
 export const FaceShocker = {
@@ -2971,6 +3264,10 @@ export const FaceShocker = {
 		eleResDmg: 6,
 		uses: 3,
 		eneCost: 50
+	},
+	divine: {
+		eleDmg: [167, 219],
+		eneDmg: 78
 	}
 }
 export const Electrolyte = {
@@ -2986,6 +3283,10 @@ export const Electrolyte = {
 		eleResDmg: 6,
 		range: [2, 4],
 		eneCost: 50
+	},
+	divine: {
+		eleDmg: [138, 251],
+		eneDmg: 78
 	}
 }
 export const RailGun = {
@@ -3001,6 +3302,10 @@ export const RailGun = {
 		eleResDmg: 7,
 		range: [3, 6],
 		eneCost: 50
+	},
+	divine: {
+		eleDmg: [159, 191],
+		eneDmg: 90
 	}
 }
 export const AdvancedTeleporter = {
@@ -3015,6 +3320,10 @@ export const AdvancedTeleporter = {
 		eneDmg: 48,
 		uses: 1,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [108, 142],
+		eneDmg: 50
 	}
 }
 export const DoubleTeleporter = {
@@ -3022,7 +3331,7 @@ export const DoubleTeleporter = {
 	name: 'Double Teleporter',
 	type: 7,
 	element: 3,
-	tiers: [3, 5],
+	tiers: [3, 3],
 	stats: {
 		weight: 26,
 		uses: 2,
@@ -3041,6 +3350,10 @@ export const ShockingGrapplingHook = {
 		eneDmg: 48,
 		uses: 1,
 		eneCost: 31
+	},
+	divine: {
+		eleDmg: [108, 142],
+		eneDmg: 50
 	}
 }
 export const EnergyEngine = {
@@ -3158,6 +3471,10 @@ export const UnreliableGuardian = {
 		eleResDmg: 5,
 		backfire: 98,
 		eneCost: 50
+	},
+	divine: {
+		eleDmg: [147, 266],
+		eneDmg: 96
 	}
 }
 export const BackstabbingGuardian = {
@@ -3173,6 +3490,10 @@ export const BackstabbingGuardian = {
 		expResDmg: 6,
 		backfire: 101,
 		heaCost: 62
+	},
+	divine: {
+		expDmg: [141, 158],
+		heaDmg: 61
 	}
 }
 export const SelfishGuardian = {
@@ -3188,6 +3509,9 @@ export const SelfishGuardian = {
 		backfire: 130,
 		eneCost: 16,
 		heaCost: 16
+	},
+	divine: {
+		phyDmg: [227, 400]
 	}
 }
 export const SelfishProtector = {
@@ -3203,6 +3527,9 @@ export const SelfishProtector = {
 		backfire: 108,
 		eneCost: 16,
 		heaCost: 16
+	},
+	divine: {
+		phyDmg: [206, 368]
 	}
 }
 export const BackstabbingProtector = {
@@ -3218,6 +3545,10 @@ export const BackstabbingProtector = {
 		expResDmg: 5,
 		backfire: 87,
 		heaCost: 50
+	},
+	divine: {
+		expDmg: [130, 133],
+		heaDmg: 52
 	}
 }
 export const UnreliableProtector = {
@@ -3233,6 +3564,10 @@ export const UnreliableProtector = {
 		eleResDmg: 5,
 		backfire: 87,
 		eneCost: 69
+	},
+	divine: {
+		eleDmg: [138, 243],
+		eneDmg: 78
 	}
 }
 export const LazyFalcon = {
@@ -3285,6 +3620,10 @@ export const RustyHeatBlaster = {
 		uses: 3,
 		backfire: 173,
 		heaCost: 143
+	},
+	divine: {
+		expDmg: [220, 355],
+		heaDmg: 112
 	},
 	attachment: { x: 58, y: 33 }
 }
@@ -3362,6 +3701,10 @@ export const DistanceController = {
 		uses: 2,
 		heaCost: 38
 	},
+	divine: {
+		expDmg: [143, 255],
+		heaDmg: 46
+	},
 	attachment: { x: 53, y: 26 }
 }
 export const DistanceGenerator = {
@@ -3421,6 +3764,10 @@ export const CockpitBurner = {
 		eneCost: 31,
 		heaCost: 155
 	},
+	divine: {
+		expDmg: [417, 369],
+		heaDmg: 187
+	},
 	attachment: { x: 71, y: 41 }
 }
 export const CockpitElectrocuter = {
@@ -3458,6 +3805,10 @@ export const ScrappedEnergyBlaster = {
 		backfire: 173,
 		eneCost: 143
 	},
+	divine: {
+		eleDmg: [220, 355],
+		eneDmg: 150
+	},
 	attachment: { x: 58, y: 33 }
 }
 export const ElectrocutedScope = {
@@ -3474,6 +3825,10 @@ export const ElectrocutedScope = {
 		range: [8, 0],
 		backfire: 389,
 		eneCost: 62
+	},
+	divine: {
+		eleDmg: [531, 852],
+		eneDmg: 299
 	},
 	attachment: { x: 40, y: 50 }
 }
@@ -3566,6 +3921,9 @@ export const SuperbChargeEngine = {
 		weight: 23,
 		phyDmg: [264, 345],
 		uses: 1
+	},
+	divine: {
+		phyDmg: [283, 370]
 	}
 }
 

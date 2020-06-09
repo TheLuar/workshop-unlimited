@@ -1881,11 +1881,6 @@
 			"phyRes": 22,
 			"expRes": 22,
 			"eleRes": 16
-		},
-		"divine": {
-			"health": 910,
-			"eneCap": 298,
-			"heaCap": 200
 		}
 	},
 	{
