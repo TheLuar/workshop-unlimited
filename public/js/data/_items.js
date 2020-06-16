@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 
 export const Interceptor = {
@@ -817,9 +817,6 @@ export const HurlBat = {
 		eneCapDmg: 6,
 		eneCost: 16,
 		heaCost: 16
-	},
-	divine: {
-		phyDmg: [139, 201]
 	}
 }
 export const Greedy = {
@@ -1890,10 +1887,6 @@ export const IronFrenzy = {
 		range: [4, 8],
 		eneCost: 16,
 		heaCost: 47
-	},
-	divine: {
-		expDmg: [215, 280],
-		heaDmg: 75
 	}
 }
 export const DesertSnake = {
@@ -1913,10 +1906,6 @@ export const DesertSnake = {
 		range: [4, 8],
 		eneCost: 25,
 		heaCost: 75
-	},
-	divine: {
-		expDmg: [202, 346],
-		heaDmg: 75
 	}
 }
 export const Savagery = {
@@ -2024,10 +2013,6 @@ export const FranticFlame = {
 		uses: 2,
 		eneCost: 10,
 		heaCost: 81
-	},
-	divine: {
-		expDmg: [78, 483],
-		heaDmg: 80
 	},
 	attachment: { x: 44, y: 27 }
 }
@@ -2911,7 +2896,6 @@ export const EvacSpark = {
 	stats: {
 		weight: 37,
 		eleDmg: [164, 337],
-		eneDmg: 76,
 		eleResDmg: 5,
 		push: 1,
 		retreat: 2,
@@ -2919,10 +2903,6 @@ export const EvacSpark = {
 		uses: 2,
 		eneCost: 44,
 		heaCost: 19
-	},
-	divine: {
-		eleDmg: [173, 356],
-		eneDmg: 81
 	},
 	attachment: { x: 51, y: 40 }
 }
@@ -2937,7 +2917,6 @@ export const LightningRecoiler = {
 	stats: {
 		weight: 69,
 		eleDmg: [173, 350],
-		eneDmg: 67,
 		eleResDmg: 10,
 		push: 1,
 		recoil: 1,
@@ -2973,7 +2952,7 @@ export const PiercingFox = {
 	},
 	divine: {
 		eleDmg: [155, 397],
-		eneDmg: 71
+		eneDmg: 67
 	},
 	attachment: { x: 64, y: 32 }
 }
@@ -3149,10 +3128,6 @@ export const FranticLightning = {
 		uses: 2,
 		eneCost: 81,
 		heaCost: 13
-	},
-	divine: {
-		eleDmg: [78, 463],
-		eneDmg: 97
 	},
 	attachment: { x: 44, y: 27 }
 }
@@ -3572,7 +3547,7 @@ export const BackstabbingProtector = {
 		heaCost: 50
 	},
 	divine: {
-		expDmg: [130, 233],
+		expDmg: [130, 133],
 		heaDmg: 52
 	}
 }
@@ -3627,10 +3602,6 @@ export const HalfBurntScope = {
 		range: [8, 0],
 		backfire: 468,
 		heaCost: 100
-	},
-	divine: {
-		expDmg: [531, 852],
-		heaDmg: 224
 	},
 	attachment: { x: 40, y: 50 }
 }
@@ -3752,10 +3723,6 @@ export const DistanceGenerator = {
 		uses: 2,
 		heaCost: 38
 	},
-	divine: {
-		eleDmg: [143, 255],
-		eneDmg: 61
-	},
 	attachment: { x: 53, y: 26 }
 }
 export const CockpitPiercer = {
@@ -3792,7 +3759,7 @@ export const CockpitBurner = {
 		heaDmg: 177,
 		expResDmg: 12,
 		range: [7, 0],
-		push: 1,
+		push: 7,
 		uses: 1,
 		eneCost: 31,
 		heaCost: 155
@@ -3819,10 +3786,6 @@ export const CockpitElectrocuter = {
 		uses: 1,
 		eneCost: 124,
 		heaCost: 31
-	},
-	divine: {
-		eleDmg: [437, 703],
-		eneDmg: 230
 	},
 	attachment: { x: 71, y: 41 }
 }
