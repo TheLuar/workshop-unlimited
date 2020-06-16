@@ -11,21 +11,21 @@ import { imagesLoader } from '../helpers/imagesLoader.js'
 
 export const StatsManager = class extends Singleton
 {
+	total = 0
+	loaded = 0
+
+	mechSumStatKeys = [
+		'weight', 'health', 'eneCap',
+		'eneReg', 'heaCap', 'heaCol',
+		'phyRes', 'expRes', 'eleRes'
+	]
+
+	list = []
+	mapByKey = {}
+
 	constructor ()
 	{
 		super()
-				
-		this.total = 0
-		this.loaded = 0
-		
-		this.mechSumStatKeys = [
-			'weight', 'health', 'eneCap',
-			'eneReg', 'heaCap', 'heaCol',
-			'phyRes', 'expRes', 'eleRes'
-		]
-
-		this.list = []
-		this.mapByKey = {}
 	}
 
 	init (stats)
@@ -40,7 +40,7 @@ export const StatsManager = class extends Singleton
 
 			stat.url = null
 			stat.fileName = fileName
-			
+
 			this.mapByKey[key] = stat
 		}
 

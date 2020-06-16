@@ -17,6 +17,7 @@ import { GeneralSettings } from '../helpers/GeneralSettings.js'
 let itemsM = null
 let statsM = null
 let statsResolver = null
+let generalSettings = null
 
 
 // Class
@@ -57,6 +58,7 @@ export const ToolTip = class extends SingletonElement
 		itemsM = ItemsManager.gi()
 		statsM = StatsManager.gi()
 		statsResolver = StatsResolver.gi()
+		generalSettings = GeneralSettings.gi()
 
 
 		this.statBlocks = statsM.list.map(statConf => new StatBlock(statConf.key))
@@ -103,6 +105,12 @@ export const ToolTip = class extends SingletonElement
 	{
 		container.addEventListener('mousemove', e =>
 		{
+			if (generalSettings.get('mobile_device_mode'))
+			{
+				if (this.visible) this.hide()
+				return
+			}
+
 			if (e.target !== this.lastTarget)
 			{
 				this.lastTarget = e.target
@@ -212,8 +220,8 @@ export const ToolTip = class extends SingletonElement
 
 	isMissingDivineStats (item)
 	{
-		return GeneralSettings.get('divine_tier')
-		    && GeneralSettings.get('buffs_on_tooltip')
+		return generalSettings.get('divine_tier')
+		    && generalSettings.get('buffs_on_tooltip')
 		    && !item.divine
 		    && item.tiers[1] > 4
 	}

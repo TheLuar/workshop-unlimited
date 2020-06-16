@@ -77,3 +77,32 @@ export const neq = (first, args) =>
 {
     return args.every(arg => arg !== first)
 }
+
+export const setLS = (key, value) =>
+{
+    localStorage.setItem(key, JSON.stringify(value))
+    return value
+}
+
+export const getLS = (key, optional) =>
+{
+    const data = localStorage.getItem(key)
+
+    if (!data)
+    {
+        if (typeof optional !== 'undefined')
+        {
+            localStorage.setItem(key, JSON.stringify(optional))
+        }
+        return optional
+    }
+
+    try
+    {
+        return JSON.parse(data)
+    }
+    catch (err)
+    {
+        return typeof optional !== 'undefined' ? optional : null
+    }
+}

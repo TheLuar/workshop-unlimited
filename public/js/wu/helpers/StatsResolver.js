@@ -11,6 +11,7 @@ import { Singleton } from '../bases/Singleton.js'
 // General
 
 let statsM = null
+let generalSettings = null
 
 
 // Export
@@ -29,6 +30,7 @@ export const StatsResolver = class extends Singleton
 	init ()
 	{
 		statsM = StatsManager.gi()
+		generalSettings = GeneralSettings.gi()
 
 		this._init()
 	}
@@ -44,7 +46,7 @@ export const StatsResolver = class extends Singleton
 			{
 				if (!item || !item.stats[key]) continue
 
-				if (GeneralSettings.get('divine_tier') && item.divine && item.divine[key])
+				if (generalSettings.get('divine_tier') && item.divine && item.divine[key])
 				{
 					sum[key] += item.divine[key]
 				}
@@ -57,7 +59,7 @@ export const StatsResolver = class extends Singleton
 
 		if (sum.weight > this.maxWeight) sum.health -= (sum.weight - this.maxWeight) * 15
 		
-		if (GeneralSettings.get('arena_buffs'))
+		if (generalSettings.get('arena_buffs'))
 		{
 			for (const key of statsM.mechSumStatKeys)
 			{
@@ -111,16 +113,16 @@ export const StatsResolver = class extends Singleton
 	{
 		let value = item.stats[key]
 
-		if (GeneralSettings.get('buffs_on_tooltip'))
+		if (generalSettings.get('buffs_on_tooltip'))
 		{
-			if (GeneralSettings.get('divine_tier')
+			if (generalSettings.get('divine_tier')
 			 && item.divine
 			 && item.divine[key])
 			{
 				value = item.divine[key]	
 			}
 			
-			if (GeneralSettings.get('arena_buffs') && arenaBuffs)
+			if (generalSettings.get('arena_buffs') && arenaBuffs)
 			{
 				value = Array.isArray(value) ? value.map(x => this.getArenaBuff(key, x)) : this.getArenaBuff(key, value)
 			}

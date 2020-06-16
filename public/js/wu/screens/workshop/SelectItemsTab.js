@@ -6,30 +6,36 @@
 import { div, css } from '../../utils/GeneralUtils.js'
 import { ItemsManager } from '../../managers/ItemsManager.js'
 import { SingletonElement } from '../../bases/SingletonElement.js'
+import { GeneralSettings } from '../../helpers/GeneralSettings.js'
 
 
 // General
 
-const itemsM = ItemsManager.gi()
+let itemsM = null
+let generalSettings = null
 
 
 // Export
 
 export const SelectItemsTab = class extends SingletonElement
 {
+	itemBlocksCtn = null
+	items = null
+	currentSlot = null
+
 	constructor ()
 	{
 		super()
-		
-		this.itemBlocksCtn = null
-		this.items = null
-		this.currentSlot = null
 
 		this.classList.add('tab')
 	}
 
 	init ()
 	{
+		itemsM = ItemsManager.gi()
+		generalSettings = GeneralSettings.gi()
+
+		this.itemDetailsCtn = div('item-details-container')
 		this.itemBlocksCtn = div('item-blocks-container')
 
 		this.addEventListener('click', e =>
@@ -37,7 +43,7 @@ export const SelectItemsTab = class extends SingletonElement
 			if (!e.target.classList.contains('click-area')) this.select(null)
 		})
 
-		this.appendChild(this.itemBlocksCtn)
+		this.appendChildren(this.itemDetailsCtn, this.itemBlocksCtn)
 		this._init()
 	}
 
@@ -72,7 +78,7 @@ export const SelectItemsTab = class extends SingletonElement
 				block.style.visibility = ''
 				block.addEventListener('click', e =>
 				{
-					if (e.sourceCapabilities && e.sourceCapabilities.firesTouchEvents)
+					if (generalSettings.get('mobile_device_mode'))
 					{
 						if (block.classList.contains('active'))
 						{

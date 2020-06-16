@@ -12,6 +12,7 @@ import { SettingsManager } from './managers/SettingsManager.js'
 import { WorkshopManager } from './managers/WorkshopManager.js'
 import { BattleManager } from './managers/BattleManager.js'
 import { ToolTip } from './mobiles/ToolTip.js'
+import { GeneralSettings } from './helpers/GeneralSettings.js'
 
 
 // Class
@@ -29,6 +30,7 @@ export const WorkshopUnlimited = class extends SingletonElement
 	battleM = null
 	screens = null
 	toolTip = null
+	generalSettings = null
 
 	constructor ()
 	{
@@ -55,7 +57,10 @@ export const WorkshopUnlimited = class extends SingletonElement
 		this.settingsM = SettingsManager.gi()
 		this.battleM = BattleManager.gi()
 		this.toolTip = ToolTip.gi()
+		this.generalSettings = GeneralSettings.gi()
 
+
+		this.generalSettings.init()
 		this.socketM.init()
 		this.itemsM.init(items)
 		this.statsM.init(stats)
