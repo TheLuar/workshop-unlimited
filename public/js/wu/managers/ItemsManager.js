@@ -130,4 +130,9 @@ export const ItemsManager = class extends Singleton
 	{
 		return 'advance' in item.stats || 'retreat' in item.stats
 	}
+
+	missingDivineBuffs (item)
+	{
+		return !item.divine && item.tiers[1] > 4
+	}
 }

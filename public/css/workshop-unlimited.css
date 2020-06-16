@@ -94,7 +94,7 @@ wu-workshop-unlimited {
 
 wu-workshop-unlimited *::-webkit-scrollbar {
   background-color: #000000DD;
-  width: 1rem;
+  width: 0.5rem;
   border-radius: var(--general-radius);
 }
 
@@ -175,9 +175,9 @@ wu-settings-screen > .header {
 	font-size: 1.5em;
 }
 wu-settings-screen > .header > wu-basic-button {
-    width: 2.25rem;
-    height: 2.25rem;
-    margin: 0 0.5rem;
+	width: 2.25rem;
+	height: 2.25rem;
+	margin: 0 0.5rem;
 	border-radius: var(--general-radius);
 	background-color: #00000080;
 }
@@ -306,12 +306,43 @@ wu-workshop-screen > wu-basic-button.settings { grid-area: d }
 wu-workshop-screen > wu-select-items-tab {
 	position: absolute;
 	display: grid;
+	grid-template-rows: 40% 60%;
 	grid-template-columns: 40% 60%;
+	grid-template-areas:
+		'a c'
+		'b c';
 	width: 100%;
 	height: 100%;
 	border-radius: var(--general-radius);
 	background-color: var(--color-c);
 }
+
+wu-workshop-screen > wu-select-items-tab > .ctn-item-img {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	grid-area: a;
+}
+
+wu-workshop-screen > wu-select-items-tab > .ctn-item-img > .img {
+	position: relative;
+	width: 70%;
+	height: 70%;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+wu-workshop-screen > wu-select-items-tab > wu-item-info-panel {
+	width: 100%;
+	height: 100%;
+	grid-area: b;
+}
+
 wu-workshop-screen > wu-select-items-tab > .item-blocks-container {
 	position: relative;
 	display: -webkit-flex;
@@ -325,6 +356,7 @@ wu-workshop-screen > wu-select-items-tab > .item-blocks-container {
 	overflow-y: auto;
 	will-change: scroll-position;
 	z-index: 10;
+	grid-area: c;
 }
 wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block {
 	--size: 15.5%;
@@ -587,6 +619,55 @@ wu-progress-bar > .text {
 }
 
 
+wu-item-info-panel {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+wu-item-info-panel > * {
+	position: relative;
+	width: 100%;
+}
+
+wu-item-info-panel > .header {
+	display: block;
+	text-align: center;
+}
+
+wu-item-info-panel > .header > * {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+wu-item-info-panel > .header > .kind { color: var(--color-e) }
+
+wu-item-info-panel > .details {
+	position: relative;
+	display: block;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+wu-item-info-panel > .details > .is-premium { color: var(--color-premium) }
+wu-item-info-panel > .details > .require-jump { color: var(--color-require) }
+wu-item-info-panel > .details > .missing-divine { color: var(--color-off) }
+
+wu-item-info-panel > .stats {
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+wu-item-info-panel > .stats > wu-stat-block {
+	width: 50%;
+	margin-bottom: 0.2rem;
+}
+
+
 @keyframes text-glow {
 	0% {
 		text-shadow: 0 0 3px var(--color-a);
@@ -631,11 +712,12 @@ wu-progress-bar > .text {
 	}
 
 	wu-workshop-screen > wu-select-items-tab {
-		grid-template-rows: 40% 60%;
-		grid-template-columns: unset;
-		grid-template-areas:
+    grid-template-rows: 20% 40% 40%;
+    grid-template-columns: 100%;
+    grid-template-areas:
 			'a'
-			'b';
+			'b'
+			'c';
 	}
 
 	wu-settings-screen > .sections-wrapper {
@@ -647,5 +729,10 @@ wu-progress-bar > .text {
 		height: unset;
 		margin-right: 0;
 		margin-bottom: 0.5rem;
+	}
+
+	wu-item-info-panel > .stats > wu-stat-block {
+		width: 33.33333%;
+		margin-bottom: 0.2rem;
 	}
 }

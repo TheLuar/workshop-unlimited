@@ -7,12 +7,14 @@ import { div, css } from '../../utils/GeneralUtils.js'
 import { ItemsManager } from '../../managers/ItemsManager.js'
 import { SingletonElement } from '../../bases/SingletonElement.js'
 import { GeneralSettings } from '../../helpers/GeneralSettings.js'
+import { ItemInfoPanel } from '../../mobiles/ItemDetailsPanel.js'
 
 
 // General
 
-let itemsM = null
-let generalSettings = null
+let
+	itemsM,
+	generalSettings
 
 
 // Export
@@ -35,7 +37,9 @@ export const SelectItemsTab = class extends SingletonElement
 		itemsM = ItemsManager.gi()
 		generalSettings = GeneralSettings.gi()
 
-		this.itemDetailsCtn = div('item-details-container')
+		this.elmItemImage = div('img')
+		this.itemImgCtn = div('ctn-item-img', null, [this.elmItemImage])
+		this.itemDetailsCtn = new ItemInfoPanel()
 		this.itemBlocksCtn = div('item-blocks-container')
 
 		this.addEventListener('click', e =>
@@ -43,7 +47,7 @@ export const SelectItemsTab = class extends SingletonElement
 			if (!e.target.classList.contains('click-area')) this.select(null)
 		})
 
-		this.appendChildren(this.itemDetailsCtn, this.itemBlocksCtn)
+		this.appendChildren(this.itemImgCtn, this.itemDetailsCtn, this.itemBlocksCtn)
 		this._init()
 	}
 
@@ -56,6 +60,13 @@ export const SelectItemsTab = class extends SingletonElement
 			this.refreshList()
 		}
 		this.currentSlot = slot
+		this.setItem(slot.item)
+	}
+
+	setItem (item)
+	{
+		this.elmItemImage.style.backgroundImage = item ? `url(${ item.url })` : ''
+		this.itemDetailsCtn.setItem(item)
 	}
 
 	refreshList ()
@@ -87,9 +98,14 @@ export const SelectItemsTab = class extends SingletonElement
 						}
 						Array.from(this.itemBlocksCtn.children).forEach(b => b.classList.remove('active'))
 						block.classList.add('active')
+						this.setItem(item)
 						return
 					}
 					this.select(item)
+				})
+				block.addEventListener('mouseover', e =>
+				{
+					if (!generalSettings.get('mobile_device_mode')) this.setItem(item)
 				})
 			}, i * 25)
 			this.itemBlocksCtn.appendChild(block)
@@ -107,3 +123,7 @@ export const SelectItemsTab = class extends SingletonElement
 		this.parentNode.dispatchEvent(event)
 	}
 }
+
+
+// Components
+
