@@ -27,7 +27,7 @@ export const SocketManager = class extends Singleton
 	{
 		wu = WorkshopUnlimited.gi()
 
-		this.socket = io()
+		// this.socket = io()
 
 		this.setListeners()
 
@@ -36,6 +36,7 @@ export const SocketManager = class extends Singleton
 
 	setListeners ()
 	{
+		return;
 		// Connection
 
 		this.socket.on('connect', () => console.log('connected to socket as', this.socket.id))
@@ -60,11 +61,13 @@ export const SocketManager = class extends Singleton
 
 	battlePool_join (setup)
 	{
+		return;
 		this.socket.emit('battle-pool-join', setup)
 	}
 
 	battlePool_quit ()
 	{
+		return;
 		this.socket.emit('battle-pool-quit')
 	}
 }

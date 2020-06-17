@@ -80,7 +80,7 @@ export const ItemsManager = class extends Singleton
 	{
 		const imagesData = this.list.map(({ fileName, fileType }) => [path + fileName, 'image/' + fileType])
 
-		imagesLoader(imagesData, 5, (url, i) =>
+		imagesLoader(imagesData, 10, (url, i) =>
 		{
 			this.loaded++
 			this.list[i].url = url
