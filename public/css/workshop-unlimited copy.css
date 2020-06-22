@@ -1,0 +1,798 @@
+.outline {
+	-webkit-filter:
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000);
+	filter:
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000)
+		drop-shadow(0 0 0.8px #000000);
+}
+
+.horizontal-separator {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #FFFFFF88;
+	margin: 0.25rem 0;
+}
+
+.screen {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.ui {
+	z-index: 100;
+}
+
+.tab {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+	height: 100%;
+	background-color: #000000DD;
+	z-index: 200;
+}
+
+.click-area {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.loading-animation {
+	position: relative;
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 1em;
+	background-image: url(../img/general/notexture.svg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+/* wu-workshop-unlimited */
+
+wu-workshop-unlimited {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 500px;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	--general-radius: 0.5rem;
+	--color-a: #DDDDDD;
+	--color-b: #051020DD;
+	--color-c: #000000EE;
+	--color-d: #102040EE;
+	--color-e: #888888;
+	--color-premium: #FFBB44;
+	--color-require: #FF4400;
+	--color-g: #101010EE;
+	--color-on: #44FF66;
+	--color-on2: #228033;
+	--color-off: #FF4466;
+	--color-off2: #802233;
+}
+
+wu-workshop-unlimited *::-webkit-scrollbar {
+  background-color: #000000DD;
+  width: 0.5rem;
+  border-radius: var(--general-radius);
+}
+
+wu-workshop-unlimited *::-webkit-scrollbar-thumb {
+  background-color: #DDDDDD;
+  border-radius: var(--general-radius);
+}
+
+
+/* wu-loading-screen */
+
+wu-loading-screen {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+wu-loading-screen > .text-container {
+	animation-name: text-glow;
+	animation-duration: 250ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+wu-loading-screen > wu-progress-bar {
+	width: 40%;
+	margin: 0.5em;
+}
+wu-loading-screen > wu-progress-bar > .text {
+	mix-blend-mode: difference;
+}
+
+
+/* wu-basic-button */
+
+wu-basic-button {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: var(--grid-box-sizing);
+	height: var(--grid-box-sizing);
+	margin: var(--grid-box-margin);
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	cursor: pointer;
+}
+wu-basic-button > .icon {
+	position: relative;
+	display: block;
+	width: 80%;
+	height: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+wu-basic-button:hover {
+	/* background-color: var(--color-g); */
+	-webkit-filter: invert(1);
+	filter: invert(1);
+}
+
+
+/* wu-loading-screen */
+
+wu-settings-screen {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+}
+wu-settings-screen > .header {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 2.5em;
+	font-size: 1.5em;
+}
+wu-settings-screen > .header > wu-basic-button {
+	width: 2.25rem;
+	height: 2.25rem;
+	margin: 0 0.5rem;
+	border-radius: var(--general-radius);
+	background-color: #00000080;
+}
+wu-settings-screen > .sections-wrapper {
+	display: -webkit-flex;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	grid-area: b;
+	overflow-x: auto;
+}
+wu-settings-screen > .sections-wrapper > .section {
+	width: 40%;
+	height: 100%;
+	margin-right: 1rem;
+	background-color: #00000066;
+	border-radius: var(--general-radius);
+}
+.sections-wrapper > .section > .title {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 2rem;
+  white-space: nowrap;
+	font-size: 1.5rem;
+}
+.sections-wrapper > .section > .rows-holder {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: calc(100% - 2rem);
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.section > .rows-holder > .switch-container {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 2.5rem;
+	margin: 0.25rem 0;
+	border-radius: var(--general-radius);
+	background-color: #00000080;
+}
+.section > .rows-holder > .switch-container:last-of-type {
+	margin-bottom: 0;
+}
+
+
+/* #wu-switch-button */
+
+wu-switch-button {
+	position: relative;
+	display: block;
+	width: 3rem;
+	height: 1.5rem;
+	margin: 0.5rem;
+	border-radius: 0.2rem;
+	background-color: var(--color-off2);
+	overflow: hidden;
+	cursor: pointer;
+	transition: background-color 250ms;
+}
+wu-switch-button > .thumb {
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 100%;
+	left: 0;
+	background-color: var(--color-off);
+	transition: left 250ms, background-color 250ms;
+}
+wu-switch-button.active {
+	background-color: var(--color-on2);
+}
+wu-switch-button.active > .thumb {
+	background-color: var(--color-on);
+	left: 50%;
+}
+
+
+/* wu-workshop-screen */
+
+wu-workshop-screen {
+	display: block;
+	--grid-box-margin: 0.25rem;
+	--grid-box-sizing: 100%;
+	--grid-box-sizing: -webkit-calc(100% - var(--grid-box-margin) * 2);
+	--grid-box-sizing: calc(100% - var(--grid-box-margin) * 2);
+}
+wu-workshop-screen > .ctn-parts {
+	position: absolute;
+	display: grid;
+	grid-template-areas:
+		'g i h'
+		'e a f'
+		'c b d';
+	left: 0;
+	top: 0;
+	width: 37.5%;
+	height: 60%;
+}
+wu-workshop-screen > .ctn-specials {
+	position: relative;
+	display: grid;
+	grid-template-areas: 'a b c';
+	left: 4.6875%;
+	top: 60%;
+	width: 28.125%;
+	height: 15%;
+}
+wu-workshop-screen > .ctn-modules {
+	position: relative;
+	display: grid;
+	grid-template-areas:
+		'a b c d'
+		'e f g h';
+	left: 2.5%;
+	top: 60%;
+	width: 32.5%;
+	height: 25%;
+}
+wu-workshop-screen > wu-mech-summary {
+	position: absolute;
+	left: 48.75%;
+	bottom: 0;
+	width: calc(40% - var(--grid-box-margin) * 2);
+	height: calc(25% - var(--grid-box-margin) * 2);
+}
+wu-workshop-screen > wu-mech-display {
+	position: absolute;
+	left: 68.75%;
+	bottom: 25%;
+	width: 0;
+	height: 0;
+}
+wu-workshop-screen > wu-basic-button.settings {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 4rem;
+	height: 4rem;
+}
+
+wu-workshop-screen > wu-select-items-tab {
+	position: absolute;
+	display: grid;
+	grid-template-rows: 40% 60%;
+	grid-template-columns: 40% 60%;
+	grid-template-areas:
+		'a c'
+		'b c';
+	width: 100%;
+	height: 100%;
+	border-radius: var(--general-radius);
+	background-color: var(--color-c);
+}
+
+wu-workshop-screen > wu-select-items-tab > .ctn-item-img {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	grid-area: a;
+}
+
+wu-workshop-screen > wu-select-items-tab > .ctn-item-img > .img {
+	position: relative;
+	width: 70%;
+	height: 70%;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+wu-workshop-screen > wu-select-items-tab > wu-item-info-panel {
+	width: 100%;
+	height: 100%;
+	grid-area: b;
+}
+
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-content: baseline;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-c);
+	overflow-x: hidden;
+	overflow-y: auto;
+	will-change: scroll-position;
+	z-index: 10;
+	grid-area: c;
+}
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block {
+	--size: 15.5%;
+	position: relative;
+	display: block;
+	width: var(--size);
+	height: 0;
+	padding-top: var(--size);
+	margin: 1% 0 0 1%;
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	cursor: pointer;
+}
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block.active,
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block:hover {
+	box-shadow: 0 0 0 2px var(--color-e) inset;
+}
+wu-workshop-screen > wu-select-items-tab > .item-blocks-container > .item-block > .gfx {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+wu-workshop-screen > wu-select-items-tab > .item-block.active,
+wu-workshop-screen > wu-select-items-tab > .item-block:hover {
+	background-color: var(--color-d);
+}
+
+
+wu-select-items-tab > .item-details-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+wu-select-items-tab > .item-details-container {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+wu-select-items-tab > .item-details-container > .title {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 2rem;
+	font-size: 1.5rem;
+}
+
+
+wu-searching-for-battle-tab {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+wu-searching-for-battle-tab > .ctn-searching {
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1em
+}
+wu-searching-for-battle-tab > .btn-cancel {
+	width: 8em;
+	height: 3em;
+}
+
+
+
+
+/* wu-equipment-slot */
+
+wu-equipment-slot {
+	position: relative;
+	display: block;
+	width: var(--grid-box-sizing);
+	height: var(--grid-box-sizing);
+	margin: var(--grid-box-margin);
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	cursor: pointer;
+}
+wu-equipment-slot > .item-gfx,
+wu-equipment-slot > .icon-gfx {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 80%;
+	height: 80%;
+	margin: 10%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+/* wu-mech-summary */
+
+wu-mech-summary {
+	position: relative;
+	display: grid;
+	grid-template-areas:
+		'a d g'
+		'b e h'
+		'c f i';
+	width: var(--grid-box-sizing);
+	height: var(--grid-box-sizing);
+	border-radius: var(--general-radius);
+	margin: var(--grid-box-margin);
+	background-color: var(--color-c);
+}
+wu-mech-summary > wu-stat-block {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/* #wu-stat-block */
+
+wu-stat-block {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	width: 24em;
+	height: 1.5em;
+	white-space: nowrap;
+}
+wu-stat-block > .icon {
+	position: relative;
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 0.5em;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+wu-stat-block > .output {
+	position: relative;
+	display: block;
+	height: 0;
+	line-height: 0;
+}
+
+
+/* wu-mech-display */
+
+wu-mech-display {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+wu-mech-display > .parts-container {
+	position: absolute;
+	display: block;
+	left: 50%;
+	bottom: 0;
+	width: 0;
+	height: 0;
+}
+wu-mech-display > .parts-container > wu-mech-display-part {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+}
+wu-mech-display > .parts-container > wu-mech-display-part.smooth-moving {
+	transition: left 500ms ease-out, top 500ms ease-out;
+}
+wu-mech-display > .parts-container > wu-mech-display-part:hover {
+	-webkit-filter: contrast(0.9) brightness(1.2) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000);
+	filter: contrast(0.9) brightness(1.2) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000) drop-shadow(0 0 0.5px #000);
+}
+
+
+/* wu-tool-tip */
+
+wu-tool-tip {
+	position: absolute;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	max-width: 230px;
+	padding: 6px;
+	background-color: var(--color-c);
+	border-radius: var(--general-radius);
+	z-index: 1000;
+}
+wu-tool-tip > .title,
+wu-tool-tip > .item-details {
+	width: 100%;
+	text-align: center;
+}
+wu-tool-tip > .item-details > * {
+	width: 100%;
+	font-size: 0.85em;
+}
+wu-tool-tip > .item-details > .item-kind { color: var(--color-e) }
+wu-tool-tip > .item-details > .item-is-premium { color: var(--color-premium) }
+wu-tool-tip > .item-details > .item-require-jump { color: var(--color-require) }
+wu-tool-tip > .item-details > .item-missing-divine { color: var(--color-off) }
+wu-tool-tip > .stat-blocks {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+wu-tool-tip > .stat-blocks > wu-stat-block {
+	width: 50%;
+	margin-bottom: 0.25em;
+}
+
+
+/* #wu-progress-bar */
+
+wu-progress-bar {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24em;
+	height: 1.5em;
+	margin: 0.5em;
+	border-radius: 0.2em;
+	background-color: #000000;
+	overflow: hidden;
+}
+wu-progress-bar > .bar {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	min-width: 0;
+	background-color: #FF00FF;
+	background-image: url(/img/general/bar-frame.svg);
+	background-size: auto 100%;
+	z-index: 1;
+	transition: width 250ms ease;
+}
+wu-progress-bar > .text {
+	position: relative;
+	display: block;
+	z-index: 2;
+}
+
+
+wu-item-info-panel {
+	position: relative;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+wu-item-info-panel > * {
+	position: relative;
+	width: 100%;
+}
+
+wu-item-info-panel > .header {
+	display: block;
+	text-align: center;
+}
+
+wu-item-info-panel > .header > * {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+wu-item-info-panel > .header > .kind { color: var(--color-e) }
+
+wu-item-info-panel > .details {
+	position: relative;
+	display: block;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+wu-item-info-panel > .details > .is-premium { color: var(--color-premium) }
+wu-item-info-panel > .details > .require-jump { color: var(--color-require) }
+wu-item-info-panel > .details > .missing-divine { color: var(--color-off) }
+
+wu-item-info-panel > .stats {
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+wu-item-info-panel > .stats > wu-stat-block {
+	width: 50%;
+	margin-bottom: 0.2rem;
+}
+
+
+@keyframes text-glow {
+	0% {
+		text-shadow: 0 0 3px var(--color-a);
+	}
+	100% {
+		text-shadow: 0 0 10px var(--color-a);
+	}
+}
+
+
+@media (orientation: portrait) {
+	wu-workshop-unlimited {
+		width: 100%;
+		height: 100%;
+		max-width: unset;
+		max-height: unset;
+	}
+
+	wu-workshop-screen {
+		--grid-box-margin: 0.25rem;
+	}
+
+	wu-workshop-screen > .ctn-parts {
+		position: absolute;
+		display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+			'e a f g i h'
+			'c b d . . .';
+		left: 0;
+		top: 73%;
+		width: 100%;
+		height: 18%;
+		grid-area: a;
+	}
+
+	wu-workshop-screen > .ctn-specials {
+		position: absolute;
+		left: 50%;
+		top: 82%;
+		width: 50%;
+		height: 9%;
+	}
+
+	wu-workshop-screen > .ctn-modules {
+		position: absolute;
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-areas: 'a b c d e f g h';
+		left: 0;
+    top: 91%;
+		width: 100%;
+		height: 9%;
+	}
+
+	wu-workshop-screen > wu-mech-summary {
+		left: 0;
+		top: 0;
+    width: calc(75% - var(--grid-box-margin) * 2);
+    height: calc(18% - var(--grid-box-margin) * 2);
+	}
+
+	wu-workshop-screen > wu-select-items-tab {
+    grid-template-rows: 20% 40% 40%;
+    grid-template-columns: 100%;
+    grid-template-areas:
+			'a'
+			'b'
+			'c';
+	}
+
+	wu-workshop-screen > wu-mech-display {
+		left: 50%;
+		bottom: 27%;
+	}
+
+	wu-settings-screen > .sections-wrapper {
+		flex-direction: column;
+	}
+
+	wu-settings-screen > .sections-wrapper > .section {
+		width: 100%;
+		height: unset;
+		margin-right: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	wu-item-info-panel > .stats > wu-stat-block {
+		width: 33.33333%;
+		margin-bottom: 0.2rem;
+	}
+
+	wu-workshop-screen > wu-basic-button.settings {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(25% - var(--grid-box-margin) * 2);
+    height: calc(9% - var(--grid-box-margin) * 2);
+	}
+}

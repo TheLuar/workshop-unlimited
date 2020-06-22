@@ -36,13 +36,12 @@ export const WorkshopScreen = class extends SingletonElement
 
 	init (manager, slotConfs)
 	{
-		const slotGridAreas = Array.from('abcdefghiabcabcdefgh')
+		const slotGridAreas = Array.from('abcdefghijklabcdefgh')
 
 		this.manager = manager
 
-		this.ctnParts = div('ctn-parts')
-		this.ctnSpecs = div('ctn-specials')
-		this.ctnMods  = div('ctn-modules')
+		this.ctnPartsAndSpecs = div('ctn-parts-and-specs')
+		this.ctnModules = div('ctn-modules')
 
 		this.btn_settings = new BasicButton({
 			title: 'Settings',
@@ -78,18 +77,15 @@ export const WorkshopScreen = class extends SingletonElement
 			slot.index = i
 			slot.style.gridArea = slotGridAreas[i]
 
-			const container = i < 9  ? this.ctnParts
-											: i < 12 ? this.ctnSpecs
-											: this.ctnMods
+			const container = i < 12 ? this.ctnPartsAndSpecs : this.ctnModules
 
 			this.slots.push(slot)
 			container.appendChild(slot)
 		}
 
 		this.appendChildren(
-			this.ctnParts,
-			this.ctnSpecs,
-			this.ctnMods,
+			this.ctnPartsAndSpecs,
+			this.ctnModules,
 			this.btn_settings,
 			this.btn_searchBattle,
 			this.itemsTab,

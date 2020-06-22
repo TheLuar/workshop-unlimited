@@ -2717,8 +2717,7 @@ export const BlizzardDissolver = {
 	name: 'Blizzard Dissolver',
 	type: 3,
 	element: 3,
-	attachment: { x: 65, y: 42 },
-	tiers: [3, 5],
+	tiers: [2, 5],
 	stats: {
 		weight: 24,
 		eleDmg: [34, 70],
@@ -2730,7 +2729,8 @@ export const BlizzardDissolver = {
 	divine: {
 		eleDmg: [36, 73],
 		eneDmg: 65
-	}
+	},
+	attachment: { x: 65, y: 42 }
 }
 export const EMP = {
 	id: '125',
@@ -3964,4 +3964,95 @@ export const SuperbChargeEngine = {
 	}
 }
 
-// last id: 183
+export const MisguidedRocketBattery = {
+	id: '184',
+	name: 'Misguided Rocket Battery',
+	type: 3,
+	element: 2,
+	tiers: [3, 5],
+	stats: {
+		weight: 63,
+		expDmg: [189, 377],
+		heaDmg: 106,
+		expResDmg: 14,
+		range: [4, 8],
+		push: 1,
+		retreat: 1,
+		uses: 3,
+		backfire: 180,
+		heaCost: 75
+	},
+	divine: {
+		expDmg: [200, 398],
+		heaDmg: 112,
+	},
+	attachment: { x: 51, y: 39 }
+}
+export const CrackedPlasmaCannon = {
+	id: '185',
+	name: 'Cracked Plasma Cannon',
+	type: 3,
+	element: 2,
+	tiers: [2, 5],
+	stats: {
+		weight: 37,
+		expDmg: [181, 290],
+		heaDmg: 71,
+		range: [2, 4],
+		retreat: 1,
+		backfire: 72,
+		eneCost: 16,
+		heaCost: 47
+	},
+	divine: {
+		expDmg: [186, 298],
+		heaDmg: 73,
+	},
+	attachment: { x: 47, y: 30 }
+}
+export const ObsoleteEnergyCannon = {
+	id: '186',
+	name: 'Obsolete Energy Cannon',
+	type: 3,
+	element: 3,
+	tiers: [2, 5],
+	stats: {
+		weight: 43,
+		eleDmg: [181, 290],
+		eneDmg: 95,
+		range: [2, 4],
+		retreat: 1,
+		backfire: 72,
+		eneCost: 47,
+		heaCost: 16
+	},
+	divine: {
+		eleDmg: [186, 298],
+		eneDmg: 97,
+	},
+	attachment: { x: 47, y: 30 }
+}
+export const OverchargedRocketBattery = {
+	id: '187',
+	name: 'Overcharged Rocket Battery',
+	type: 3,
+	element: 2,
+	tiers: [3, 5],
+	stats: {
+		weight: 63,
+		expDmg: [202, 362],
+		heaDmg: 106,
+		range: [3, 6],
+		push: 1,
+		retreat: 1,
+		backfire: 180,
+		heaCost: 75
+	},
+	divine: {
+		expDmg: [186, 298],
+		heaDmg: 73,
+	},
+	attachment: { x: 57, y: 49 }
+}
+
+// last id: 187
