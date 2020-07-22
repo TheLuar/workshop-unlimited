@@ -3,23 +3,24 @@
 
 // Packages
 
-import { Singleton } from '../bases/Singleton.js'
-import { WorkshopScreen } from '../screens/workshop/WorkshopScreen.js'
-import { SocketManager } from '../managers/SocketManager.js'
-import { ItemsManager } from '../managers/ItemsManager.js'
-import { StatsResolver } from '../helpers/StatsResolver.js'
+import { Singleton } from '../../bases/Singleton.js'
+import WorkshopScreen from './WorkshopScreen.js'
+import { SocketManager } from '../../managers/SocketManager.js'
+import { ItemsManager } from '../../managers/ItemsManager.js'
+import { StatsResolver } from '../../helpers/StatsResolver.js'
 
 
 // General
 
-let socketM = null
-let itemsM = null
-let statsResolver = null
+let
+	socketM,
+	itemsM,
+	statsResolver
 
 
 // Class
 
-export const WorkshopManager = class extends Singleton
+export default class WorkshopManager extends Singleton
 {
 	screen = null
 	setup = []

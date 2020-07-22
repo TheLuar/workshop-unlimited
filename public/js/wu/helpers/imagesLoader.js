@@ -9,15 +9,15 @@ import { getImgBlob } from '../utils/GeneralUtils.js'
 
 // Function
 
-export const imagesLoader = (images, step, oneach) => new Promise(resolve =>
-{
+export const imagesLoader = (images, step, oneach) => new Promise(resolve => {
+
 	const result = []
 
 	let loading = 0
 	let i = 0
 
-	const roll = () =>
-	{
+	const roll = () => {
+
 		loading++
 
 		const j = i
@@ -26,16 +26,15 @@ export const imagesLoader = (images, step, oneach) => new Promise(resolve =>
 		getImgBlob(src, mime)
 			.then(blob => result[j] = blob)
 			.catch(() => result[j] = MISSING_TEXTURE)
-			.then(() =>
-			{
+			.then(() => {
+
 				loading--
 				oneach(result[j], j)
-				if (images[i + 1])
-				{
+
+				if (images[i + 1]) {
 					while (loading < step && images[++i]) roll()
 				}
-				else
-				{
+				else {
 					resolve(result)
 				}
 			})

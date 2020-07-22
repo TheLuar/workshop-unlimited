@@ -11,15 +11,15 @@ import { SwitchButton } from '../../mobiles/SwitchButton.js'
 
 // Class
 
-export const SettingsScreen = class extends SingletonElement
+export default class SettingsScreen extends SingletonElement
 {
+	sectionsWrapper = null
+	
 	constructor ()
 	{
 		super()
 
 		this.classList.add('screen')
-
-		this.sectionsWrapper = null
 	}
 
 	init ()

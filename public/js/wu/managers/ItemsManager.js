@@ -9,8 +9,8 @@ import { imagesLoader } from '../helpers/imagesLoader.js'
 
 // Export
 
-export const ItemsManager = class extends Singleton
-{
+export const ItemsManager = class extends Singleton {
+
 	TYPE_TORSO = 1
 	TYPE_LEGS = 2
 	TYPE_SIDE = 3
@@ -36,8 +36,8 @@ export const ItemsManager = class extends Singleton
 	TIER_MYTHICAL = 4
 	TIER_DIVINE = 5
 	
-	constructor ()
-	{
+	constructor () {
+	
 		super()
 		
 		this.total = 0
@@ -49,13 +49,13 @@ export const ItemsManager = class extends Singleton
 		this.mapsByType = {}
 	}
 
-	init (items)
-	{
+	init (items) {
+
 		this.list = Object.keys(items).map(a => items[a])
 		this.total = this.list.length
 
-		for (const name in items)
-		{
+		for (const name in items) {
+
 			const item = items[name]
 			const fileType = (item.svg ? 'svg' : 'png')
 			const fileName = item.name.replace(/\s/g, '') + '.' + fileType
@@ -68,71 +68,74 @@ export const ItemsManager = class extends Singleton
 			
 			const safeName = item.name.replace(/\s+/g, '').toLowerCase()
 
-			this.mapByName[safeName] = item
-			this.mapByID[item.id] = item
-			this.mapsByType[item.type][item.id] = item
+			this.mapByName[safeName]
+			 = this.mapByID[item.id]
+			 = this.mapsByType[item.type][item.id]
+			 = item
 		}
 
 		this._init()
 	}
 
-	load (path)
-	{
+	load (path) {
+
 		const imagesData = this.list.map(({ fileName, fileType }) => [path + fileName, 'image/' + fileType])
 
-		imagesLoader(imagesData, 50, (url, i) =>
-		{
+		imagesLoader(imagesData, 20, (url, i) => {
 			this.loaded++
 			this.list[i].url = url
 		})
 	}
 
-	byID (id)
-	{
-		const item = this.mapByID[id];
-		if (!item) throw new Error('No such item with id', id);
-		return item;
-	}
+	byID (id) {
 
-	byName (name)
-	{
-		const safeName = name.replace(/\s+/g, '').toLowerCase()
-		const item = this.mapByName[safeName]
-		if (!item) throw new Error('No such item with name', name);
+		const item = this.mapByID[id]
+		
+		if (!item) throw new Error('No such item with id', id)
+		
 		return item
 	}
 
-	byType (type)
-	{
-		const map = this.mapsByType[type];
-		if (!map) throw new Error('No such item type', type);
-		return map;
+	byName (name) {
+
+		const safeName = name.replace(/\s+/g, '').toLowerCase()
+		const item = this.mapByName[safeName]
+		
+		if (!item) throw new Error('No such item with name', name)
+		
+		return item
 	}
 
-	getItemKind (item)
-	{
+	byType (type) {
+
+		const map = this.mapsByType[type]
+		
+		if (!map) throw new Error('No such item type', type)
+		
+		return map
+	}
+
+	getItemKind (item) {
+
 		const elements = ['Physical', 'Explosive', 'Electric']
 		const types = ['Torso', 'Legs', 'Side Weapon', 'Top Weapon', 'Drone', 'Charge Engine', 'Teleporter', 'Grappling Hook', 'Module']
+		
 		return elements[item.element - 1] + ' ' + types[item.type - 1]
 	}
 
-	getLoadingProgress ()
-	{
+	getLoadingProgress () {
 		return this.total > 0 ? this.loaded / this.total : 0
 	}
 
-	isPremium (item)
-	{
+	isPremium (item) {
 		return item.tiers[0] > this.TIER_EPIC
 	}
 
-	requireJump (item)
-	{
+	requireJump (item) {
 		return 'advance' in item.stats || 'retreat' in item.stats
 	}
 
-	missingDivineBuffs (item)
-	{
+	missingDivineBuffs (item) {
 		return !item.divine && item.tiers[1] > 4
 	}
 }

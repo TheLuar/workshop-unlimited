@@ -54,18 +54,6 @@
 	height: 100%;
 }
 
-.loading-animation {
-	position: relative;
-	display: block;
-	width: 1.5em;
-	height: 1.5em;
-	margin: 1em;
-	background-image: url(../img/general/notexture.svg);
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
 
 /* wu-workshop-unlimited */
 
@@ -324,6 +312,9 @@ wu-workshop-screen > wu-basic-button.settings {
 	right: 0;
 	width: 4rem;
 	height: 4rem;
+}
+wu-workshop-screen > wu-basic-button.battle {
+	display: none
 }
 
 wu-workshop-screen > wu-select-items-tab {

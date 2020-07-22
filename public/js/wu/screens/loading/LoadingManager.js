@@ -3,20 +3,20 @@
 
 // Packages
 
-import { Singleton } from '../bases/Singleton.js'
+import { Singleton } from '../../bases/Singleton.js'
 
-import { LoadingScreen } from '../screens/loading/LoadingScreen.js'
+import LoadingScreen from './LoadingScreen.js'
 
 
 // Class
 
-export const LoadingManager = class extends Singleton
+export default class extends Singleton
 {
+	screen = null
+
 	constructor ()
 	{
 		super()
-
-		this.screen = null
 	}
 
 	init ()

@@ -3,10 +3,10 @@
 
 // Packages
 
-import { Singleton } from '../bases/Singleton.js'
-import { SettingsScreen } from '../screens/settings/SettingsScreen.js'
-import { GeneralSettings } from '../helpers/GeneralSettings.js'
-import { WorkshopManager } from '../managers/WorkshopManager.js'
+import { Singleton } from '../../bases/Singleton.js'
+import SettingsScreen from './SettingsScreen.js'
+import WorkshopManager from '../workshop/WorkshopManager.js'
+import { GeneralSettings } from '../../helpers/GeneralSettings.js'
 
 
 // General
@@ -23,7 +23,7 @@ const toggleBuff = (key, state) =>
 
 // Class
 
-export const SettingsManager = class extends Singleton
+export default class SettingsManager extends Singleton
 {
 	screen = null
 

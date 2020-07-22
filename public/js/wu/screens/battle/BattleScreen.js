@@ -8,7 +8,7 @@ import { SingletonElement } from '../../bases/SingletonElement.js'
 
 // Class
 
-export const BattleScreen = class extends SingletonElement
+export default class BattleScreen extends SingletonElement
 {
     constructor ()
     {

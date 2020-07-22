@@ -744,26 +744,26 @@ export const Falcon = {
 	},
 	attachment: { x: 60, y: 52 }
 }
-export const FranticBrute = {
-	id: '34',
-	name: 'Frantic Brute',
-	svg: true,
-	type: 4,
-	element: 1,
-	tiers: [2, 5],
-	stats: {
-		weight: 50,
-		phyDmg: [69, 632],
-		range: [3, 6],
-		uses: 2,
-		eneCost: 10,
-		heaCost: 50
-	},
-	divine: {
-		phyDmg: [70, 649]
-	},
-	attachment: { x: 44, y: 27 }
-}
+// export const FranticBrute = {
+// 	id: '34',
+// 	name: 'Frantic Brute',
+// 	svg: true,
+// 	type: 4,
+// 	element: 1,
+// 	tiers: [2, 5],
+// 	stats: {
+// 		weight: 50,
+// 		phyDmg: [69, 632],
+// 		range: [3, 6],
+// 		uses: 2,
+// 		eneCost: 10,
+// 		heaCost: 50
+// 	},
+// 	divine: {
+// 		phyDmg: [70, 649]
+// 	},
+// 	attachment: { x: 44, y: 27 }
+// }
 export const DistanceShredder = {
 	id: '35',
 	name: 'Distance Shredder',
@@ -1803,7 +1803,7 @@ export const OvercookingOven = {
 		heaCost: 19
 	},
 	divine: {
-		expDmg: [253, 246],
+		expDmg: [153, 246],
 		heaDmg: 187
 	},
 	attachment: { x: 74, y: 47 }
@@ -2008,29 +2008,29 @@ export const RedRain = {
 	},
 	attachment: { x: 36, y: 79 }
 }
-export const FranticFlame = {
-	id: '92',
-	name: 'Frantic Flame',
-	svg: true,
-	type: 4,
-	element: 2,
-	tiers: [2, 5],
-	stats: {
-		weight: 50,
-		expDmg: [76, 470],
-		heaDmg: 78,
-		expResDmg: 10,
-		range: [3, 6],
-		uses: 2,
-		eneCost: 10,
-		heaCost: 81
-	},
-	divine: {
-		expDmg: [78, 483],
-		heaDmg: 80
-	},
-	attachment: { x: 44, y: 27 }
-}
+// export const FranticFlame = {
+// 	id: '92',
+// 	name: 'Frantic Flame',
+// 	svg: true,
+// 	type: 4,
+// 	element: 2,
+// 	tiers: [2, 5],
+// 	stats: {
+// 		weight: 50,
+// 		expDmg: [76, 470],
+// 		heaDmg: 78,
+// 		expResDmg: 10,
+// 		range: [3, 6],
+// 		uses: 2,
+// 		eneCost: 10,
+// 		heaCost: 81
+// 	},
+// 	divine: {
+// 		expDmg: [78, 483],
+// 		heaDmg: 80
+// 	},
+// 	attachment: { x: 44, y: 27 }
+// }
 export const SpaceInvader = {
 	id: '93',
 	name: 'Space Invader',
@@ -3133,29 +3133,29 @@ export const LightningScope = {
 		eneDmg: 299
 	}
 }
-export const FranticLightning = {
-	id: '143',
-	name: 'Frantic Lightning',
-	svg: true,
-	type: 4,
-	element: 3,
-	tiers: [2, 5],
-	stats: {
-		weight: 50,
-		eleDmg: [76, 451],
-		eneDmg: 95,
-		eleResDmg: 10,
-		range: [3, 6],
-		uses: 2,
-		eneCost: 81,
-		heaCost: 13
-	},
-	divine: {
-		eleDmg: [78, 463],
-		eneDmg: 97
-	},
-	attachment: { x: 44, y: 27 }
-}
+// export const FranticLightning = {
+// 	id: '143',
+// 	name: 'Frantic Lightning',
+// 	svg: true,
+// 	type: 4,
+// 	element: 3,
+// 	tiers: [2, 5],
+// 	stats: {
+// 		weight: 50,
+// 		eleDmg: [76, 451],
+// 		eneDmg: 95,
+// 		eleResDmg: 10,
+// 		range: [3, 6],
+// 		uses: 2,
+// 		eneCost: 81,
+// 		heaCost: 13
+// 	},
+// 	divine: {
+// 		eleDmg: [78, 463],
+// 		eneDmg: 97
+// 	},
+// 	attachment: { x: 44, y: 27 }
+// }
 export const PartyCrasher = {
 	id: '144',
 	name: 'Party Crasher',
@@ -3798,7 +3798,7 @@ export const CockpitBurner = {
 		heaCost: 155
 	},
 	divine: {
-		expDmg: [417, 369],
+		expDmg: [417, 691],
 		heaDmg: 187
 	},
 	attachment: { x: 71, y: 41 }
@@ -3963,7 +3963,6 @@ export const SuperbChargeEngine = {
 		phyDmg: [283, 370]
 	}
 }
-
 export const MisguidedRocketBattery = {
 	id: '184',
 	name: 'Misguided Rocket Battery',
@@ -4054,5 +4053,77 @@ export const OverchargedRocketBattery = {
 	},
 	attachment: { x: 57, y: 49 }
 }
+export const CombinedStorageUnit = {
+	id: '188',
+	name: 'Combined Storage Unit',
+	type: 9,
+	element: 1,
+	tiers: [2, 5],
+	stats: {
+		weight: 40,
+		eneCap: 121,
+		heaCap: 112
+	},
+	divine: {
+		eneCap: 125,
+		heaCap: 115
+	}
+}
+export const CombinedEngineUnit = {
+	id: '189',
+	name: 'Combined Engine Unit',
+	type: 9,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 35,
+		eneCap: 145,
+		heaCap: 134
+	},
+	divine: {
+		eneCap: 155,
+		heaCap: 141
+	}
+}
+export const RockPolisher = {
+	id: '190',
+	name: 'Rock Polisher',
+	type: 3,
+	element: 1,
+	tiers: [3, 5],
+	stats: {
+		weight: 36,
+		phyDmg: [212, 423],
+		phyResDmg: 15,
+		range: [1, 2],
+		backfire: 144,
+		heaCost: 62
+	},
+	divine: {
+		phyDmg: [224, 447]
+	},
+	attachment: { x: 53, y: 50 }
+}
+export const MassiveStoneFeet = {
+	id: '191',
+	name: 'Massive Stone Feet',
+	type: 2,
+	element: 1,
+	tiers: [2, 5],
+	stats: {
+		weight: 132,
+		health: 526,
+		phyDmg: [144, 232],
+		phyResDmg: 10,
+		range: [0, 1],
+		push: 1,
+		walk: 1,
+		jump: 2
+	},
+	divine: {
+		phyDmg: [148, 239]
+	},
+	attachment: { x: 60, y: 23 }
+}
 
-// last id: 187
+// last id: 191

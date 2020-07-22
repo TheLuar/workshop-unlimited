@@ -15,7 +15,7 @@ import { BasicButton } from '../../mobiles/BasicButton.js'
 
 // Class
 
-export const WorkshopScreen = class extends SingletonElement
+export default class WorkshopScreen extends SingletonElement
 {
 	manager = null
 	slots = []
@@ -56,7 +56,7 @@ export const WorkshopScreen = class extends SingletonElement
 			icon: '../../../../img/general/mech.svg',
 			className: 'battle',
 		})
-		this.btn_searchBattle.style.display = 'none'
+		// this.btn_searchBattle.style.display = 'none'
 
 		this.itemsTab = SelectItemsTab.gi()
 		this.itemsTab.init()

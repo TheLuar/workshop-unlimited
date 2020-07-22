@@ -7,10 +7,12 @@ import { SingletonElement } from './bases/SingletonElement.js'
 import { SocketManager } from './managers/SocketManager.js'
 import { ItemsManager } from './managers/ItemsManager.js'
 import { StatsManager } from './managers/StatsManager.js'
-import { LoadingManager } from './managers/LoadingManager.js'
-import { SettingsManager } from './managers/SettingsManager.js'
-import { WorkshopManager } from './managers/WorkshopManager.js'
-import { BattleManager } from './managers/BattleManager.js'
+
+import LoadingManager  from './screens/loading/LoadingManager.js'
+import SettingsManager from './screens/settings/SettingsManager.js'
+import WorkshopManager from './screens/workshop/WorkshopManager.js'
+import BattleManager   from './screens/battle/BattleManager.js'
+
 import { ToolTip } from './mobiles/ToolTip.js'
 import { GeneralSettings } from './helpers/GeneralSettings.js'
 

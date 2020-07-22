@@ -10,14 +10,14 @@ import { ProgressBar } from '../../mobiles/ProgressBar.js'
 
 // Class
 
-export const LoadingScreen = class extends SingletonElement
+export default class LoadingScreen extends SingletonElement
 {
+    textElm = null
+    progressBar = null
+
     constructor ()
     {
         super()
-
-        this.textElm = null
-        this.progressBar = null
 
         this.classList.add('screen')
     }
@@ -26,9 +26,6 @@ export const LoadingScreen = class extends SingletonElement
     {
         this.elmText = div('elm-text', { innerText: txt })
         this.progressBar = new ProgressBar('#DDDDDD', 100, 0, 'procent')
-        
-		// this.addEventListener('mouseenter', () => toolTip.displayItem(...))
-		// this.addEventListener('mouseleave', () => toolTip.hide())
 
         this.appendChildren(this.elmText, this.progressBar)
 

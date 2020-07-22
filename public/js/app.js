@@ -16,13 +16,7 @@ const wu = WorkshopUnlimited.gi()
 
 wu.init({ container, items, stats })
 
-document.addEventListener('readystatechange', e =>
-{
-	if (e.target.readyState === 'complete')
-	{
-		wu.load({
-			items: '../../img/items/',
-			stats: '../../img/stats/',
-		})
-	}
+wu.load({
+	items: '../../img/items/',
+	stats: '../../img/stats/',
 })
